@@ -1,6 +1,6 @@
 use std::fmt;
 use std::num::NonZeroU8;
-#[derive(Clone)]
+#[derive(Clone, PartialEq)]
 struct Board {
     // Rows are read from left to right and then top to bottom.
     cells: [Cell; 81],
@@ -42,7 +42,7 @@ impl fmt::Debug for Board {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         for cell in self.cells.iter() {
             match cell {
-                Cell::Unfilled => f.write_str(".")?,
+                Cell::Unfilled => f.write_str("0")?,
                 Cell::Filled(v) => v.fmt(f)?,
             };
         }
@@ -50,13 +50,13 @@ impl fmt::Debug for Board {
     }
 }
 
-#[derive(Clone, Copy)]
+#[derive(Clone, Copy, PartialEq)]
 enum Cell {
     Unfilled,
     Filled(NonZeroU8),
 }
 
-#[derive(Debug)]
+#[derive(Debug, PartialEq)]
 enum SolveResult {
     NoSolution,
     UniqueSolution(Board),
@@ -108,4 +108,57 @@ fn solve(board: &mut Board) -> SolveResult {
     // Make sure we exit this function with the board unchanged.
     board.cells[index] = Cell::Unfilled;
     current_result
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use std::convert::TryInto;
+
+    fn board(s: &str) -> Board {
+        let mut cells = [Cell::Unfilled; 81];
+        for (dst, src) in cells.iter_mut().zip(s.chars().map(|c| {
+            let digit = c.to_digit(10).unwrap();
+            let digit: u8 = digit.try_into().unwrap();
+            if digit == 0 {
+                Cell::Unfilled
+            } else {
+                Cell::Filled(NonZeroU8::new(digit).unwrap())
+            }
+        })) {
+            *dst = src
+        }
+        Board { cells }
+    }
+
+    #[test]
+    fn test_unique_solution() {
+        // From https://raw.githubusercontent.com/maxbergmark/sudoku-solver/master/data-sets/hard_sudokus_solved.txt.
+        let mut puzzle = board(
+            "000075400000000008080190000300001060000000034000068170204000603900000020530200000",
+        );
+        let solved = board(
+            "693875412145632798782194356357421869816957234429368175274519683968743521531286947",
+        );
+        assert_eq!(solve(&mut puzzle), SolveResult::UniqueSolution(solved));
+    }
+
+    #[test]
+    fn test_multiple_solutions() {
+        let mut puzzle = Board {
+            cells: [Cell::Unfilled; 81],
+        };
+        assert!(matches!(
+            solve(&mut puzzle),
+            SolveResult::MultipleSolutions(_)
+        ));
+    }
+
+    #[test]
+    fn test_no_solutions() {
+        let mut puzzle = Board {
+            cells: [Cell::Filled(NonZeroU8::new(1).unwrap()); 81],
+        };
+        assert!(matches!(solve(&mut puzzle), SolveResult::NoSolution));
+    }
 }

@@ -1,9 +1,53 @@
+use std::fmt;
 use std::num::NonZeroU8;
-
 #[derive(Clone)]
 struct Board {
     // Rows are read from left to right and then top to bottom.
     cells: [Cell; 81],
+}
+
+impl Board {
+    fn is_valid(&self) -> bool {
+        // Each row, column, and block must not contain duplicate digits.
+        let mut row_values = [[false; 9]; 9];
+        let mut column_values = [[false; 9]; 9];
+        let mut block_values = [[false; 9]; 9];
+        for (i, v) in self.cells.iter().enumerate().filter_map(|(i, c)| match c {
+            Cell::Unfilled => None,
+            Cell::Filled(v) => Some((i, v)),
+        }) {
+            let value_index: usize = (v.get() - 1).into();
+            let row = i / 9;
+            let column = i % 9;
+            let block = (row / 3) * 3 + column / 3;
+
+            if row_values[row][value_index] {
+                return false;
+            }
+            if column_values[column][value_index] {
+                return false;
+            }
+            if block_values[block][value_index] {
+                return false;
+            }
+            row_values[row][value_index] = true;
+            column_values[column][value_index] = true;
+            block_values[block][value_index] = true;
+        }
+        true
+    }
+}
+
+impl fmt::Debug for Board {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        for cell in self.cells.iter() {
+            match cell {
+                Cell::Unfilled => f.write_str(".")?,
+                Cell::Filled(v) => v.fmt(f)?,
+            };
+        }
+        Ok(())
+    }
 }
 
 #[derive(Clone, Copy)]
@@ -12,6 +56,7 @@ enum Cell {
     Filled(NonZeroU8),
 }
 
+#[derive(Debug)]
 enum SolveResult {
     NoSolution,
     UniqueSolution(Board),
@@ -20,13 +65,13 @@ enum SolveResult {
 
 fn main() {
     let mut board = Board {
-        cells: [Cell::Filled(NonZeroU8::new(1).unwrap()); 81],
+        cells: [Cell::Unfilled; 81],
     };
-    solve(&mut board);
+    dbg!(solve(&mut board));
 }
 
 fn solve(board: &mut Board) -> SolveResult {
-    if !is_valid(&board) {
+    if !board.is_valid() {
         return SolveResult::NoSolution;
     }
     // Find an empty cell.
@@ -63,8 +108,4 @@ fn solve(board: &mut Board) -> SolveResult {
     // Make sure we exit this function with the board unchanged.
     board.cells[index] = Cell::Unfilled;
     current_result
-}
-
-fn is_valid(_board: &Board) -> bool {
-    true
 }

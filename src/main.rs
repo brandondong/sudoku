@@ -1,5 +1,10 @@
+use rand::{thread_rng, Rng};
+use std::collections::HashSet;
+use std::convert::TryInto;
+use std::error::Error;
 use std::fmt;
 use std::num::NonZeroU8;
+
 #[derive(Clone, PartialEq)]
 struct Board {
     // Rows are read from left to right and then top to bottom.
@@ -7,6 +12,22 @@ struct Board {
 }
 
 impl Board {
+    fn new(s: &str) -> Board {
+        let mut cells = [Cell::Unfilled; 81];
+        for (dst, src) in cells.iter_mut().zip(s.chars().map(|c| {
+            let digit = c.to_digit(10).unwrap();
+            let digit: u8 = digit.try_into().unwrap();
+            if digit == 0 {
+                Cell::Unfilled
+            } else {
+                Cell::Filled(NonZeroU8::new(digit).unwrap())
+            }
+        })) {
+            *dst = src
+        }
+        Board { cells }
+    }
+
     fn is_valid(&self) -> bool {
         // Each row, column, and block must not contain duplicate digits.
         let mut row_values = [[false; 9]; 9];
@@ -63,11 +84,34 @@ enum SolveResult {
     MultipleSolutions(Board),
 }
 
+#[derive(Debug)]
+enum PuzzleCreateError {
+    NoSolution,
+    MultipleSolutions,
+}
+
+impl fmt::Display for PuzzleCreateError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        let error = match self {
+            Self::NoSolution => "No solution",
+            Self::MultipleSolutions => "Multiple solutions",
+        };
+        f.write_str(error)
+    }
+}
+
+impl Error for PuzzleCreateError {}
+
 fn main() {
     let mut board = Board {
         cells: [Cell::Unfilled; 81],
     };
     dbg!(solve(&mut board));
+    let mut board = Board::new(
+        "693875412145632798782194356357421869816957234429368175274519683968743521531286947",
+    );
+    create_puzzle(&mut board).unwrap();
+    dbg!(board);
 }
 
 fn solve(board: &mut Board) -> SolveResult {
@@ -110,34 +154,70 @@ fn solve(board: &mut Board) -> SolveResult {
     current_result
 }
 
+fn create_puzzle(board: &mut Board) -> Result<(), PuzzleCreateError> {
+    match solve(board) {
+        SolveResult::NoSolution => return Err(PuzzleCreateError::NoSolution),
+        SolveResult::MultipleSolutions(_) => return Err(PuzzleCreateError::MultipleSolutions),
+        SolveResult::UniqueSolution(_) => (),
+    }
+    // Keep removing digits while there exists a unique solution.
+    let mut rng = thread_rng();
+    let mut count_filled = board
+        .cells
+        .iter()
+        .filter(|c| matches!(c, Cell::Filled(_)))
+        .count();
+    while count_filled > 0 {
+        // Each iteration attempts to remove one digit.
+        let mut failed_removals = HashSet::new();
+        loop {
+            // Choose a random digit to remove.
+            let choice = rng.gen_range(0, count_filled - failed_removals.len());
+            // Find its index.
+            let cell_index = board
+                .cells
+                .iter()
+                .enumerate()
+                .filter(|(i, c)| matches!(c, Cell::Filled(_)) && !failed_removals.contains(i))
+                .nth(choice)
+                .map(|e| e.0)
+                .unwrap();
+            let old_value = board.cells[cell_index];
+            board.cells[cell_index] = Cell::Unfilled;
+            match solve(board) {
+                SolveResult::NoSolution => return Err(PuzzleCreateError::NoSolution), // Something has gone terribly wrong with the puzzle constraints...
+                SolveResult::UniqueSolution(_) => {
+                    count_filled -= 1;
+                    dbg!(&board);
+                    dbg!(count_filled);
+                    break;
+                }
+                SolveResult::MultipleSolutions(_) => {
+                    board.cells[cell_index] = old_value;
+                    failed_removals.insert(cell_index);
+                    dbg!(failed_removals.len());
+                    if failed_removals.len() == count_filled {
+                        // All options of digit removal resulted in multiple solution puzzles.
+                        return Ok(());
+                    }
+                }
+            }
+        }
+    }
+    Ok(())
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
-    use std::convert::TryInto;
-
-    fn board(s: &str) -> Board {
-        let mut cells = [Cell::Unfilled; 81];
-        for (dst, src) in cells.iter_mut().zip(s.chars().map(|c| {
-            let digit = c.to_digit(10).unwrap();
-            let digit: u8 = digit.try_into().unwrap();
-            if digit == 0 {
-                Cell::Unfilled
-            } else {
-                Cell::Filled(NonZeroU8::new(digit).unwrap())
-            }
-        })) {
-            *dst = src
-        }
-        Board { cells }
-    }
 
     #[test]
     fn test_unique_solution() {
         // From https://raw.githubusercontent.com/maxbergmark/sudoku-solver/master/data-sets/hard_sudokus_solved.txt.
-        let mut puzzle = board(
+        let mut puzzle = Board::new(
             "000075400000000008080190000300001060000000034000068170204000603900000020530200000",
         );
-        let solved = board(
+        let solved = Board::new(
             "693875412145632798782194356357421869816957234429368175274519683968743521531286947",
         );
         assert_eq!(solve(&mut puzzle), SolveResult::UniqueSolution(solved));

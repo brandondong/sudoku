@@ -27,36 +27,6 @@ impl Board {
         }
         Board { cells }
     }
-
-    fn is_valid(&self) -> bool {
-        // Each row, column, and block must not contain duplicate digits.
-        let mut row_values = [[false; 9]; 9];
-        let mut column_values = [[false; 9]; 9];
-        let mut block_values = [[false; 9]; 9];
-        for (i, v) in self.cells.iter().enumerate().filter_map(|(i, c)| match c {
-            Cell::Unfilled => None,
-            Cell::Filled(v) => Some((i, v)),
-        }) {
-            let value_index: usize = (v.get() - 1).into();
-            let row = i / 9;
-            let column = i % 9;
-            let block = (row / 3) * 3 + column / 3;
-
-            if row_values[row][value_index] {
-                return false;
-            }
-            if column_values[column][value_index] {
-                return false;
-            }
-            if block_values[block][value_index] {
-                return false;
-            }
-            row_values[row][value_index] = true;
-            column_values[column][value_index] = true;
-            block_values[block][value_index] = true;
-        }
-        true
-    }
 }
 
 impl fmt::Debug for Board {
@@ -102,20 +72,102 @@ impl fmt::Display for PuzzleCreateError {
 
 impl Error for PuzzleCreateError {}
 
-fn main() {
-    let mut board = Board {
-        cells: [Cell::Unfilled; 81],
-    };
-    dbg!(solve(&mut board));
-    let mut board = Board::new(
-        "693875412145632798782194356357421869816957234429368175274519683968743521531286947",
-    );
-    create_puzzle(&mut board).unwrap();
-    dbg!(board);
+trait PuzzleRules {
+    fn is_valid(&self, board: &Board) -> bool;
 }
 
-fn solve(board: &mut Board) -> SolveResult {
-    if !board.is_valid() {
+struct ClassicSudoku {}
+
+impl PuzzleRules for ClassicSudoku {
+    fn is_valid(&self, board: &Board) -> bool {
+        is_valid_classic(board)
+    }
+}
+
+struct ParityRestriction {}
+
+impl PuzzleRules for ParityRestriction {
+    fn is_valid(&self, board: &Board) -> bool {
+        fn is_even_cell(c: Cell) -> bool {
+            match c {
+                Cell::Unfilled => false,
+                Cell::Filled(v) => v.get() % 2 == 0,
+            }
+        }
+
+        if !is_valid_classic(board) {
+            return false;
+        }
+        // Additional rule: each even cell must have at least 3 odd neighbors.
+        for i in board
+            .cells
+            .iter()
+            .enumerate()
+            .filter(|(_i, &c)| is_even_cell(c))
+            .map(|e| e.0)
+        {
+            let mut odd_count = 0;
+            let row = i / 9;
+            let column = i % 9;
+            if row > 0 && !is_even_cell(board.cells[i - 9]) {
+                odd_count += 1;
+            }
+            if row < 8 && !is_even_cell(board.cells[i + 9]) {
+                odd_count += 1;
+            }
+            if column > 0 && !is_even_cell(board.cells[i - 1]) {
+                odd_count += 1;
+            }
+            if column < 8 && !is_even_cell(board.cells[i + 1]) {
+                odd_count += 1;
+            }
+            if odd_count < 3 {
+                return false;
+            }
+        }
+        true
+    }
+}
+
+fn is_valid_classic(board: &Board) -> bool {
+    // Each row, column, and block must not contain duplicate digits.
+    let mut row_values = [[false; 9]; 9];
+    let mut column_values = [[false; 9]; 9];
+    let mut block_values = [[false; 9]; 9];
+    for (i, v) in board.cells.iter().enumerate().filter_map(|(i, c)| match c {
+        Cell::Unfilled => None,
+        Cell::Filled(v) => Some((i, v)),
+    }) {
+        let value_index: usize = (v.get() - 1).into();
+        let row = i / 9;
+        let column = i % 9;
+        let block = (row / 3) * 3 + column / 3;
+
+        if row_values[row][value_index] {
+            return false;
+        }
+        if column_values[column][value_index] {
+            return false;
+        }
+        if block_values[block][value_index] {
+            return false;
+        }
+        row_values[row][value_index] = true;
+        column_values[column][value_index] = true;
+        block_values[block][value_index] = true;
+    }
+    true
+}
+
+fn main() {
+    let mut board = Board::new(
+        "123456789456789132789123465215834976978561243634972518367245891892317654541698327",
+    );
+    dbg!(create_puzzle(&mut board, &ParityRestriction {}).unwrap());
+}
+
+fn solve(board: &mut Board, rules: &impl PuzzleRules) -> SolveResult {
+    if !rules.is_valid(board) {
         return SolveResult::NoSolution;
     }
     // Find an empty cell.
@@ -132,7 +184,7 @@ fn solve(board: &mut Board) -> SolveResult {
     let mut current_result = SolveResult::NoSolution;
     for guess in 1..=9 {
         board.cells[index] = Cell::Filled(NonZeroU8::new(guess).unwrap());
-        let sub_result = solve(board);
+        let sub_result = solve(board, rules);
         match (sub_result, &current_result) {
             (SolveResult::NoSolution, _) => (),
             (SolveResult::UniqueSolution(b), SolveResult::NoSolution) => {
@@ -154,8 +206,8 @@ fn solve(board: &mut Board) -> SolveResult {
     current_result
 }
 
-fn create_puzzle(board: &mut Board) -> Result<(), PuzzleCreateError> {
-    match solve(board) {
+fn create_puzzle(board: &mut Board, rules: &impl PuzzleRules) -> Result<(), PuzzleCreateError> {
+    match solve(board, rules) {
         SolveResult::NoSolution => return Err(PuzzleCreateError::NoSolution),
         SolveResult::MultipleSolutions(_) => return Err(PuzzleCreateError::MultipleSolutions),
         SolveResult::UniqueSolution(_) => (),
@@ -184,7 +236,7 @@ fn create_puzzle(board: &mut Board) -> Result<(), PuzzleCreateError> {
                 .unwrap();
             let old_value = board.cells[cell_index];
             board.cells[cell_index] = Cell::Unfilled;
-            match solve(board) {
+            match solve(board, rules) {
                 SolveResult::NoSolution => return Err(PuzzleCreateError::NoSolution), // Something has gone terribly wrong with the puzzle constraints...
                 SolveResult::UniqueSolution(_) => {
                     count_filled -= 1;
@@ -220,7 +272,10 @@ mod tests {
         let solved = Board::new(
             "693875412145632798782194356357421869816957234429368175274519683968743521531286947",
         );
-        assert_eq!(solve(&mut puzzle), SolveResult::UniqueSolution(solved));
+        assert_eq!(
+            solve(&mut puzzle, &ClassicSudoku {}),
+            SolveResult::UniqueSolution(solved)
+        );
     }
 
     #[test]
@@ -229,7 +284,7 @@ mod tests {
             cells: [Cell::Unfilled; 81],
         };
         assert!(matches!(
-            solve(&mut puzzle),
+            solve(&mut puzzle, &ClassicSudoku {}),
             SolveResult::MultipleSolutions(_)
         ));
     }
@@ -239,6 +294,9 @@ mod tests {
         let mut puzzle = Board {
             cells: [Cell::Filled(NonZeroU8::new(1).unwrap()); 81],
         };
-        assert!(matches!(solve(&mut puzzle), SolveResult::NoSolution));
+        assert!(matches!(
+            solve(&mut puzzle, &ClassicSudoku {}),
+            SolveResult::NoSolution
+        ));
     }
 }

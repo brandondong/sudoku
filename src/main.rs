@@ -27,6 +27,12 @@ impl Board {
         }
         Board { cells }
     }
+
+    fn unfilled() -> Board {
+        Board {
+            cells: [Cell::Unfilled; 81],
+        }
+    }
 }
 
 impl fmt::Debug for Board {
@@ -84,9 +90,48 @@ impl PuzzleRules for ClassicSudoku {
     }
 }
 
-struct ParityRestriction {}
+// A very uninteresting puzzle constraint.
+// However, it can be used with the solver to quickly find interesting solutions.
+// For example, meeting the 112121212121212121212121112121212121212111212121212121211121212121212121212121211 restriction
+// guarantees all even digits only have odd neighbors.
+struct ParityMask {
+    even_mask: [bool; 81],
+}
 
-impl PuzzleRules for ParityRestriction {
+impl ParityMask {
+    fn new(s: &str) -> ParityMask {
+        let mut even_mask = [false; 81];
+        for (dst, src) in even_mask.iter_mut().zip(s.chars().map(|c| {
+            let digit = c.to_digit(10).unwrap();
+            digit % 2 == 0
+        })) {
+            *dst = src
+        }
+        ParityMask { even_mask }
+    }
+}
+
+impl PuzzleRules for ParityMask {
+    fn is_valid(&self, board: &Board) -> bool {
+        let parity_mismatch = board
+            .cells
+            .iter()
+            .zip(self.even_mask.iter())
+            .any(|(c, &is_even)| match c {
+                Cell::Unfilled => false,
+                Cell::Filled(v) => (v.get() % 2 == 0) != is_even,
+            });
+        if parity_mismatch {
+            return false;
+        }
+        is_valid_classic(board)
+    }
+}
+
+// Even digits only have odd neighbors.
+struct EvenOddNeighbors {}
+
+impl PuzzleRules for EvenOddNeighbors {
     fn is_valid(&self, board: &Board) -> bool {
         fn is_even_cell(c: Cell) -> bool {
             match c {
@@ -94,38 +139,23 @@ impl PuzzleRules for ParityRestriction {
                 Cell::Filled(v) => v.get() % 2 == 0,
             }
         }
-
-        if !is_valid_classic(board) {
-            return false;
-        }
-        // Additional rule: each even cell must have at least 3 odd neighbors.
-        for i in board
+        let has_even_neighbor = board
             .cells
             .iter()
             .enumerate()
             .filter(|(_i, &c)| is_even_cell(c))
-            .map(|e| e.0)
-        {
-            let mut odd_count = 0;
-            let row = i / 9;
-            let column = i % 9;
-            if row > 0 && !is_even_cell(board.cells[i - 9]) {
-                odd_count += 1;
-            }
-            if row < 8 && !is_even_cell(board.cells[i + 9]) {
-                odd_count += 1;
-            }
-            if column > 0 && !is_even_cell(board.cells[i - 1]) {
-                odd_count += 1;
-            }
-            if column < 8 && !is_even_cell(board.cells[i + 1]) {
-                odd_count += 1;
-            }
-            if odd_count < 3 {
-                return false;
-            }
+            .any(|(i, _v)| {
+                let row = i / 9;
+                let column = i % 9;
+                row > 0 && is_even_cell(board.cells[i - 9])
+                    || row < 8 && is_even_cell(board.cells[i + 9])
+                    || column > 0 && is_even_cell(board.cells[i - 1])
+                    || column < 8 && is_even_cell(board.cells[i + 1])
+            });
+        if has_even_neighbor {
+            return false;
         }
-        true
+        is_valid_classic(board)
     }
 }
 
@@ -161,9 +191,9 @@ fn is_valid_classic(board: &Board) -> bool {
 
 fn main() {
     let mut board = Board::new(
-        "123456789456789132789123465215834976978561243634972518367245891892317654541698327",
+        "132547698547698123698123574321456789874931256965872341419765832783214965256389417",
     );
-    dbg!(create_puzzle(&mut board, &ParityRestriction {}).unwrap());
+    dbg!(create_puzzle(&mut board, &EvenOddNeighbors {}).unwrap());
 }
 
 fn solve(board: &mut Board, rules: &impl PuzzleRules) -> SolveResult {
@@ -188,7 +218,7 @@ fn solve(board: &mut Board, rules: &impl PuzzleRules) -> SolveResult {
         match (sub_result, &current_result) {
             (SolveResult::NoSolution, _) => (),
             (SolveResult::UniqueSolution(b), SolveResult::NoSolution) => {
-                current_result = SolveResult::UniqueSolution(b)
+                current_result = SolveResult::UniqueSolution(b);
             }
             (SolveResult::UniqueSolution(b), SolveResult::UniqueSolution(_)) => {
                 current_result = SolveResult::MultipleSolutions(b);

@@ -3,8 +3,10 @@ pub mod rules;
 pub mod solve;
 
 use std::convert::TryInto;
+use std::error::Error;
 use std::fmt;
 use std::num::NonZeroU8;
+use std::str::FromStr;
 
 #[derive(Clone, PartialEq)]
 pub struct Board {
@@ -12,27 +14,29 @@ pub struct Board {
     pub(crate) cells: [Cell; 81],
 }
 
-impl Board {
-    pub fn new(s: &str) -> Board {
+impl FromStr for Board {
+    type Err = ParseError;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        if s.len() != 81 {
+            return Err(ParseError {});
+        }
         let mut cells = [Cell::Unfilled; 81];
         for (dst, src) in cells.iter_mut().zip(s.chars().map(|c| {
-            let digit = c.to_digit(10).unwrap();
+            let digit = match c.to_digit(10) {
+                None => return Err(ParseError {}),
+                Some(v) => v,
+            };
             let digit: u8 = digit.try_into().unwrap();
-            if digit == 0 {
-                Cell::Unfilled
-            } else {
-                Cell::Filled(NonZeroU8::new(digit).unwrap())
-            }
+            let cell = match digit.try_into() {
+                Ok(v) => Cell::Filled(v),
+                Err(_) => Cell::Unfilled,
+            };
+            Ok(cell)
         })) {
-            *dst = src
+            *dst = src?
         }
-        Board { cells }
-    }
-
-    pub fn unfilled() -> Board {
-        Board {
-            cells: [Cell::Unfilled; 81],
-        }
+        Ok(Self { cells })
     }
 }
 
@@ -53,3 +57,14 @@ enum Cell {
     Unfilled,
     Filled(NonZeroU8),
 }
+
+#[derive(Debug)]
+pub struct ParseError {}
+
+impl fmt::Display for ParseError {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.write_str("Parse error")
+    }
+}
+
+impl Error for ParseError {}

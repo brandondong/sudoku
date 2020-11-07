@@ -1,5 +1,7 @@
 use crate::Board;
 use crate::Cell;
+use crate::ParseError;
+use std::str::FromStr;
 
 pub trait PuzzleRules {
     fn is_valid(&self, board: &Board) -> bool;
@@ -20,16 +22,24 @@ pub struct ParityMask {
     even_mask: [bool; 81],
 }
 
-impl ParityMask {
-    pub fn new(s: &str) -> ParityMask {
+impl FromStr for ParityMask {
+    type Err = ParseError;
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        if s.len() != 81 {
+            return Err(ParseError {});
+        }
         let mut even_mask = [false; 81];
         for (dst, src) in even_mask.iter_mut().zip(s.chars().map(|c| {
-            let digit = c.to_digit(10).unwrap();
-            digit % 2 == 0
+            let digit = match c.to_digit(10) {
+                None => return Err(ParseError {}),
+                Some(v) => v,
+            };
+            Ok(digit % 2 == 0)
         })) {
-            *dst = src
+            *dst = src?
         }
-        ParityMask { even_mask }
+        Ok(Self { even_mask })
     }
 }
 
@@ -116,26 +126,57 @@ mod tests {
     use super::*;
     use crate::solve::solve;
     use crate::solve::SolveResult;
+    use std::convert::TryInto;
 
     #[test]
     fn test_even_odd_valid() {
-        let board = Board::new(
-            "132547698547698123698123574321456789874931256965872341419765832783214965256389417",
-        );
-        assert!(EvenOddNeighbors {}.is_valid(&board));
+        let board: Board =
+            "132547698547698123698123574321456789874931256965872341419765832783214965256389417"
+                .parse()
+                .unwrap();
+        let invalid = Board {
+            cells: [Cell::Filled(1.try_into().unwrap()); 81],
+        };
+        let rule = EvenOddNeighbors {};
+        assert!(rule.is_valid(&board));
+        assert!(!rule.is_valid(&invalid));
     }
 
     #[test]
     fn test_even_odd_solve() {
-        let mut puzzle = Board::new(
-            "000000698000090100000000000000006089004000050000070000000700000700000900000300000",
-        );
-        let solution = Board::new(
-            "132547698547698123698123574321456789874931256965872341419765832783214965256389417",
-        );
+        let mut puzzle: Board =
+            "000000698000090100000000000000006089004000050000070000000700000700000900000300000"
+                .parse()
+                .unwrap();
+        let solution: Board =
+            "132547698547698123698123574321456789874931256965872341419765832783214965256389417"
+                .parse()
+                .unwrap();
         assert_eq!(
             solve(&mut puzzle, &EvenOddNeighbors {}),
             SolveResult::UniqueSolution(solution)
         );
+    }
+
+    #[test]
+    fn test_parity_mask_valid() {
+        let puzzle: Board =
+            "000000698000090100000000000000006089004000050000070000000700000700000900000300000"
+                .parse()
+                .unwrap();
+        let solution: Board =
+            "132547698547698123698123574321456789874931256965872341419765832783214965256389417"
+                .parse()
+                .unwrap();
+        let invalid = Board {
+            cells: [Cell::Filled(1.try_into().unwrap()); 81],
+        };
+        let mask: ParityMask =
+            "112121212121212121212121112121212121212111212121212121211121212121212121212121211"
+                .parse()
+                .unwrap();
+        assert!(mask.is_valid(&puzzle));
+        assert!(mask.is_valid(&solution));
+        assert!(!mask.is_valid(&invalid));
     }
 }

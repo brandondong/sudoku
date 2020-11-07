@@ -1,7 +1,8 @@
 use crate::rules::PuzzleRules;
 use crate::Board;
 use crate::Cell;
-use std::num::NonZeroU8;
+use std::convert::TryInto;
+
 #[derive(Debug, PartialEq)]
 pub enum SolveResult {
     NoSolution,
@@ -26,7 +27,7 @@ pub fn solve(board: &mut Board, rules: &impl PuzzleRules) -> SolveResult {
     };
     let mut current_result = SolveResult::NoSolution;
     for guess in 1..=9 {
-        board.cells[index] = Cell::Filled(NonZeroU8::new(guess).unwrap());
+        board.cells[index] = Cell::Filled(guess.try_into().unwrap());
         let sub_result = solve(board, rules);
         match (sub_result, &current_result) {
             (SolveResult::NoSolution, _) => (),
@@ -57,12 +58,14 @@ mod tests {
     #[test]
     fn test_unique_solution() {
         // From https://raw.githubusercontent.com/maxbergmark/sudoku-solver/master/data-sets/hard_sudokus_solved.txt.
-        let mut puzzle = Board::new(
-            "000075400000000008080190000300001060000000034000068170204000603900000020530200000",
-        );
-        let solved = Board::new(
-            "693875412145632798782194356357421869816957234429368175274519683968743521531286947",
-        );
+        let mut puzzle: Board =
+            "000075400000000008080190000300001060000000034000068170204000603900000020530200000"
+                .parse()
+                .unwrap();
+        let solved: Board =
+            "693875412145632798782194356357421869816957234429368175274519683968743521531286947"
+                .parse()
+                .unwrap();
         assert_eq!(
             solve(&mut puzzle, &ClassicSudoku {}),
             SolveResult::UniqueSolution(solved)
@@ -83,7 +86,7 @@ mod tests {
     #[test]
     fn test_no_solutions() {
         let mut puzzle = Board {
-            cells: [Cell::Filled(NonZeroU8::new(1).unwrap()); 81],
+            cells: [Cell::Filled((1).try_into().unwrap()); 81],
         };
         assert!(matches!(
             solve(&mut puzzle, &ClassicSudoku {}),

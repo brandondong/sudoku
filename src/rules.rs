@@ -1,7 +1,10 @@
+pub mod util;
+
 use crate::Board;
 use crate::Cell;
 use crate::ParseError;
 use std::str::FromStr;
+use util::is_valid_classic;
 
 pub trait PuzzleRules {
     fn is_valid(&self, board: &Board) -> bool;
@@ -19,40 +22,28 @@ impl PuzzleRules for ClassicSudoku {
 // For example, meeting the 112121212121212121212121112121212121212111212121212121211121212121212121212121211 restriction
 // guarantees all even digits only have odd neighbors.
 pub struct ParityMask {
-    even_mask: [bool; 81],
+    mask: Board,
 }
 
 impl FromStr for ParityMask {
     type Err = ParseError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        if s.len() != 81 {
-            return Err(ParseError {});
-        }
-        let mut even_mask = [false; 81];
-        for (dst, src) in even_mask.iter_mut().zip(s.chars().map(|c| {
-            let digit = match c.to_digit(10) {
-                None => return Err(ParseError {}),
-                Some(v) => v,
-            };
-            Ok(digit % 2 == 0)
-        })) {
-            *dst = src?
-        }
-        Ok(Self { even_mask })
+        Ok(Self { mask: s.parse()? })
     }
 }
 
 impl PuzzleRules for ParityMask {
     fn is_valid(&self, board: &Board) -> bool {
-        let parity_mismatch = board
-            .cells
-            .iter()
-            .zip(self.even_mask.iter())
-            .any(|(c, &is_even)| match c {
-                Cell::Unfilled => false,
-                Cell::Filled(v) => (v.get() % 2 == 0) != is_even,
-            });
+        let parity_mismatch =
+            board
+                .cells
+                .iter()
+                .zip(self.mask.cells.iter())
+                .any(|(c1, c2)| match (c1, c2) {
+                    (Cell::Filled(v1), Cell::Filled(v2)) => v1.get() % 2 != v2.get() % 2,
+                    (_, _) => false,
+                });
         if parity_mismatch {
             return false;
         }
@@ -89,36 +80,6 @@ impl PuzzleRules for EvenOddNeighbors {
         }
         is_valid_classic(board)
     }
-}
-
-fn is_valid_classic(board: &Board) -> bool {
-    // Each row, column, and block must not contain duplicate digits.
-    let mut row_values = [[false; 9]; 9];
-    let mut column_values = [[false; 9]; 9];
-    let mut block_values = [[false; 9]; 9];
-    for (i, v) in board.cells.iter().enumerate().filter_map(|(i, c)| match c {
-        Cell::Unfilled => None,
-        Cell::Filled(v) => Some((i, v)),
-    }) {
-        let value_index: usize = (v.get() - 1).into();
-        let row = i / 9;
-        let column = i % 9;
-        let block = (row / 3) * 3 + column / 3;
-
-        if row_values[row][value_index] {
-            return false;
-        }
-        if column_values[column][value_index] {
-            return false;
-        }
-        if block_values[block][value_index] {
-            return false;
-        }
-        row_values[row][value_index] = true;
-        column_values[column][value_index] = true;
-        block_values[block][value_index] = true;
-    }
-    true
 }
 
 #[cfg(test)]
@@ -168,6 +129,9 @@ mod tests {
             "132547698547698123698123574321456789874931256965872341419765832783214965256389417"
                 .parse()
                 .unwrap();
+        let empty = Board {
+            cells: [Cell::Unfilled; 81],
+        };
         let invalid = Board {
             cells: [Cell::Filled(1.try_into().unwrap()); 81],
         };
@@ -177,6 +141,7 @@ mod tests {
                 .unwrap();
         assert!(mask.is_valid(&puzzle));
         assert!(mask.is_valid(&solution));
+        assert!(mask.is_valid(&empty));
         assert!(!mask.is_valid(&invalid));
     }
 }

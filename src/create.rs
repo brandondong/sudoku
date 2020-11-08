@@ -3,8 +3,9 @@ use crate::solve::solve;
 use crate::solve::SolveResult;
 use crate::Board;
 use crate::Cell;
+use rand::seq::SliceRandom;
 use rand::{thread_rng, Rng};
-use std::collections::HashSet;
+use std::convert::TryInto;
 use std::error::Error;
 use std::fmt;
 
@@ -26,6 +27,50 @@ impl fmt::Display for PuzzleCreateError {
 
 impl Error for PuzzleCreateError {}
 
+pub fn create_puzzle_solution(rules: &impl PuzzleRules) -> Option<Board> {
+    let mut rng = thread_rng();
+    create_puzzle_solution_recursive(
+        &mut Board {
+            cells: [Cell::Unfilled; 81],
+        },
+        rules,
+        &mut rng,
+    )
+}
+
+fn create_puzzle_solution_recursive(
+    board: &mut Board,
+    rules: &impl PuzzleRules,
+    rng: &mut impl Rng,
+) -> Option<Board> {
+    if !rules.is_valid(board) {
+        return None;
+    }
+    // Find an empty cell.
+    let index = board
+        .cells
+        .iter()
+        .enumerate()
+        .find(|(_i, &cell)| matches!(cell, Cell::Unfilled))
+        .map(|e| e.0);
+    let index = match index {
+        None => return Some(board.clone()),
+        Some(v) => v,
+    };
+    let mut options = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    options.shuffle(rng);
+    for &guess in options.iter() {
+        board.cells[index] = Cell::Filled(guess.try_into().unwrap());
+        match create_puzzle_solution_recursive(board, rules, rng) {
+            None => (),
+            Some(b) => return Some(b),
+        }
+    }
+    // Make sure we exit this function with the board unchanged if we found no solution.
+    board.cells[index] = Cell::Unfilled;
+    None
+}
+
 pub fn create_puzzle_from(
     board: &mut Board,
     rules: &impl PuzzleRules,
@@ -37,47 +82,51 @@ pub fn create_puzzle_from(
     }
     // Keep removing digits while there exists a unique solution.
     let mut rng = thread_rng();
-    let mut count_filled = board
+    while remove_digit(board, rules, &mut rng) {}
+    Ok(())
+}
+
+fn remove_digit(board: &mut Board, rules: &impl PuzzleRules, rng: &mut impl Rng) -> bool {
+    let mut filled_indexes: Vec<usize> = board
         .cells
         .iter()
-        .filter(|c| matches!(c, Cell::Filled(_)))
-        .count();
-    while count_filled > 0 {
-        // Each iteration attempts to remove one digit.
-        let mut failed_removals = HashSet::new();
-        loop {
-            // Choose a random digit to remove.
-            let choice = rng.gen_range(0, count_filled - failed_removals.len());
-            // Find its index.
-            let cell_index = board
-                .cells
-                .iter()
-                .enumerate()
-                .filter(|(i, c)| matches!(c, Cell::Filled(_)) && !failed_removals.contains(i))
-                .nth(choice)
-                .map(|e| e.0)
-                .unwrap();
-            let old_value = board.cells[cell_index];
-            board.cells[cell_index] = Cell::Unfilled;
-            match solve(board, rules) {
-                SolveResult::NoSolution => return Err(PuzzleCreateError::NoSolution), // Something has gone terribly wrong with the puzzle constraints...
-                SolveResult::UniqueSolution(_) => {
-                    count_filled -= 1;
-                    dbg!(&board);
-                    dbg!(count_filled);
-                    break;
-                }
-                SolveResult::MultipleSolutions(_) => {
-                    board.cells[cell_index] = old_value;
-                    failed_removals.insert(cell_index);
-                    dbg!(failed_removals.len());
-                    if failed_removals.len() == count_filled {
-                        // All options of digit removal resulted in multiple solution puzzles.
-                        return Ok(());
-                    }
-                }
+        .enumerate()
+        .filter(|(_i, c)| matches!(c, Cell::Filled(_)))
+        .map(|e| e.0)
+        .collect();
+    filled_indexes.shuffle(rng);
+    let len = filled_indexes.len();
+    for i in filled_indexes {
+        let old_value = board.cells[i];
+        board.cells[i] = Cell::Unfilled;
+        match solve(board, rules) {
+            SolveResult::NoSolution => {
+                board.cells[i] = old_value;
+                return false;
+            }
+            SolveResult::UniqueSolution(_) => {
+                dbg!(board);
+                dbg!(len - 1);
+                return true;
+            }
+            SolveResult::MultipleSolutions(_) => {
+                board.cells[i] = old_value;
+                dbg!(i);
             }
         }
     }
-    Ok(())
+    false
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+    use crate::rules::ClassicSudoku;
+
+    #[test]
+    fn test_create_solution() {
+        let rules = ClassicSudoku {};
+        let board = create_puzzle_solution(&rules).unwrap();
+        assert!(rules.is_valid(&board));
+    }
 }

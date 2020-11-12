@@ -50,6 +50,48 @@ pub fn solve(board: &mut Board, rules: &impl PuzzleRules) -> SolveResult {
     current_result
 }
 
+pub fn derive(board: &mut Board, rules: &impl PuzzleRules) -> Option<Board> {
+    let mut acc = None;
+    derive_recursive(board, rules, &mut acc);
+    acc
+}
+
+fn derive_recursive(board: &mut Board, rules: &impl PuzzleRules, acc: &mut Option<Board>) {
+    if !rules.is_valid(board) {
+        return;
+    }
+    // Find an empty cell.
+    let index = board
+        .cells
+        .iter()
+        .enumerate()
+        .find(|(_i, &cell)| matches!(cell, Cell::Unfilled))
+        .map(|e| e.0);
+    let index = match index {
+        None => {
+            match acc {
+                None => *acc = Some(board.clone()),
+                Some(acc) => {
+                    for (dst, src) in acc.cells.iter_mut().zip(board.cells.iter()) {
+                        if *dst != *src {
+                            *dst = Cell::Unfilled;
+                        }
+                    }
+                }
+            }
+            dbg!(acc);
+            return;
+        }
+        Some(v) => v,
+    };
+    for guess in 1..=9 {
+        board.cells[index] = Cell::Filled(guess.try_into().unwrap());
+        derive_recursive(board, rules, acc);
+    }
+    // Make sure we exit this function with the board unchanged.
+    board.cells[index] = Cell::Unfilled;
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -92,5 +134,34 @@ mod tests {
             solve(&mut puzzle, &ClassicSudoku {}),
             SolveResult::NoSolution
         ));
+    }
+
+    #[test]
+    fn test_derive_solution() {
+        let solved: Board =
+            "693875412145632798782194356357421869816957234429368175274519683968743521531286947"
+                .parse()
+                .unwrap();
+        let mut missing: Board =
+            "093875412145632798782194356357421869816957234429368175274519683968743521531286947"
+                .parse()
+                .unwrap();
+        assert_eq!(derive(&mut missing, &ClassicSudoku {}), Some(solved));
+    }
+
+    #[test]
+    fn test_derive_no_unique_solution() {
+        let mut missing: Board =
+            "026571483351486279874923516582367194149258367763100825238700651617835942495612738"
+                .parse()
+                .unwrap();
+        let partial_filled: Board =
+            "926571483351486279874923516582367194149258367763100825238700651617835942495612738"
+                .parse()
+                .unwrap();
+        assert_eq!(
+            derive(&mut missing, &ClassicSudoku {}),
+            Some(partial_filled)
+        );
     }
 }

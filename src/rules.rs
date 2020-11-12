@@ -5,6 +5,7 @@ use crate::Cell;
 use crate::ParseError;
 use std::str::FromStr;
 use util::is_valid_classic;
+use util::passes_knights_move_constraint;
 
 pub trait PuzzleRules {
     fn is_valid(&self, board: &Board) -> bool;
@@ -14,6 +15,14 @@ pub struct ClassicSudoku {}
 impl PuzzleRules for ClassicSudoku {
     fn is_valid(&self, board: &Board) -> bool {
         is_valid_classic(board)
+    }
+}
+
+pub struct KnightsRestrictionSudoku {}
+
+impl PuzzleRules for KnightsRestrictionSudoku {
+    fn is_valid(&self, board: &Board) -> bool {
+        passes_knights_move_constraint(board) && is_valid_classic(board)
     }
 }
 

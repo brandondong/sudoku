@@ -6,6 +6,7 @@ use std::convert::TryInto;
 use std::error::Error;
 use std::fmt;
 use std::num::NonZeroU8;
+use std::ops::Add;
 use std::str::FromStr;
 
 #[derive(Clone, PartialEq)]
@@ -56,6 +57,19 @@ impl fmt::Debug for Board {
 enum Cell {
     Unfilled,
     Filled(NonZeroU8),
+}
+
+impl Add for Cell {
+    type Output = Self;
+
+    fn add(self, rhs: Self) -> Self::Output {
+        match (self, rhs) {
+            (Cell::Filled(v1), Cell::Filled(v2)) => {
+                Cell::Filled((v1.get() + v2.get()).try_into().unwrap())
+            }
+            _ => Cell::Unfilled,
+        }
+    }
 }
 
 #[derive(Debug)]

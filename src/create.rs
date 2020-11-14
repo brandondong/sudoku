@@ -28,14 +28,12 @@ impl fmt::Display for PuzzleCreateError {
 impl Error for PuzzleCreateError {}
 
 pub fn create_puzzle_solution(rules: &impl PuzzleRules) -> Option<Board> {
+    let mut board = Board {
+        cells: [Cell::Unfilled; 81],
+    };
+    board.cells[40] = Cell::Filled(8.try_into().unwrap());
     let mut rng = thread_rng();
-    create_puzzle_solution_recursive(
-        &mut Board {
-            cells: [Cell::Unfilled; 81],
-        },
-        rules,
-        &mut rng,
-    )
+    create_puzzle_solution_recursive(&mut board, rules, &mut rng)
 }
 
 fn create_puzzle_solution_recursive(

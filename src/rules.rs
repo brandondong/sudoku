@@ -3,8 +3,10 @@ pub mod util;
 use crate::Board;
 use crate::Cell;
 use crate::ParseError;
+use std::convert::TryInto;
 use std::str::FromStr;
 use util::is_valid_classic;
+use util::passes_knights_move_constraint;
 
 pub trait PuzzleRules {
     fn is_valid(&self, board: &Board) -> bool;
@@ -14,6 +16,175 @@ pub struct ClassicSudoku {}
 impl PuzzleRules for ClassicSudoku {
     fn is_valid(&self, board: &Board) -> bool {
         is_valid_classic(board)
+    }
+}
+
+pub struct Test {}
+
+impl PuzzleRules for Test {
+    fn is_valid(&self, board: &Board) -> bool {
+        // https://f-puzzles.com/?id=yxz3p8ao
+        let c = board.cells;
+        match (c[3], c[4], c[5]) {
+            (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
+                if v1.get() != 7 && v1.get() != 9 {
+                    return false;
+                }
+                if v2.get() % 2 == 0 {
+                    return false;
+                }
+                if v3.get() % 2 == 0 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match (c[9], c[10], c[11]) {
+            (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
+                let left = v1.get();
+                let right = v2.get() + v3.get();
+                let b1 = left + 1 == right || left - 1 == right;
+                let left = v1.get() + v2.get();
+                let right = v3.get();
+                let b2 = left + 1 == right || left - 1 == right;
+                if !b1 && !b2 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[12] {
+            Cell::Filled(v1) => {
+                if v1.get() % 2 != 0 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match (c[13], c[14]) {
+            (Cell::Filled(v1), Cell::Filled(v2)) => {
+                let left = v1.get();
+                let right = v2.get();
+                let b1 = left + 1 == right || left - 1 == right;
+                if !b1 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match (c[15], c[16], c[17]) {
+            (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
+                let left = v1.get();
+                let right = v2.get() + v3.get();
+                let b1 = left + 1 == right || left - 1 == right;
+                let left = v1.get() + v2.get();
+                let right = v3.get();
+                let b2 = left + 1 == right || left - 1 == right;
+                if !b1 && !b2 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match (c[18], c[19]) {
+            (Cell::Filled(v1), Cell::Filled(v2)) => {
+                let left = v1.get();
+                let right = v2.get();
+                let b1 = left + 1 == right || left - 1 == right;
+                if !b1 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[21] {
+            Cell::Filled(v1) => {
+                if v1.get() != 2 && v1.get() != 4 && v1.get() != 6 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match (c[20], c[21]) {
+            (Cell::Filled(v1), Cell::Filled(v2)) => {
+                let left = v1.get();
+                let right = v2.get();
+                let b1 = left + 1 == right || left - 1 == right;
+                if !b1 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match (c[21], c[22]) {
+            (Cell::Filled(v1), Cell::Filled(v2)) => {
+                let left = v1.get();
+                let right = v2.get();
+                let b1 = left + 1 == right || left - 1 == right;
+                if !b1 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[23] {
+            Cell::Filled(v1) => {
+                if v1.get() != 2 && v1.get() != 4 && v1.get() != 6 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match (c[24], c[25], c[26]) {
+            (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
+                let left = v1.get();
+                let right = v2.get();
+                let b1 = left + 1 == right || left - 1 == right;
+                let left = v2.get();
+                let right = v3.get();
+                let b2 = left + 1 == right || left - 1 == right;
+                if !b1 && !b2 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[30] {
+            Cell::Filled(v1) => {
+                if v1.get() != 1 && v1.get() != 3 && v1.get() != 5 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[39] {
+            Cell::Filled(v1) => {
+                if v1.get() != 1 && v1.get() != 3 && v1.get() != 5 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[48] {
+            Cell::Filled(v1) => {
+                if v1.get() != 1 && v1.get() != 3 && v1.get() != 5 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match (c[57], c[66], c[75]) {
+            (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
+                let left = v1.get();
+                let right = v2.get() + v3.get();
+                let b1 = left + 1 == right || left - 1 == right;
+                if !b1 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        passes_knights_move_constraint(board) && is_valid_classic(board)
     }
 }
 

@@ -1,4 +1,4 @@
-https://f-puzzles.com/?id=y3ss546e
+https://f-puzzles.com/?id=yygrf3m4
 
 Box 4's 6 cage must contain 1-2-3.
 3 odd sums in row 2 force r2c4 to be even.
@@ -29,11 +29,30 @@ Neither r3c3 nor r3c5 can be 1 as that would force the other to be 3 and break r
 r3c5 must be 5 as 3 would mean r3c3 must be 1 or 5.
 r3c9 can no longer be 5.
 r3c4 can no longer be 2.
-r2c4 cannot be 6 because of the 4-6 pair in the box.
 Column 6's 13 sum can only be 4-9 or 6-7.
 r4c5 must be a 4 because of the 7-9 pair in the same box.
 r2c4 can no longer be 4.
 r1c6 can no longer by 7 or 9.
+r2c4 cannot be 6 because of the 4-6 pair in the box.
+r1c6 must be 1 as r1c5 will not contain the required digits in both cases of r1c4 when r1c6 is 3.
+r1c4 and r1c5 form a 7-9 pair in order to add to 17.
+8 must be in r2c4 as it cannot be a part of the consecutive pair in box 2 which is left with 2-3.
+r8c4 and r9c4 can no longer contain 8.
 r4c9 must be even by looking at the parity of digits in row 4.
 r4c8 cannot be 7 or 9 as it observes both r3c6 and r4c6.
 r4c7 must be 7 or 9 due to the 6-9 pair in the row.
+r5c9 cannot be 5 so must be 7 or 9 to complete the consecutive pair.
+r3c9 cannot be 7 or 9 as it observes both r4c7 and r5c9.
+r3c3 must be 7 as if it was 3, r3c9 would be 1 and nothing would be able to pair up with the 2 in the same row.
+r6c3 is 9. r6c1 is 7. r1c4 is 9. r1c5 is 7. r3c4 is 6. r3c6 is 4. r4c6 is 9. r5c6 is 7. r4c7 is 7. r5c9 is 9. r4c9 is 8. r4c8 is 6. r7c4 is 7. r8c4 and r9c4 cannot be 6. r9c2 is 7.
+r3c7 must be 9 as other cells in the box are restricted by sudoku or due to 9 not being able to be put in the 2 cell cage. r3c8 is 8.
+r2c1 must be 9.
+The remaining digits of row 2 can only match the box 1 9 using 4-6 or 1-7. 1-7 would invalidate the remaining cages in the row.
+r2c2 is 4. r2c3 is 6. r5c2 is 6. r5c1 is 4. r2c9 is 7. r2c8 is 5. r2c7 is 1. r3c9 is 3. r8c8 is 7. r9c8 is 9. r7c2 is 9. r8c5 is 9.
+Box 7's 13 cage cannot contain 2-4 with the 7 so it must be 5-1 in that order.
+r3c1 must contain the same digit as r4c2 making a 1-2 pair in column 2. r8c2 is 3. r1c2 is 5.
+r8c1 must be 6 by elimination.
+r8c9 is 1 looking at row 8. r5c8 is 1. r5c4 is 3. r6c4 is 1. r5c7 is 2. r1c7 is 6. r7c5 is 1.
+r1c8 is 2 looking at column 8. r1c9 is 4. r6c9 is a naked 5. r8c7 is 5.
+r97 is 8 due to there having to be an 8 in the first row of box 7. r7c6 is 5. r8c6 is 8. r7c9 is 6 looking at row 7. r9c9 is 2. r9c4 is 4. r8c4 is 2. r8c3 is 4. r6c5 is 6.
+r6c6 is 2. r2c5 is 2. r2c6 is 3.

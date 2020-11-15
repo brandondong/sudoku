@@ -1,4 +1,4 @@
-https://f-puzzles.com/?id=yygrf3m4
+https://f-puzzles.com/?id=y5k9bqgy
 
 Box 4's 6 cage must contain 1-2-3.
 3 odd sums in row 2 force r2c4 to be even.

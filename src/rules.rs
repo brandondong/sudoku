@@ -23,17 +23,35 @@ pub struct Test {}
 
 impl PuzzleRules for Test {
     fn is_valid(&self, board: &Board) -> bool {
-        // https://f-puzzles.com/?id=yxz3p8ao
+        // https://f-puzzles.com/?id=y64s5p2z
         let c = board.cells;
-        match (c[3], c[4], c[5]) {
-            (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
+        match c[3] {
+            Cell::Filled(v1) => {
                 if v1.get() != 7 && v1.get() != 9 {
                     return false;
                 }
-                if v2.get() % 2 == 0 {
+            }
+            _ => (),
+        }
+        match c[4] {
+            Cell::Filled(v1) => {
+                if v1.get() % 2 == 0 {
                     return false;
                 }
-                if v3.get() % 2 == 0 {
+            }
+            _ => (),
+        }
+        match c[5] {
+            Cell::Filled(v1) => {
+                if v1.get() % 2 == 0 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match (c[3], c[4], c[5]) {
+            (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
+                if v1.get() + v2.get() + v3.get() != 17 {
                     return false;
                 }
             }
@@ -44,10 +62,7 @@ impl PuzzleRules for Test {
                 let left = v1.get();
                 let right = v2.get() + v3.get();
                 let b1 = left + 1 == right || left - 1 == right;
-                let left = v1.get() + v2.get();
-                let right = v3.get();
-                let b2 = left + 1 == right || left - 1 == right;
-                if !b1 && !b2 {
+                if !b1 {
                     return false;
                 }
             }
@@ -74,13 +89,10 @@ impl PuzzleRules for Test {
         }
         match (c[15], c[16], c[17]) {
             (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
-                let left = v1.get();
-                let right = v2.get() + v3.get();
-                let b1 = left + 1 == right || left - 1 == right;
                 let left = v1.get() + v2.get();
                 let right = v3.get();
                 let b2 = left + 1 == right || left - 1 == right;
-                if !b1 && !b2 {
+                if !b2 {
                     return false;
                 }
             }
@@ -135,15 +147,36 @@ impl PuzzleRules for Test {
             }
             _ => (),
         }
-        match (c[24], c[25], c[26]) {
-            (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
+        match (c[24], c[25]) {
+            (Cell::Filled(v1), Cell::Filled(v2)) => {
                 let left = v1.get();
                 let right = v2.get();
                 let b1 = left + 1 == right || left - 1 == right;
-                let left = v2.get();
-                let right = v3.get();
-                let b2 = left + 1 == right || left - 1 == right;
-                if !b1 && !b2 {
+                if !b1 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[27] {
+            Cell::Filled(v1) => {
+                if v1.get() != 1 && v1.get() != 2 && v1.get() != 3 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[28] {
+            Cell::Filled(v1) => {
+                if v1.get() != 1 && v1.get() != 2 && v1.get() != 3 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[29] {
+            Cell::Filled(v1) => {
+                if v1.get() != 1 && v1.get() != 2 && v1.get() != 3 {
                     return false;
                 }
             }
@@ -151,7 +184,47 @@ impl PuzzleRules for Test {
         }
         match c[30] {
             Cell::Filled(v1) => {
-                if v1.get() != 1 && v1.get() != 3 && v1.get() != 5 {
+                if v1.get() != 5 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[31] {
+            Cell::Filled(v1) => {
+                if v1.get() != 4 && v1.get() != 7 && v1.get() != 9 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[32] {
+            Cell::Filled(v1) => {
+                if v1.get() != 4 && v1.get() != 7 && v1.get() != 9 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[36] {
+            Cell::Filled(v1) => {
+                if v1.get() != 4 && v1.get() != 6 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[37] {
+            Cell::Filled(v1) => {
+                if v1.get() != 4 && v1.get() != 6 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[38] {
+            Cell::Filled(v1) => {
+                if v1.get() != 5 {
                     return false;
                 }
             }
@@ -159,7 +232,47 @@ impl PuzzleRules for Test {
         }
         match c[39] {
             Cell::Filled(v1) => {
-                if v1.get() != 1 && v1.get() != 3 && v1.get() != 5 {
+                if v1.get() != 1 && v1.get() != 3 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[40] {
+            Cell::Filled(v1) => {
+                if v1.get() != 8 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[41] {
+            Cell::Filled(v1) => {
+                if v1.get() != 7 && v1.get() != 9 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[45] {
+            Cell::Filled(v1) => {
+                if v1.get() != 7 && v1.get() != 9 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[46] {
+            Cell::Filled(v1) => {
+                if v1.get() != 8 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[47] {
+            Cell::Filled(v1) => {
+                if v1.get() != 7 && v1.get() != 9 {
                     return false;
                 }
             }
@@ -167,18 +280,23 @@ impl PuzzleRules for Test {
         }
         match c[48] {
             Cell::Filled(v1) => {
-                if v1.get() != 1 && v1.get() != 3 && v1.get() != 5 {
+                if v1.get() != 1 && v1.get() != 3 {
                     return false;
                 }
             }
             _ => (),
         }
-        match (c[57], c[66], c[75]) {
-            (Cell::Filled(v1), Cell::Filled(v2), Cell::Filled(v3)) => {
-                let left = v1.get();
-                let right = v2.get() + v3.get();
-                let b1 = left + 1 == right || left - 1 == right;
-                if !b1 {
+        match c[49] {
+            Cell::Filled(v1) => {
+                if v1.get() != 2 && v1.get() != 6 {
+                    return false;
+                }
+            }
+            _ => (),
+        }
+        match c[50] {
+            Cell::Filled(v1) => {
+                if v1.get() != 2 && v1.get() != 6 {
                     return false;
                 }
             }

@@ -1,0 +1,39 @@
+https://f-puzzles.com/?id=y3ss546e
+
+Box 4's 6 cage must contain 1-2-3.
+3 odd sums in row 2 force r2c4 to be even.
+3 odd sums and 1 even in box 2 force r3c6 to be even.
+3 even positions are known in row 3 using the consecutive pairs so the consecutive triple must be odd-even-odd.
+4 even positions are known in row 3 so r3c9 is odd.
+4 even positions are known in box 2 so r1c5 and r1c6 both must be odd.
+1 odd sum and 1 even sum in row 8 force r8c4 to be even.
+2 odd sums in box 7 force the first 3 cells of row 7 to sum to odd.
+2 odd sums in row 7 force r7c4 to be odd.
+The consecutive sum to r7c4 must be even so r9c4 is even.
+The remaining cells in column 4 are odd after having all evens placed.
+The 3 cell sum in box 5 must contain 1-3-5 as all other odd combinations sum to greater than 10.
+r4c4 must be 5 making r5c4 and r6c4 form a 1-3 pair.
+r1c4 and r7c4 now form a 7-9 pair.
+The 3 cell sum in box 5 sums to 9 so the consecutive cell must be 8.
+The 2 cell sum consecutive to the 3 cell sum in box 5 sums to 8 and without 1-3-5, must be 2-6.
+The remaining cells in box 5 are 4-7-9 and r5c6 cannot be 4.
+r3c4 and r3c6 cannot be 8 by knight's move.
+r3c3 and r3c5 cannot be 9 due to being consecutive pairs with r3c4.
+The consecutive triple in box 4 cannot contain a 6 and therefore must be 7-8-9 as it cannot start with a 4 or 5.
+The middle digit in the consecutive triple in box 4 must be an 8.
+The remaining digits in box 4 are 4-5-6.
+The consecutive pair in box 4 must contain a 5 and due to knight's move, the 5 is in r5c3 leaving a 4-6 pair.
+r3c3 can no longer be 5.
+r3c5 can no longer be 7 in order to fulfill the consecutive triple.
+Neither r3c3 nor r3c5 can be 1 as that would force the other to be 3 and break r5c4.
+r3c5 must be 5 as 3 would mean r3c3 must be 1 or 5.
+r3c9 can no longer be 5.
+r3c4 can no longer be 2.
+r2c4 cannot be 6 because of the 4-6 pair in the box.
+Column 6's 13 sum can only be 4-9 or 6-7.
+r4c5 must be a 4 because of the 7-9 pair in the same box.
+r2c4 can no longer be 4.
+r1c6 can no longer by 7 or 9.
+r4c9 must be even by looking at the parity of digits in row 4.
+r4c8 cannot be 7 or 9 as it observes both r3c6 and r4c6.
+r4c7 must be 7 or 9 due to the 6-9 pair in the row.

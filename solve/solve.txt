@@ -1,0 +1,18 @@
+Hamiltonian path
+
+Rules:
+Each 1 has a Hamiltonian path to some 9
+
+Solution:
+329654178418793256567218349876521493195437682234986517643875921752169834981342765
+
+Derivation ideas:
+Parity map https://f-puzzles.com/?id=y2uk2oqg
+Final dead map https://f-puzzles.com/?id=yyk47gkk
+
+If we give all green parity digits in every box, then we can eliminate half of all the 1 positions!
+- 8 is really clean compared to 4 and it doesn't tell you anything about 9!
+https://f-puzzles.com/?id=y2y49cgc 8's -> 1 positions
+
+https://f-puzzles.com/?id=y2evj4jv (1_derive)
+- We can derive all the 1 positions from here!

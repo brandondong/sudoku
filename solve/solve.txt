@@ -1,10 +1,18 @@
-Hamiltonian path
+Consecutive Path Sudoku
 
 Rules:
-Each 1 has a Hamiltonian path to some 9
+Normal sudoku rules apply.
+For each 1 digit on the board, there exists a path starting at that 1, which then connects to a 2, which then connects to a 3... all the way to 9 using only orthogonally adjacent cells.
+
+Provided is an example board which meets this constraint for its given 1's.
+https://f-puzzles.com/?id=yywwfjf6 (example)
+
+Puzzle:
+https://f-puzzles.com/?id=yxjtm4c2 (puzzle)
 
 Solution:
 329654178418793256567218349876521493195437682234986517643875921752169834981342765
+https://f-puzzles.com/?id=y3udrn7h (solution)
 
 Derivation ideas:
 Parity map https://f-puzzles.com/?id=y2uk2oqg
@@ -27,7 +35,8 @@ https://f-puzzles.com/?id=y4rn4z84 (2_possibilities)
 - We could potentially trap a path into a corner and show that all other possibilities lead to path contradictions (e.g. box 1 using 7's but this also traps the 1 derive).
 - We want to derive box 1 for sure because it cascades into nice derivations later.
 - Using ugly bifurcation, 2 in r2c1 is impossible because it forces a 2 in r1c6.
-- Actually, a 2 in r3c4 perfectly derives box 1's 2 without bifurcation! It's pretty beautiful since you need to use the logic in box 1 to proceed and doesn't mess up step 1.
+- Actually, a 2 in r3c4 perfectly derives box 1's 2 without bifurcation! It's pretty beautiful since you need to use the logic in box 1 to proceed and has minimal impact on step 1.
+- Unfortunately, it does allow you to easily get a 2 as your first digit but which does not lead to anything useful.
 https://f-puzzles.com/?id=yyjys6an (2_derive)
 https://f-puzzles.com/?id=y663ed2c (2_finish)
 
@@ -43,3 +52,21 @@ Next steps:
 - After sudoku we're left with a deadly 6-7 unresolvable pair :(
 https://f-puzzles.com/?id=yxdlqdlq (6_7_unresolvable)
 - 7 in r7c5 is a nice red herring.
+https://f-puzzles.com/?id=yxh4lar9 (puzzle)
+
+Solve steps:
+- 8 in box 3 cannot be part of some path because both the path using the 6 in the box or a 6 outside the box would not work.
+- The Manhattan distance from any valid path 8 to any other valid 8 is even.
+- The Manhattan distance from a 1 to an 8 in its path must be odd.
+- Therefore, if a 1 has an even Manhattan distance to one 8, none of the 8's can be part of its path which forms a contradiction for a 1 existing there.
+- This restricts the 1 positions to a checkered board pattern. Using sudoku, we can derive all the 1 positions.
+- Each 1 must have at least one orthogonally adjacent 2.
+- If the 2 in box 1 is r2c1, it cannot path up because of the 5. It cannot path down because there is no 8 to path to. Therefore, r1c2 is the 2.
+- Using sudoku, we can derive all remaining 2's except in boxes 5, 6, and 8.
+- The 2 in box 7 is used in a path so we know where the 3's are in the same box.
+- This forces the path in box 4 to go right which then comes back around and resolves box 7's 3's.
+- In box 9, the 2 must connect to a 3 and we cam disambiguate which one.
+- Box 1's path must go to the left because of the 3's. The 7 cannot go down because of the lack of good 8's. 9 finishes the box.
+- Box 7's remaining digits means the 4 in the path must escape the box and we can complete the rest of box 4.
+- Box 9's 4 cannot path down or else a 7 contradiction will occur in box 8 and this completes the rest of the box.
+- After continuing with regular sudoku, it becomes obvious how box 3 paths. The rest of the sudoku proceeds smoothly until box 5's path resolves the deadly pair.

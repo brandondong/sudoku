@@ -16,3 +16,13 @@ https://f-puzzles.com/?id=y2y49cgc 8's -> 1 positions
 
 https://f-puzzles.com/?id=y2evj4jv (1_derive)
 - We can derive all the 1 positions from here!
+
+For the 2's:
+https://f-puzzles.com/?id=y4rn4z84 (2_possibilities)
+- We know there must be a 2 in r7c3 or r8c3 from box 1 and 4.
+- No contradiction if we make r8c9 a 2 and when we do, all 2's are different from the solution except r4c5.
+- If we force r4c5 to not be a 2, there's no contradiction either.
+- By giving the fake 2 in r5c9, we can derive 6 2's. Only the last 2 is interesting.
+- We'd have to place a lot of 3's to make it interesting.
+- We could potentially trap a path into a corner and show that all other possibilities lead to path contradictions (e.g. box 1 using 7's).
+- We want to derive box 1 for sure because it cascades into nice derivations later.

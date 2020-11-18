@@ -30,3 +30,16 @@ https://f-puzzles.com/?id=y4rn4z84 (2_possibilities)
 - Actually, a 2 in r3c4 perfectly derives box 1's 2 without bifurcation! It's pretty beautiful since you need to use the logic in box 1 to proceed and doesn't mess up step 1.
 https://f-puzzles.com/?id=yyjys6an (2_derive)
 https://f-puzzles.com/?id=y663ed2c (2_finish)
+
+Next steps:
+- Box 1's path can't proceed to the right as it will break box 3's path. It must stay in its own box.
+- Now box 2's path cannot start to the left or will break box 3 for the same reason. This resolves the rest of the 2's!
+- Box 3's triple allows us to resolve the 5-7 pair.
+- Box 4's 3 must go to the right forcing box 7's 3 to go up.
+- Box 7's path cannot be restricted to its own box so the 4 must go up leading to the 5-6 pair in the column being completed. The 7-9 pair in box 4 can be resolved.
+- Box 5 cannot be the right 4 because both directions after are 5 restricted. This resolves the 4-6 pair in row 1.
+- Box 3's path must go left now because of digit restrictions completing box 2 and column 4.
+- Box 9's path must stay in its own box and there's only one possibility.
+- After sudoku we're left with a deadly 6-7 unresolvable pair :(
+https://f-puzzles.com/?id=yxdlqdlq (6_7_unresolvable)
+- 7 in r7c5 is a nice red herring.

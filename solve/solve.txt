@@ -24,5 +24,9 @@ https://f-puzzles.com/?id=y4rn4z84 (2_possibilities)
 - If we force r4c5 to not be a 2, there's no contradiction either.
 - By giving the fake 2 in r5c9, we can derive 6 2's. Only the last 2 is interesting.
 - We'd have to place a lot of 3's to make it interesting.
-- We could potentially trap a path into a corner and show that all other possibilities lead to path contradictions (e.g. box 1 using 7's).
+- We could potentially trap a path into a corner and show that all other possibilities lead to path contradictions (e.g. box 1 using 7's but this also traps the 1 derive).
 - We want to derive box 1 for sure because it cascades into nice derivations later.
+- Using ugly bifurcation, 2 in r2c1 is impossible because it forces a 2 in r1c6.
+- Actually, a 2 in r3c4 perfectly derives box 1's 2 without bifurcation! It's pretty beautiful since you need to use the logic in box 1 to proceed and doesn't mess up step 1.
+https://f-puzzles.com/?id=yyjys6an (2_derive)
+https://f-puzzles.com/?id=y663ed2c (2_finish)

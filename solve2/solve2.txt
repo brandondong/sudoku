@@ -1,0 +1,15 @@
+Solution: https://f-puzzles.com/?id=y2jftto2
+
+Ideas:
+- Sandwich sudoku
+- Odd even sudoku but only provide odds, but you might as well just provide odd digits
+- Just regular sudoku but be clever about given digits???
+
+Sandwich sudoku:
+https://f-puzzles.com/?id=y5s73mmy
+- Row 2 with a value of 8 cannot be 2-6 or 3-5. Same with row 3 but it doesn't really tell you where the 1-8-9 triples are.
+
+Provide odd digits:
+- You can't only provide odd digits or else all evens are interchangeable.
+- Can't only provide black dots as that only covers 1-2 and 3-6. But combined with white dots with 9, you wouldn't have to provide many.
+- They also tell you there is an even-odd sequence.

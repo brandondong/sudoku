@@ -7,9 +7,18 @@ Ideas:
 
 Sandwich sudoku:
 https://f-puzzles.com/?id=y5s73mmy
+- Row 1 can either have an outside 8 or 2-6 separated as 3-5 would force too many evens in the center.
 - Row 2 with a value of 8 cannot be 2-6 or 3-5. Same with row 3 but it doesn't really tell you where the 1-8-9 triples are.
+- Row 6 reveals the entire parity structure of the row and therefore boxes 4, 5, and 6.
 
 Provide odd digits:
 - You can't only provide odd digits or else all evens are interchangeable.
 - Can't only provide black dots as that only covers 1-2 and 3-6. But combined with white dots with 9, you wouldn't have to provide many.
 - They also tell you there is an even-odd sequence.
+https://f-puzzles.com/?id=yxwkso88 surprisingly leads to https://f-puzzles.com/?id=y6fjb5n9!
+- I don't really feel like giving away odd digits anymore since it could possibly reveal this structure in another way.
+- You must reveal two more corner parities to finish off the puzzle.
+- It would be hilarious to reveal r3c7 and r7c3 using diagonals with the evens.
+- We can also reveal the 1-5 in box 9 using a 6 diagonal which reveals the 1 in box 3 playing beautifully with the previous 31 diagonal which can't contain 1!
+- The 33 diagonal has minimum 5 in the odd cell while the 31 has minimum 3. Both diagonals are allowed to contain 2.
+https://f-puzzles.com/?id=y57vzlv7 leads to https://f-puzzles.com/?id=yy7ha2f4 and the even odd neighbor ruleset is done.

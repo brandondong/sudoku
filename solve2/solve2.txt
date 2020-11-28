@@ -9,7 +9,14 @@ Sandwich sudoku:
 https://f-puzzles.com/?id=y5s73mmy
 - Row 1 can either have an outside 8 or 2-6 separated as 3-5 would force too many evens in the center.
 - Row 2 with a value of 8 cannot be 2-6 or 3-5. Same with row 3 but it doesn't really tell you where the 1-8-9 triples are.
-- Row 6 reveals the entire parity structure of the row and therefore boxes 4, 5, and 6.
+- Row 6 reveals almost the entire parity structure of the board.
+- Row 5 as well and it's forced when supplying a 3.
+- It combos quite well with column 5 if you replace 8's with 2's as you wouldn't be able to disambiguate between a 2-4 or 6 until you complete row 5. 2-6 vs 8 also works.
+- Row 2's sum then disambiguates the 2-4 pair. Giving row 8 also works.
+- Giving row 9's sum might actually be cooler and shouldn't give away anything prior with the 29 column sum. https://f-puzzles.com/?id=yyt4p5wo
+- The sum in column 3 gives away the structure of the column and combos into row 9!! https://f-puzzles.com/?id=yypha5eg
+- Row 1's sum shouldn't be able to combo off with column 2's sum to start the puzzle. https://f-puzzles.com/?id=yxjryfh9
+
 
 Provide odd digits:
 - You can't only provide odd digits or else all evens are interchangeable.

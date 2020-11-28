@@ -15,10 +15,16 @@ Provide odd digits:
 - You can't only provide odd digits or else all evens are interchangeable.
 - Can't only provide black dots as that only covers 1-2 and 3-6. But combined with white dots with 9, you wouldn't have to provide many.
 - They also tell you there is an even-odd sequence.
-https://f-puzzles.com/?id=yxwkso88 surprisingly leads to https://f-puzzles.com/?id=y6fjb5n9!
+https://f-puzzles.com/?id=yxwkso88 surprisingly leads to almost all odd/evens placed! https://f-puzzles.com/?id=y6fjb5n9
 - I don't really feel like giving away odd digits anymore since it could possibly reveal this structure in another way.
 - You must reveal two more corner parities to finish off the puzzle.
 - It would be hilarious to reveal r3c7 and r7c3 using diagonals with the evens.
 - We can also reveal the 1-5 in box 9 using a 6 diagonal which reveals the 1 in box 3 playing beautifully with the previous 31 diagonal which can't contain 1!
 - The 33 diagonal has minimum 5 in the odd cell while the 31 has minimum 3. Both diagonals are allowed to contain 2.
 https://f-puzzles.com/?id=y57vzlv7 leads to https://f-puzzles.com/?id=yy7ha2f4 and the even odd neighbor ruleset is done.
+- A 16 diagonal on the 9 with at least 3 on r9c4 forces a 1-3-3 with a 1-3 pair in box 7 and a 7 in r8c1. https://f-puzzles.com/?id=y46k258b
+- With just two more diagonals, you can derive all odds except for a 5-7 deadly pair. https://f-puzzles.com/?id=y2pvdrpt
+- A diagonal must be used to resolve them and unfortunately cannot involve any evens.
+
+Thermos:
+- Thermos seems only powerful if you know the sequence is all even or all odd and I think it's going to be very noticeable if they curve.

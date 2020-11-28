@@ -15,7 +15,14 @@ https://f-puzzles.com/?id=y5s73mmy
 - Row 2's sum then disambiguates the 2-4 pair. Giving row 8 also works.
 - Giving row 9's sum might actually be cooler and shouldn't give away anything prior with the 29 column sum. https://f-puzzles.com/?id=yyt4p5wo
 - The sum in column 3 gives away the structure of the column and combos into row 9!! https://f-puzzles.com/?id=yypha5eg
-- Row 1's sum shouldn't be able to combo off with column 2's sum to start the puzzle. https://f-puzzles.com/?id=yxjryfh9
+- Row 1's sum shouldn't be able to combo off with column 2's sum to start the puzzle. https://f-puzzles.com/?id=yyttuket
+- Either of box 1's 2 placements should work so we need row 7's sum to disambiguate. https://f-puzzles.com/?id=y6ehsgqd
+- At this point, we just need to disambiguate numeric pairs in a way that does nothing for parity.
+- Possible obvious candidates include: diagonal and thermos but diagonals don't play well with sandwich sums.
+- If you have a 5 cell thermos, you can disambiguate all the odds. Technically, it can be 4 if you know one end cannot contain a 1-9.
+- 1-3-5-7-9 thermos in the top right corner doesn't reveal all the odds. https://f-puzzles.com/?id=y6a5xp28
+- However, if we now add a thermos in the bottom left corner, we force a 6-7! https://f-puzzles.com/?id=yxezlqre
+- A 5-6 thermos in box 8 is most efficient. And we can finish it off in the center. https://f-puzzles.com/?id=y2v8haf5
 
 
 Provide odd digits:

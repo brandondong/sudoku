@@ -44,7 +44,9 @@ Step back 2:
 - Yes! You can also eliminate 1-7-9 as a possibility. https://f-puzzles.com/?id=y6stbomw pretty much the same minimal example except a little more info in column 3.
 - We want to be careful about long thermos giving away a meta solution. https://f-puzzles.com/?id=yyn868zo swapped https://f-puzzles.com/?id=yyn7xvqx
 https://f-puzzles.com/?id=y3kqttsh pretty efficient but the thermo clues allow you to bypass the 7 sandwich sum.
-- r7c9 and r9c9 have their parities revealed at the very end. https://f-puzzles.com/?id=y5jba236 holy efficiency
+- r7c9 and r9c9 have their parities revealed at the very end. https://f-puzzles.com/?id=y5jba236 holy efficiency, many valid solutions from here.
+- Next efficient thermo: https://f-puzzles.com/?id=yyl52mod
+- https://f-puzzles.com/?id=yydd3k24 don't think you can beat this information density!!!
 
 Provide odd digits:
 - You can't only provide odd digits or else all evens are interchangeable.

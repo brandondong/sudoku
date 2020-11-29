@@ -35,6 +35,16 @@ Taking a step back:
 https://f-puzzles.com/?id=y35c4jwd seems to be the minimal example, hopefully some thermo resolves all odds that uses r3c7 or r9c9.
 - Sudoku thinks it resolves to https://f-puzzles.com/?id=yyolc2j9 for some reason but this does lead to a valid solution...
 - You can get to the same point using a 3-5-7 thermos in box 3 https://f-puzzles.com/?id=y26b266n
+- It would be great if the next thermos is only possible after the previous.
+- Also have to be really careful that the thermos don't reveal anything about 1-9 positions.
+- I would prefer fewer longer thermos than many short ones which would make it obvious they were there just for disambiguation.
+
+Step back 2:
+- Row 7 is a little boring, maybe column 3 is possible if we sandwich 7?
+- Yes! You can also eliminate 1-7-9 as a possibility. https://f-puzzles.com/?id=y6stbomw pretty much the same minimal example except a little more info in column 3.
+- We want to be careful about long thermos giving away a meta solution. https://f-puzzles.com/?id=yyn868zo swapped https://f-puzzles.com/?id=yyn7xvqx
+https://f-puzzles.com/?id=y3kqttsh pretty efficient but the thermo clues allow you to bypass the 7 sandwich sum.
+- r7c9 and r9c9 have their parities revealed at the very end. https://f-puzzles.com/?id=y5jba236 holy efficiency
 
 Provide odd digits:
 - You can't only provide odd digits or else all evens are interchangeable.

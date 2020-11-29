@@ -24,6 +24,17 @@ https://f-puzzles.com/?id=y5s73mmy
 - However, if we now add a thermos in the bottom left corner, we force a 6-7! https://f-puzzles.com/?id=yxezlqre
 - A 5-6 thermos in box 8 is most efficient. And we can finish it off in the center. https://f-puzzles.com/?id=y2v8haf5
 
+Taking a step back:
+- The opening trick with 1-3-9 in the center is too beautiful. It locks the 3 and 1-9 pair from being transferred.
+- That alone is enough to resolve odd/evens except for corners in corner boxes.
+- Column 2's trick with parity is too nice to pass up but doesn't necessarily need to force a 6-7-8.
+- We do however want a 2 digit sum to be plausible on the outside and even 2 more would push it past to 16.
+- Row 1's sum works super well with the previous clue and locks either a 2 or 4 outside the sandwich.
+- Getting the bottom right corner as odd would resolve all the odd/evens but it doesn't look possible using one sandwich clue.
+- Instead, sandwich clues on rows 7 and 9 combo nicely, with the even sum on row 9 not using the even digit used in row 1.
+https://f-puzzles.com/?id=y35c4jwd seems to be the minimal example, hopefully some thermo resolves all odds that uses r3c7 or r9c9.
+- Sudoku thinks it resolves to https://f-puzzles.com/?id=yyolc2j9 for some reason but this does lead to a valid solution...
+- You can get to the same point using a 3-5-7 thermos in box 3 https://f-puzzles.com/?id=y26b266n
 
 Provide odd digits:
 - You can't only provide odd digits or else all evens are interchangeable.

@@ -1,4 +1,16 @@
-Solution: https://f-puzzles.com/?id=y2jftto2
+Odd Neighbors Sudoku
+
+https://f-puzzles.com/?id=y6glgvux
+
+Rules:
+- Normal sudoku rules apply.
+- Normal sandwich sum rules apply (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value).
+- Normal thermometer rules apply (numbers on a thermometer must strictly increase as they move away from the bulb).
+- Even digits must have odd orthogonal neighbors.
+
+Don't bother trying to think outside the box; there's a very straightforward solve path :)
+
+Solution: https://f-puzzles.com/?id=yydd3k24
 
 Ideas:
 - Sandwich sudoku
@@ -46,7 +58,17 @@ Step back 2:
 https://f-puzzles.com/?id=y3kqttsh pretty efficient but the thermo clues allow you to bypass the 7 sandwich sum.
 - r7c9 and r9c9 have their parities revealed at the very end. https://f-puzzles.com/?id=y5jba236 holy efficiency, many valid solutions from here.
 - Next efficient thermo: https://f-puzzles.com/?id=yyl52mod
-- https://f-puzzles.com/?id=yydd3k24 don't think you can beat this information density!!!
+- https://f-puzzles.com/?id=yydd3k24 don't think you can beat this information density!!! https://f-puzzles.com/?id=y459z8by
+
+Solve steps:
+- The edge centers of a box must either be all even or all odd.
+- In row 5, the sum must form 1-3-9 which is an odd sequence of length 3. This can only happen at the center of the row.
+- This odd placement reveals the parity of almost all squares on the board except for the diagonals in the diagonal regions.
+- Column 2 cannot have 1-9 in row 5. There are 3 reasonable possibilities for the 1-9 left but 2 would require an even + odd to sum to 14.
+- Row 9 now can only form a sum in one position. Same with row 1. 2 and 4 can be filled in boxes 3 and 9 by sudoku.
+- Possibilities for 1-9 in column 3 must force row 7 as odd which is revealed through sudoku to be 1-9.
+- The column 9 thermo now becomes available forcing 6-7-8. A lot of sudoku follows. Column 3's sandwich sum allows the evens to propagate on the left side.
+- Row 8's thermo forces a 9 which finishes all the odds. The last two thermos are usable and finishes the solve.
 
 Provide odd digits:
 - You can't only provide odd digits or else all evens are interchangeable.

@@ -1,12 +1,12 @@
 Odd Neighbors Sudoku
 
-https://f-puzzles.com/?id=y6glgvux
+https://f-puzzles.com/?id=y5ya99tp
 
 Rules:
 - Normal sudoku rules apply.
 - Normal sandwich sum rules apply (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value).
 - Normal thermometer rules apply (numbers on a thermometer must strictly increase as they move away from the bulb).
-- Even digits must have odd orthogonal neighbors.
+- Even digits must only have odd orthogonal neighbors.
 
 Don't bother trying to think outside the box; there's a very straightforward solve path :)
 

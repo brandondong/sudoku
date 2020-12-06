@@ -12,6 +12,9 @@ Diagonals:
 How in the world can we possible solve this?
 - We can first group them and count https://f-puzzles.com/?id=y36dhsot
 - Just giving a 7 in r1c2 leads to https://f-puzzles.com/?id=yyfq8rwb pretty nicely using the diagonal edges.
+- One way we could resolve this is filling column 5 in box 2 but this feels like bifurcation. Actually, the much easier observation is the 3 which hits both edges.
+- https://f-puzzles.com/?id=y6bn76gj here's the minimal so far, the orientation of green is using bifurcation.
+- https://f-puzzles.com/?id=y5g83ath the 6 logic is insane!
 
 Lemmas:
 - Rwo identical diagonal lines cannot intersect at opposite directions! It's pretty obvious though with concrete, short lines.

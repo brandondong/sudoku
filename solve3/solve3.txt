@@ -1,0 +1,14 @@
+Diagonals:
+- Lines are probably easiest?
+- If we make them two groups of 4 each, we should be able to disambiguate everything with just one row.
+- At the same time, intersecting lines sound hilarious.
+- Maybe you could find some clever way to prove a diagonal must contain a duplicate.
+- https://f-puzzles.com/?id=y5ymk8yv
+- Maybe if you just shove enough diagonals, some interesting coloring behavior will emerge. https://f-puzzles.com/?id=y4ma99dl
+- Best off using diagonals to avoid multiple forced naked singles. https://f-puzzles.com/?id=y4kdcfm2 -> https://f-puzzles.com/?id=yxd9zoss
+- https://f-puzzles.com/?id=y5vsq9to omg this is the best we're going to get!
+
+Lemmas:
+- Rwo identical diagonal lines cannot intersect at opposite directions! It's pretty obvious though with concrete, short lines.
+- 5 repeated diagonals cannot have a duplicate digit in the diagonal.
+- 

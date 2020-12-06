@@ -7,6 +7,11 @@ Diagonals:
 - Maybe if you just shove enough diagonals, some interesting coloring behavior will emerge. https://f-puzzles.com/?id=y4ma99dl
 - Best off using diagonals to avoid multiple forced naked singles. https://f-puzzles.com/?id=y4kdcfm2 -> https://f-puzzles.com/?id=yxd9zoss
 - https://f-puzzles.com/?id=y5vsq9to omg this is the best we're going to get!
+- The row we give shouldn't really matter I think as long as we disambiguate the deadly pattern https://f-puzzles.com/?id=yya9j683
+
+How in the world can we possible solve this?
+- We can first group them and count https://f-puzzles.com/?id=y36dhsot
+- Just giving a 7 in r1c2 leads to https://f-puzzles.com/?id=yyfq8rwb pretty nicely using the diagonal edges.
 
 Lemmas:
 - Rwo identical diagonal lines cannot intersect at opposite directions! It's pretty obvious though with concrete, short lines.

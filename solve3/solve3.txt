@@ -1,5 +1,6 @@
 Rules:
-Different groups may share digits.
+- Normal sudoku rules apply.
+- The 12 rods in the grid can be divided into 3 groups of 4. The 4 rods within a group are all identical after rotation. Different groups are allowed to have digits in common.
 
 Diagonals:
 - Lines are probably easiest?
@@ -23,9 +24,10 @@ How in the world can we possible solve this?
 - Maybe at this point, we can prove the rest of the digits are unique and just proceed with sudoku...
 - Actually, you could have got the 1 duplication logic 20 years earlier if you provide a 7 in r3c4 but it feels sort of cheap whereas currently, there's many angles of attack.
 - 9 sees everything. 7 is done. 8 sees everything. 1 is done. 3 sees everything. 2 as well. 6 is done. 5 sees the rest of green. We're done by symmetry.
+- The easiest way to see this is just to notice row 3 where all the remaining unknowns are present.
 - Sudoku proceeds to unresolvable patterns https://f-puzzles.com/?id=y655zf43
 - The digits we give shouldn't help with the 6/7 sudoku at the start of the puzzle.
-- Done https://f-puzzles.com/?id=y6g9corq
+- Done https://f-puzzles.com/?id=y6g9corq puzzle -> https://f-puzzles.com/?id=y57kobot
 
 Lemmas:
 - Rwo identical diagonal lines cannot intersect at opposite directions! It's pretty obvious though with concrete, short lines.

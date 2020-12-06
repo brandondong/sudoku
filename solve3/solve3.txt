@@ -1,3 +1,6 @@
+Rules:
+Different groups may share digits.
+
 Diagonals:
 - Lines are probably easiest?
 - If we make them two groups of 4 each, we should be able to disambiguate everything with just one row.
@@ -15,6 +18,14 @@ How in the world can we possible solve this?
 - One way we could resolve this is filling column 5 in box 2 but this feels like bifurcation. Actually, the much easier observation is the 3 which hits both edges.
 - https://f-puzzles.com/?id=y6bn76gj here's the minimal so far, the orientation of green is using bifurcation.
 - https://f-puzzles.com/?id=y5g83ath the 6 logic is insane!
+- https://f-puzzles.com/?id=yy46zxyq one more 4 gives the 7 orientations.
+- To fix the green/blue orientations, I would love to show a duplication of 1's, in fact we can already do so in box 2!!!
+- Maybe at this point, we can prove the rest of the digits are unique and just proceed with sudoku...
+- Actually, you could have got the 1 duplication logic 20 years earlier if you provide a 7 in r3c4 but it feels sort of cheap whereas currently, there's many angles of attack.
+- 9 sees everything. 7 is done. 8 sees everything. 1 is done. 3 sees everything. 2 as well. 6 is done. 5 sees the rest of green. We're done by symmetry.
+- Sudoku proceeds to unresolvable patterns https://f-puzzles.com/?id=y655zf43
+- The digits we give shouldn't help with the 6/7 sudoku at the start of the puzzle.
+- Done https://f-puzzles.com/?id=y6g9corq
 
 Lemmas:
 - Rwo identical diagonal lines cannot intersect at opposite directions! It's pretty obvious though with concrete, short lines.

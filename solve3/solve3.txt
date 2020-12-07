@@ -29,6 +29,23 @@ How in the world can we possible solve this?
 - The digits we give shouldn't help with the 6/7 sudoku at the start of the puzzle.
 - Done https://f-puzzles.com/?id=y6g9corq puzzle -> https://f-puzzles.com/?id=y57kobot
 
+Solve steps:
+- Begin by marking r7c2 as green and r7c3 as blue.
+- Column 2 contains the all three groups. So does row 3 and box 6. Therefore, the two remaining are either green or red.
+- The top cannot be green as a 7 cannot appear in green. The diagonal in box 1 must therefore be blue because a 7 cannot appear in it either. r5c3 is 7.
+- The 7's in column 5 and 7 resolve which diagonal in the set is red.
+- r4c8 cannot be 7 as that would force a 7 in r6c6. This makes the next step too easy, perhaps https://f-puzzles.com/?id=yxpge4p4
+- Both red edges see r4c5 and r4c6 so the other diagonal must be red. r4c5 is blue because of r8c5.
+- A 7 in r4c8 forces r2c9 to be 7 and there becomes no place to put a 7 in box 9.
+- r4c5 cannot be 6 as that would make r7c7 and r5c6 both cannot be green.
+- 6 can only be in r5c6 in box 5 as r5c5 would eliminate all greens in the remaining set.
+- 6 can be placed in box 2 and box 1. There is some dark magic to place the 6 in r6c1 which shouldn't lead to much except finishing the rest of the 6's.
+- Actually the 7's can be placed now as well.
+- In box 2, the green 1's must match the blue 1's. This resolves all diagonal orientations and that digit which must be 1.
+- Row 3 shows all the remaining colors must be unique.
+- Unfortunately, just giving the deadly pattern is not enough. I need to give away another digit but I think it's worth it to get the beginning logic plus the alternative path with the 6.
+- https://f-puzzles.com/?id=yyvadur8 -> puzzle https://f-puzzles.com/?id=y6d2b2mw
+
 Lemmas:
 - Rwo identical diagonal lines cannot intersect at opposite directions! It's pretty obvious though with concrete, short lines.
 - 5 repeated diagonals cannot have a duplicate digit in the diagonal.

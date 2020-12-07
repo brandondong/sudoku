@@ -45,6 +45,10 @@ Solve steps:
 - Row 3 shows all the remaining colors must be unique.
 - Unfortunately, just giving the deadly pattern is not enough. I need to give away another digit but I think it's worth it to get the beginning logic plus the alternative path with the 6.
 - https://f-puzzles.com/?id=yyvadur8 -> puzzle https://f-puzzles.com/?id=y6d2b2mw
+- Okay, maybe it is possible without revealing the 7's at all https://f-puzzles.com/?id=y6hnlhhj box 6 the 1 is restricted to a row, then the 1's duplicate in box 5!
+- We still know they're all separate digits through their various interactions.
+- Box 3 forms a 3-5 pair giving info to the 2's!
+- Now box 9 differentiates the 3-5 pair in box 3! It's not pretty but it looks like the rest of the puzzle is solvable. https://f-puzzles.com/?id=yysc4c2t
 
 Lemmas:
 - Rwo identical diagonal lines cannot intersect at opposite directions! It's pretty obvious though with concrete, short lines.

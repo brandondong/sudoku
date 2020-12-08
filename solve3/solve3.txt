@@ -1,6 +1,18 @@
+Rotated Lines Sudoku
+
+Puzzle:
+https://f-puzzles.com/?id=yxopx7ma
+
 Rules:
 - Normal sudoku rules apply.
-- The 12 rods in the grid can be divided into 3 groups of 4. The 4 rods within a group are all identical after rotation. Different groups are allowed to have digits in common.
+- The 12 grey lines in the grid can be divided into 3 groups of 4. All 4 lines within a group are identical after rotation. Different groups are allowed to have digits in common.
+
+Example board (with 4 lines and 2 groups): https://f-puzzles.com/?id=y2wt95qh
+
+Solution: https://f-puzzles.com/?id=y3ayz5yz
+
+I hope this a nice challenge even for experienced solvers.
+No individual deduction is particularly complicated but there are quite a few steps required before the puzzle finally cracks :)
 
 Diagonals:
 - Lines are probably easiest?

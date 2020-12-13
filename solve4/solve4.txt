@@ -1,0 +1,10 @@
+Tetris Sudoku
+
+Ideas:
+- Cover the board with tetris pieces except 1 cell.
+- Each piece summing to 20 is awful for humans.
+- Each piece having uniform parity is probably interesting but sounds extremely difficult to allocate parity if not impossible.
+- There's 36 evens and 45 odds in the grid so definitely impossible.
+- We could partially fill the grid but then we would need so many numbers which would ruin the aesthetic.
+- Pieces and be colored and some pieces may be given showing a tetris game in progress.
+- Maybe 4 consecutive digits which would interact nicely with sandwich sudoku.

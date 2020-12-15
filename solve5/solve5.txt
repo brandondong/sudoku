@@ -4,3 +4,8 @@ https://f-puzzles.com/?id=yy9x9u34 should work but is too similar to the last pu
 
 https://f-puzzles.com/?id=yxab6lzm this may work?
 https://f-puzzles.com/?id=y6rqv5h8 yes!!
+- Unfortunately a sole sandwich force is impossible because it leads to an invalid box 4 + 6 https://f-puzzles.com/?id=y25qoeqn
+- Actually you can use a killer cage on the other corner in each corner box, disgusting!
+- Wait nevermind, the 4 odd digits give away too much
+- Using 3 sandwiches and one corner on the other hand...
+- This just sounds too frustrating.

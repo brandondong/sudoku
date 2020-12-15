@@ -8,3 +8,12 @@ Ideas:
 - We could partially fill the grid but then we would need so many numbers which would ruin the aesthetic.
 - Pieces and be colored and some pieces may be given showing a tetris game in progress.
 - Maybe 4 consecutive digits which would interact nicely with sandwich sudoku.
+
+Computing a consecutive solution:
+- Manually construct Tetris pieces, as many as possible.
+- The algorithm fills in one tetris piece at a time, 6 * 24 = 144 possibilities per 4 squares or ~3.4 per cell.
+https://f-puzzles.com/?id=ybuon5rw
+- 174635289285914367369782400400063000000000000000000000000000000000000000000000000
+- Even just https://f-puzzles.com/?id=y9u5cpdq has no solution because of the 1-5 restriction...
+- https://f-puzzles.com/?id=yaum4odh is possible giving the 1-9 in row 1.
+- Giving the sandwich sum for row 2 isn't half bad https://f-puzzles.com/?id=yczfwo5e

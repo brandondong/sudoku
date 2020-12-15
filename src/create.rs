@@ -1,4 +1,4 @@
-use crate::rules::PuzzleRules;
+use crate::rules::{util::is_valid_classic, PuzzleRules};
 use crate::solve::solve;
 use crate::solve::SolveResult;
 use crate::Board;
@@ -26,6 +26,60 @@ impl fmt::Display for PuzzleCreateError {
 }
 
 impl Error for PuzzleCreateError {}
+
+struct Piece(usize, usize, usize, usize);
+
+const PIECES: [Piece; 7] = [
+    Piece(0, 9, 18, 27),
+    Piece(1, 10, 19, 20),
+    Piece(2, 3, 4, 11),
+    Piece(5, 6, 15, 24),
+    Piece(7, 8, 16, 17),
+    Piece(12, 21, 22, 31),
+    Piece(13, 14, 23, 32),
+];
+
+pub fn create_tetris() -> Option<Board> {
+    let mut board = Board {
+        cells: [Cell::Unfilled; 81],
+    };
+    create_tetris_recursive(&mut board, 0)
+}
+
+use itertools::Itertools;
+fn create_tetris_recursive(board: &mut Board, piece_index: usize) -> Option<Board> {
+    if !is_valid_classic(board) {
+        return None;
+    }
+    let piece = match PIECES.get(piece_index) {
+        None => return Some(board.clone()),
+        Some(v) => v,
+    };
+    for min in 1..=6u8 {
+        let assign = [
+            Cell::Filled(min.try_into().unwrap()),
+            Cell::Filled((min + 1).try_into().unwrap()),
+            Cell::Filled((min + 2).try_into().unwrap()),
+            Cell::Filled((min + 3).try_into().unwrap()),
+        ];
+        for a in assign.iter().permutations(4) {
+            let (a1, a2, a3, a4) = (a[0], a[1], a[2], a[3]);
+            board.cells[piece.0] = *a1;
+            board.cells[piece.1] = *a2;
+            board.cells[piece.2] = *a3;
+            board.cells[piece.3] = *a4;
+            match create_tetris_recursive(board, piece_index + 1) {
+                None => (),
+                Some(v) => return Some(v),
+            }
+        }
+    }
+    board.cells[piece.0] = Cell::Unfilled;
+    board.cells[piece.1] = Cell::Unfilled;
+    board.cells[piece.2] = Cell::Unfilled;
+    board.cells[piece.3] = Cell::Unfilled;
+    None
+}
 
 pub fn create_puzzle_solution(rules: &impl PuzzleRules) -> Option<Board> {
     let mut rng = thread_rng();

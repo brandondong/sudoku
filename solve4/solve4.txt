@@ -17,3 +17,9 @@ https://f-puzzles.com/?id=ybuon5rw
 - Even just https://f-puzzles.com/?id=y9u5cpdq has no solution because of the 1-5 restriction...
 - https://f-puzzles.com/?id=yaum4odh is possible giving the 1-9 in row 1.
 - Giving the sandwich sum for row 2 isn't half bad https://f-puzzles.com/?id=yczfwo5e
+- It would be nice to clear column 1 to fit the Tetris theme by giving the 9 and 45 sum.
+- https://f-puzzles.com/?id=y7vqenjw is still possible as long as you provide column 1 sum such that 9 is not in box 1.
+- 174635289085914367069782400000063000000000000000000000000000000000000000000000000
+- https://f-puzzles.com/?id=y7fd2gbo this works well as it forces 5 sum in column 1 but it can't be 1-5-9.
+- 174635289085914367069782451040063872050000603023000004000000000000000000000000000
+- https://f-puzzles.com/?id=y74jx2db 174635289285914367369782451941563872758249613623178594897326145536491728412857936 solution

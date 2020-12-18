@@ -29,20 +29,17 @@ impl Error for PuzzleCreateError {}
 
 struct Piece(usize, usize, usize, usize);
 
-const PIECES: [Piece; 7] = [
-    Piece(0, 9, 18, 27),
-    Piece(1, 10, 19, 20),
-    Piece(2, 3, 4, 11),
-    Piece(5, 6, 15, 24),
-    Piece(7, 8, 16, 17),
-    Piece(12, 21, 22, 31),
-    Piece(13, 14, 23, 32),
+const PIECES: [Piece; 3] = [
+    Piece(26, 35, 44, 53),
+    Piece(25, 34, 33, 42),
+    Piece(28, 37, 46, 47),
 ];
 
 pub fn create_tetris() -> Option<Board> {
-    let mut board = Board {
-        cells: [Cell::Unfilled; 81],
-    };
+    let mut board: Board =
+        "174635289085914367069782451040063872050000603023000004000000000000000000000000000"
+            .parse()
+            .unwrap();
     create_tetris_recursive(&mut board, 0)
 }
 

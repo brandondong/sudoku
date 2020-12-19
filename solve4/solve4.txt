@@ -22,4 +22,9 @@ https://f-puzzles.com/?id=ybuon5rw
 - 174635289085914367069782400000063000000000000000000000000000000000000000000000000
 - https://f-puzzles.com/?id=y7fd2gbo this works well as it forces 5 sum in column 1 but it can't be 1-5-9.
 - 174635289085914367069782451040063872050000603023000004000000000000000000000000000
-- https://f-puzzles.com/?id=y74jx2db 174635289285914367369782451941563872758249613623178594897326145536491728412857936 solution
+- https://f-puzzles.com/?id=y74jx2db 174635289285914367369782451941563872758249613623178594897326145536491728412857936
+- https://f-puzzles.com/?id=y8kyuw7m solution
+- https://f-puzzles.com/?id=y8422lf4 with these sandwich clues, I'm not a fan of the multiple ways to apply the 5 clue.
+- https://f-puzzles.com/?id=ydckahgx 18 clue is quite efficient.
+- https://f-puzzles.com/?id=yccfmpld we've trapped ourselves in a corner...
+- https://f-puzzles.com/?id=y82absfe not super happy tbh

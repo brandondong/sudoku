@@ -1,7 +1,12 @@
 Game Over
 
 Rules:
+- Normal sudoku rules apply.
+- Normal sandwich sum rules apply (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value).
+- Tetris pieces must contain 4 consecutive numbers in some order. Colors have no significance.
 
+Puzzle:
+https://f-puzzles.com/?id=y8n5zws6
 
 Ideas:
 - Cover the board with tetris pieces except 1 cell.
@@ -33,7 +38,7 @@ https://f-puzzles.com/?id=ybuon5rw
 - https://f-puzzles.com/?id=y82absfe not super happy tbh but maybe we can remove some pieces?
 - https://f-puzzles.com/?id=ycqz428z not bad! 5 logic is restored, all sandwich clues are necessary
 - Perhaps a tetris piece can be removed but what's the point, that's the appeal of the puzzle...
-- Consider switching the initial 9 clue to a 1.
+- Consider switching the initial 9 clue to a 1 but that would break the sandwich clues.
 
 Solve steps:
 - 35 clue gives the 1. Column 1 cannot be 1-5-9 as that would break the piece in box 1.
@@ -48,3 +53,6 @@ Solve steps:
 - If I could get rid of the 22 clue in column 6, then there should be a beautiful 1-9 pair situation in row 6.
 - https://f-puzzles.com/?id=yc6vk7tf is what it looks like without the 22.
 - https://f-puzzles.com/?id=ycurxpdd is just like the 22 where we get the 1-9 positions but no 8 this time!
+
+https://f-puzzles.com/?id=yar6loxx
+https://f-puzzles.com/?id=y7e5hump solution

@@ -9,3 +9,17 @@ https://f-puzzles.com/?id=y6rqv5h8 yes!!
 - Wait nevermind, the 4 odd digits give away too much
 - Using 3 sandwiches and one corner on the other hand...
 - This just sounds too frustrating.
+
+
+Multiple 3 regions
+https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=000300
+
+Lemmas:
+- 3 cells summing to 3 must either be 1-1-1, 2-2-2, 3-3-3, or 1-2-3.
+- 3 cells summing to 9 or 21 must use the 1-2-3 pattern.
+- 2 cells summing to 3 must be 3-3 or 1-2.
+- In a line/column/box, if there is a 1-2-3, the others must be 1-2-3.
+
+- https://f-puzzles.com/?id=y7kbes26 is derivable with the given numbers...
+- Filling out the 1-4-7's gives the remainder of the color derivation
+- https://f-puzzles.com/?id=ybp86gd9 solution

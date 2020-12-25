@@ -56,3 +56,16 @@ Solve steps:
 
 https://f-puzzles.com/?id=yar6loxx
 https://f-puzzles.com/?id=y7e5hump solution
+
+<p><b>Rules:</b></p>
+<ol>
+<li>Normal sudoku rules apply.</li>
+<li>Normal sandwich sum rules apply (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value).</li>
+<li>Tetris pieces must contain 4 consecutive numbers in some order. Colors have no significance.</li>
+</ol>
+<p><b>Puzzle:</b></p>
+<p><a href="https://f-puzzles.com/?id=y8n5zws6">f-puzzles</a></p>
+<div style="width: 60%;">
+<img:00073U>
+</div>
+<p>Happy solving!</p>

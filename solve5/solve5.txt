@@ -23,7 +23,13 @@ Lemmas:
 
 - Box 7 shows we're in a 3-3-3 pattern, 7 is not needed. Then, only 9 in box 4 is needed to finish the first 3 columns.
 - With that completed, we know we don't have a 3-3-3 pattern on the horizontal anymore.
-- Instead of giving the 2 in box 7, we could give a 2 diagonal! Cannot be 1-1, 2-3 order is forced!
+- Instead of giving the 2 in box 7, we could give a 2 diagonal! Cannot be 1-1, 2-3 order is forced! https://f-puzzles.com/?id=y8frf3kx
+- This is not bad but we want the possibility of two 1's to be available, the 4 blocks it.
+- The meanest diagonal is 10 with the 5 given!
+- Solution: https://f-puzzles.com/?id=ydg9dw5x puzzle: https://f-puzzles.com/?id=y8qzmk9h that is actually disgusting!
+- https://f-puzzles.com/?id=yd5bmcyo more disgusting math the 7 diagonal must be 3-1 or 2-2, either of which shows the 3-3-3 vertical is impossible!
+- https://f-puzzles.com/?id=y8w99pcp resolves the boxes without being inconsistent with https://f-puzzles.com/?id=yd54effm without the 7 clue.
+- https://f-puzzles.com/?id=yddkfohz 21 clue is too efficient to give up.
 - Box 2 tells us those columns are vertical 3-3-3 patterns either which is enough to derive box 8.
 - We could also eliminate 3-3-3 by noticing 2 in box 5.
 - https://f-puzzles.com/?id=y7kbes26 is derivable with the given numbers...

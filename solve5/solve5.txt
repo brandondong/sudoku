@@ -11,8 +11,9 @@ https://f-puzzles.com/?id=y6rqv5h8 yes!!
 - This just sounds too frustrating.
 
 
-Multiple 3 regions
+Chapter 3: Modular Arithmetic
 https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=000300
+https://f-puzzles.com/?id=y2uou4ka
 
 Lemmas:
 - 3 cells summing to 3 must either be 1-1-1, 2-2-2, 3-3-3, or 1-2-3.
@@ -20,6 +21,17 @@ Lemmas:
 - 2 cells summing to 3 must be 3-3 or 1-2.
 - In a line/column/box, if there is a 1-2-3, the others must be 1-2-3.
 
+- Box 7 shows we're in a 3-3-3 pattern, 7 is not needed. Then, only 9 in box 4 is needed to finish the first 3 columns.
+- With that completed, we know we don't have a 3-3-3 pattern on the horizontal anymore.
+- Instead of giving the 2 in box 7, we could give a 2 diagonal! Cannot be 1-1, 2-3 order is forced!
+- Box 2 tells us those columns are vertical 3-3-3 patterns either which is enough to derive box 8.
+- We could also eliminate 3-3-3 by noticing 2 in box 5.
 - https://f-puzzles.com/?id=y7kbes26 is derivable with the given numbers...
 - Filling out the 1-4-7's gives the remainder of the color derivation
 - https://f-puzzles.com/?id=ybp86gd9 solution
+
+How would knowing the mod help?
+- Maybe have one large min/max diagonal
+
+How to derive modness?
+- 

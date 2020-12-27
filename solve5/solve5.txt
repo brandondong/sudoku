@@ -12,6 +12,15 @@ https://f-puzzles.com/?id=y6rqv5h8 yes!!
 
 
 Chapter 3: Modular Arithmetic
+
+Rules:
+- Normal sudoku rules apply.
+- Normal little killer sum rules apply (the numbers along the indicated diagonal must sum to the given total). Digits may repeat.
+- Inside each 3x3 block, all horizontal and vertical sums of three digits must be divisible by three.
+
+Puzzle:
+https://f-puzzles.com/?id=yakqsely
+
 https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=000300
 https://f-puzzles.com/?id=y2uou4ka
 
@@ -33,6 +42,14 @@ Lemmas:
 - https://f-puzzles.com/?id=yanpnp3b 2-6 in box 5 is too efficient!
 - Nice math with the 48 diagonal https://f-puzzles.com/?id=y88nk6z5
 - https://f-puzzles.com/?id=ydxtcx8q 33 clue is not actionable until the 48 is dealt with!
+- Actually, we don't even need the 48 clue since 9 is too big. https://f-puzzles.com/?id=yagqh5sz
+- https://f-puzzles.com/?id=ybapm686
+
+Taking a step back:
+- The biggest issue is that you can start with the 7 clue.
+- No matter what, the 7 clue by itself already tells you vertical 3-3-3 is not possible so we need to make horizontal possible in order for the 10 clue to be required first.
+- The top 3 rows can remain completely unchanged, the finishing logic remains identical.
+- I did it, not perfect but we got rid of the 33! https://f-puzzles.com/?id=yakqsely
 
 
 - Box 2 tells us those columns are vertical 3-3-3 patterns either which is enough to derive box 8.

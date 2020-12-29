@@ -19,19 +19,19 @@ Rules:
 - Inside each 3x3 block, all horizontal and vertical sums of three digits must be divisible by three.
 
 Puzzle:
-https://f-puzzles.com/?id=ycehmhfn
+https://f-puzzles.com/?id=y98zkt9r
 
 <p>This puzzle was inspired by <a href="https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=000300">Sudoku Variants Series (255) - Divisible by Three Sudoku</a>. Solving that one first might help if you get stuck :)</p>
 <p><b>Rules:</b></p>
 <ol>
 <li>Normal sudoku rules apply.</li>
 <li>Normal little killer rules apply (the numbers along the indicated diagonal must sum to the given total). Digits may repeat along the diagonal.</li>
-<li>Inside each 3x3 block, all horizontal and vertical sums of three digits must be divisible by three.</li>
+<li>Inside each 3x3 box, all horizontal and vertical sums of three digits must be divisible by three.</li>
 </ol>
 <p><b>Puzzle:</b></p>
-<p><a href="https://f-puzzles.com/?id=ycehmhfn">f-puzzles</a></p>
+<p><a href="https://f-puzzles.com/?id=y98zkt9r">f-puzzles</a></p>
 <div style="width: 60%;">
-<img:000765>
+<img:000767>
 </div>
 <p>Happy solving!</p>
 

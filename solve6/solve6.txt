@@ -1,0 +1,23 @@
+Parity Regions
+
+https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=0004Z9
+
+- Another option is to do consecutive regions.
+- Whatever the case, it would be nice if every cell was in some region.
+- https://f-puzzles.com/?id=y8ak8bud it's actually probably really difficult...
+- If we were to brute force search for one, we should first just see if parity is possible.
+- This requires no odd region size > 9 or even region > 8. Even regions must be even sized and vice versa.
+- https://f-puzzles.com/?id=y9ft8pug seems unlikely that this is possible unless you have many many diagonal separations.
+- https://f-puzzles.com/?id=yaz6xzd3 without odd parity restriction... With the parity restriction seems impossible.
+- Push comes to shove, we could just do +1/-1 but that feels awful...
+- https://f-puzzles.com/?id=y9tr38z6 we can get one big odd region + valid even regions but this puzzle is probably dumb...
+- Even continuous region just seems impossible.
+- https://f-puzzles.com/?id=yameyr3n inversion count 3.
+- https://f-puzzles.com/?id=ycwz8a2z inversion 2...
+- Maybe with an identical ruleset it would be okay. Lower inversion cell number may be better.
+- https://f-puzzles.com/?id=yag7syy5 2 inversion cells but there are conflicting 2's in a region + 1 odd cell.
+- https://f-puzzles.com/?id=ybs9crhs 8 inversion
+
+Logic:
+- https://f-puzzles.com/?id=y9bbaw7k with negative constraint.
+- There is literally no logic except for neighboring digits, what a colossal failure.

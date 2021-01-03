@@ -35,6 +35,168 @@ const PIECES: [Piece; 3] = [
     Piece(28, 37, 46, 47),
 ];
 
+pub fn create_parity() -> Board {
+    loop {
+        let mut board = Board {
+            cells: [Cell::Unfilled; 81],
+        };
+        let solution = create_parity_recursive(&mut board).unwrap();
+        if valid_connected_components(&solution) {
+            return solution;
+        }
+    }
+}
+
+fn create_parity_recursive(board: &mut Board) -> Option<Board> {
+    if !is_valid_parity(board) {
+        return None;
+    }
+    // Find an empty cell.
+    let index = board
+        .cells
+        .iter()
+        .enumerate()
+        .find(|(_i, &cell)| matches!(cell, Cell::Unfilled))
+        .map(|e| e.0);
+    let index = match index {
+        None => return Some(board.clone()),
+        Some(v) => v,
+    };
+    let mut options = [1, 2];
+    options.shuffle(&mut thread_rng());
+    for &guess in &options {
+        board.cells[index] = Cell::Filled(guess.try_into().unwrap());
+        match create_parity_recursive(board) {
+            None => (),
+            Some(b) => return Some(b),
+        }
+    }
+    // Make sure we exit this function with the board unchanged if we found no solution.
+    board.cells[index] = Cell::Unfilled;
+    None
+}
+
+fn is_valid_parity(board: &Board) -> bool {
+    // Each row, column, and block must contain 4 even digits and 5 odd digits.
+    let mut row_evens = [0; 9];
+    let mut column_evens = [0; 9];
+    let mut block_evens = [0; 9];
+    let mut row_odds = [0; 9];
+    let mut column_odds = [0; 9];
+    let mut block_odds = [0; 9];
+    for (i, v) in board.cells.iter().enumerate().filter_map(|(i, c)| match c {
+        Cell::Unfilled => None,
+        Cell::Filled(v) => Some((i, v)),
+    }) {
+        let row = i / 9;
+        let column = i % 9;
+        let block = (row / 3) * 3 + column / 3;
+        if v.get() % 2 == 0 {
+            if row_evens[row] == 4 {
+                return false;
+            }
+            if column_evens[column] == 4 {
+                return false;
+            }
+            if block_evens[block] == 4 {
+                return false;
+            }
+            row_evens[row] += 1;
+            column_evens[column] += 1;
+            block_evens[block] += 1;
+        } else {
+            if row_odds[row] == 5 {
+                return false;
+            }
+            if column_odds[column] == 5 {
+                return false;
+            }
+            if block_odds[block] == 5 {
+                return false;
+            }
+            row_odds[row] += 1;
+            column_odds[column] += 1;
+            block_odds[block] += 1;
+        }
+    }
+    true
+}
+
+fn valid_connected_components(board: &Board) -> bool {
+    if !board.cells.iter().all(|&c| matches!(c, Cell::Filled(_))) {
+        return true;
+    }
+    let c: Vec<_> = board
+        .cells
+        .iter()
+        .filter_map(|c| match c {
+            Cell::Unfilled => None,
+            Cell::Filled(v) => Some(v.get()),
+        })
+        .collect();
+    let mut visited = [false; 81];
+    let mut inversion_count = 0;
+    loop {
+        match c.iter().enumerate().find(|(i, _c)| !visited[*i]) {
+            None => break,
+            Some((i, v)) => {
+                let parity = *v % 2;
+                let size = dfs_connected(&c, i, &mut visited, parity);
+                if parity == 0 {
+                    if size > 9 {
+                        return false;
+                    }
+                    if size % 2 != 0 {
+                        inversion_count += size;
+                    }
+                } else {
+                    if size > 9 {
+                        return false;
+                    }
+                    if size % 2 == 0 {
+                        inversion_count += size;
+                    }
+                }
+            }
+        }
+    }
+    if inversion_count > 7 {
+        return false;
+    }
+    dbg!(inversion_count);
+    true
+}
+
+fn dfs_connected(c: &[u8], i: usize, visited: &mut [bool], parity: u8) -> usize {
+    let v = match c.get(i) {
+        None => return 0,
+        Some(v) => *v,
+    };
+    if v % 2 != parity {
+        return 0;
+    }
+    if visited[i] {
+        return 0;
+    }
+    visited[i] = true;
+    let mut total = 1;
+    // Up.
+    if i >= 9 {
+        total += dfs_connected(c, i - 9, visited, parity);
+    }
+    // Left.
+    if i % 9 != 0 {
+        total += dfs_connected(c, i - 1, visited, parity);
+    }
+    // Right.
+    if i % 9 != 8 {
+        total += dfs_connected(c, i + 1, visited, parity);
+    }
+    // Down.
+    total += dfs_connected(c, i + 9, visited, parity);
+    total
+}
+
 pub fn create_tetris() -> Option<Board> {
     let mut board: Board =
         "174635289085914367069782451040063872050000603023000004000000000000000000000000000"

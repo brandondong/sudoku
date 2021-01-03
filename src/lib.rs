@@ -52,7 +52,7 @@ impl fmt::Debug for Board {
     }
 }
 
-#[derive(Clone, Copy, PartialEq)]
+#[derive(Debug, Clone, Copy, PartialEq)]
 enum Cell {
     Unfilled,
     Filled(NonZeroU8),

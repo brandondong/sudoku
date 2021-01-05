@@ -22,7 +22,7 @@ Logic:
 - https://f-puzzles.com/?id=y9bbaw7k with negative constraint.
 - There is literally no logic except for neighboring digits, what a colossal failure.
 
-Thermo or palindrome
+Thermo Palindrome Mix-up
 
 Distinguishing logic:
 - It would be great if we had a lot of long lines.
@@ -48,7 +48,13 @@ Distinguishing logic:
 - https://f-puzzles.com/?id=y57yb426 maybe? We got the naked single odd done. Still a valid board https://f-puzzles.com/?id=yxtmp4z2
 - The virtual 6-9 pair dream is dead at this point but we did get the majestic odd naked single. And the puzzle keeps going sigh.
 - There is a 7-9 virtual pair here but using it is impossible https://f-puzzles.com/?id=y5n8znov
-- My god this puzzle just does not want to give up https://f-puzzles.com/?id=y2aje3kw
+- My god this puzzle just does not want to give up https://f-puzzles.com/?id=y2aje3kw, we're really running out of real estate...
+- https://f-puzzles.com/?id=y5fbhazo alternative placement, would be hilarious to make the 3-4-3 connected and ambiguous.
+- Alt 3: https://f-puzzles.com/?id=yyloeo5b a bit nicer logic to eliminate the thermo using the 6-9.
+- https://f-puzzles.com/?id=yywc7y2d shouldn't be actionable before the right is done.
+- https://f-puzzles.com/?id=y5pkd7eg so close please. Basically out of real estate at this point.
+- https://f-puzzles.com/?id=yycxw7uz it just never ends. I don't think the 1-3-9 is super actionable. It falls into the freebies after the odd naked single.
+- https://f-puzzles.com/?id=yxjyhnau not a terrible way to end it.
 
 Potential images:
 - Broken pencil to theme around the broken creation of the puzzle.

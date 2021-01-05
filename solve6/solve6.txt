@@ -39,7 +39,16 @@ Distinguishing logic:
 - https://f-puzzles.com/?id=y2xd33wf so close :(
 - https://f-puzzles.com/?id=y55z4w4x dead again
 - If you play it safe like this, you get nothing
-- Somewhat working! https://f-puzzles.com/?id=y6r9bjo4
+- Somewhat working! https://f-puzzles.com/?id=y3daooqw forced due to position of 2!
+- I would love to make a naked single with the virtual 6-9 pair but they're too far away.
+- We can create an undecided thermo/palindrome https://f-puzzles.com/?id=yxvd98kj
+- If we can force a 2 in column 1 of box 7, we can work on the virtual 6-9 pair.
+- Alternatively, we could force a 3 to target r3c1 odd.
+- https://f-puzzles.com/?id=y2vzhz86 is somewhat okay as it needs the 8 and creates a 7-9 pair to combo into a thermo hopefully.
+- https://f-puzzles.com/?id=y57yb426 maybe? We got the naked single odd done. Still a valid board https://f-puzzles.com/?id=yxtmp4z2
+- The virtual 6-9 pair dream is dead at this point but we did get the majestic odd naked single. And the puzzle keeps going sigh.
+- There is a 7-9 virtual pair here but using it is impossible https://f-puzzles.com/?id=y5n8znov
+- My god this puzzle just does not want to give up https://f-puzzles.com/?id=y2aje3kw
 
 Potential images:
 - Broken pencil to theme around the broken creation of the puzzle.

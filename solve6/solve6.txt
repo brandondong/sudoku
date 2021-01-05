@@ -21,3 +21,26 @@ https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=0004Z9
 Logic:
 - https://f-puzzles.com/?id=y9bbaw7k with negative constraint.
 - There is literally no logic except for neighboring digits, what a colossal failure.
+
+Thermo or palindrome
+
+Distinguishing logic:
+- It would be great if we had a lot of long lines.
+- We could also do odd circle + palindrome vs thermo lol
+- 1. No possibility of 1/9.
+- 2. Bad quadruple https://f-puzzles.com/?id=yct5fbee!
+- 3. Naked single for palindrome.
+- Half combos into a forced palindrome: https://f-puzzles.com/?id=y5kekplr
+- It's a bit too obvious though once you fill in the possibilities.
+- Convoluted as hell reasoning to eliminate a palindrome. https://f-puzzles.com/?id=y4or97p4
+- A length 6 palindrome with the appropriate end in either box would be enough to force the palindrome.
+- https://f-puzzles.com/?id=y3yanef2 is arguably a bit nicer.
+- https://f-puzzles.com/?id=y553gne2 one valid possibility but no flow at all.
+- https://f-puzzles.com/?id=y2xd33wf so close :(
+- https://f-puzzles.com/?id=y55z4w4x dead again
+- If you play it safe like this, you get nothing
+- Somewhat working! https://f-puzzles.com/?id=y6r9bjo4
+
+Potential images:
+- Broken pencil to theme around the broken creation of the puzzle.
+- Can't have any branching thermos.

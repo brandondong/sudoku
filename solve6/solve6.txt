@@ -22,7 +22,23 @@ Logic:
 - https://f-puzzles.com/?id=y9bbaw7k with negative constraint.
 - There is literally no logic except for neighboring digits, what a colossal failure.
 
-Thermo Palindrome Mix-up
+Thermo/Palindrome/Odd Mix-up
+
+The problem with creating a puzzle using thermometer, palindrome, and odd cell constraints is that a palindrome with a single odd cell constraint looks very similar to a thermometer.
+Fortunately, I remembered to write down which was which while creating the puzzle.
+Unfortunately, it turns out dogs don't just eat homework! What a disaster!
+
+Rules:
+- Normal sudoku rules apply.
+- For each connected line and circle, either:
+1) They represent a thermometer (numbers on a thermometer must strictly increase as they move away from the bulb)
+2) The circle must contain an odd digit and the line (which extends into the circle) is a palindrome (if a number appears as the xth cell from one end of a palindrome, it must also appear as the xth cell from the other end).
+
+Puzzle:
+https://f-puzzles.com/?id=y6q4msth
+
+Solution:
+https://f-puzzles.com/?id=y26bxgp8
 
 Distinguishing logic:
 - It would be great if we had a lot of long lines.
@@ -71,3 +87,4 @@ Look:
 Potential images:
 - Broken pencil to theme around the broken creation of the puzzle.
 - Can't have any branching thermos.
+- The completed board sort of looks like Jar Jar thinking from a distance...

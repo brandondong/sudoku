@@ -56,6 +56,18 @@ Distinguishing logic:
 - https://f-puzzles.com/?id=yycxw7uz it just never ends. I don't think the 1-3-9 is super actionable. It falls into the freebies after the odd naked single.
 - https://f-puzzles.com/?id=yxjyhnau not a terrible way to end it.
 
+Review:
+- I'm not a big fan of the 1-3-9 at all. Feels awful. The 3-3 is super cool at how useless it appears.
+- I definitely want to require that deduction first.
+- https://f-puzzles.com/?id=y26bxgp8 much better!
+
+Look:
+- #D0D0D0
+- Line width 0.6
+- Circle width < 0.8 but I prefer the look of .75
+- Unfortunately, the lines look really ugly over the cells.
+- We can disable conflict highlighting in the link itself: https://f-puzzles.com/?id=y66r44d8
+
 Potential images:
 - Broken pencil to theme around the broken creation of the puzzle.
 - Can't have any branching thermos.

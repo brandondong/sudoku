@@ -35,10 +35,30 @@ Rules:
 2) The circle must contain an odd digit and the line (which extends into the circle) is a palindrome (if a number appears as the xth cell from one end of a palindrome, it must also appear as the xth cell from the other end).
 
 Puzzle:
-https://f-puzzles.com/?id=y6q4msth
+https://f-puzzles.com/?id=y2bpkbhe
 
 Solution:
 https://f-puzzles.com/?id=y26bxgp8
+
+<p>This puzzle was created for the Cracking The Cryptic Discord fan server's monthly "Puzzle Prompt" for Jan 2021, "broken puzzles".</p>
+<p><b>Preamble:</b></p>
+<p>The problem with creating a puzzle using thermometer, palindrome, and odd cell constraints is that a palindrome with a single odd cell constraint looks very similar to a thermometer. Fortunately, I remembered to write down which was which while creating the puzzle. Unfortunately, it turns out dogs don't just eat homework! What a disaster!</p>
+<p><b>Rules:</b></p>
+<ul>
+<li>Normal sudoku rules apply.</li>
+<li>For each connected line and circle, either:
+<ol>
+<li>They represent a thermometer (numbers on a thermometer must strictly increase as they move away from the bulb).</li>
+<li>The circle must contain an odd digit and the line (which extends into the circle) is a palindrome (if a number appears as the xth cell from one end of a palindrome, it must also appear as the xth cell from the other end).</li>
+</ol>
+</li>
+</ul>
+<p><b>Puzzle:</b></p>
+<p><a href="https://f-puzzles.com/?id=y2bpkbhe">f-puzzles</a></p>
+<div style="width: 60%;">
+<img:00079Z>
+</div>
+<p>Happy solving!</p>
 
 Distinguishing logic:
 - It would be great if we had a lot of long lines.
@@ -76,6 +96,11 @@ Review:
 - I'm not a big fan of the 1-3-9 at all. Feels awful. The 3-3 is super cool at how useless it appears.
 - I definitely want to require that deduction first.
 - https://f-puzzles.com/?id=y26bxgp8 much better!
+
+Anything we can remove?
+- 3-3 is definitely needed.
+- Diagonal thermo does a lot of work.
+- We could probably make the ending sudoku much more difficult and force the 2-3 observation but that's just mean...
 
 Look:
 - #D0D0D0

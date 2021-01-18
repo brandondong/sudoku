@@ -1,0 +1,44 @@
+How hard can it be to set a standard puzzle?
+
+https://www.youtube.com/watch?v=5BAon3r5Rv8&t=138s quadruples
+
+https://f-puzzles.com/?id=y67qrdlw Phistomefel shifted
+https://f-puzzles.com/?id=y4ftt2to saturated
+Expectation subversion? https://f-puzzles.com/?id=y5wqq2nz
+https://f-puzzles.com/?id=y58mdlwv what am I even doing...
+https://f-puzzles.com/?id=yyktlwzb looks unresolvable https://f-puzzles.com/?id=y2tcnodt is the best we can do...
+- Actually https://f-puzzles.com/?id=y5nwrwdx
+- https://f-puzzles.com/?id=y2rj6mj5 does something... Unfortunately no solutions!
+- Well rest in pepperoni the entire opening doesn't consider if you go up...
+- The answer to the original question: very!
+
+Attempt 2:
+- https://f-puzzles.com/?id=y6n2m3a2 nice simple logic but where to go from here... almost certainly horizontal, consider shifting
+- https://f-puzzles.com/?id=yycwll58 not bad, nice deduction but we get so little that we are forced to work with row 9 now.
+- The problem is we don't need the earlier deduction! https://f-puzzles.com/?id=y3m7rnku We could start with this but I like the ease of the previous one.
+- One advantage of this is the pointing 1 sets up the next deduction.
+- Here is a working 2 step deduction with no clue how to proceed further... https://f-puzzles.com/?id=y4u9axwf
+- It's also not straight up linear with the 1 elimination.
+- Another alternative is to branch both openings into one.
+- The only thing we learn with them in conjunction is box 7 row 1 contains a 1/9.
+- https://f-puzzles.com/?id=y2uv8a6d I think this works... https://f-puzzles.com/?id=y3ozmr6x
+- Nope, logic is f'd again
+
+Attempt 3:
+- https://f-puzzles.com/?id=y5vtnnf6 keeping it simple because I give up and linearity or something but 28 is too powerful...
+- https://f-puzzles.com/?id=y5blextk I'm literally going backwards, the 9/1 is too powerful
+- https://f-puzzles.com/?id=y59gbrez please tell me this works!
+
+727 tribute puzzle:
+Ideas:
+- 27's along a diagonal as the solution code -> impossible
+- Just try to use as many 27/7 sandwich clues and use quadruples as necessary with 2/7
+- Setting is probably best done by either placing clues gradually and constantly checking that a valid solution exists or intelligently brute forcing somehow...
+- Maxing out 7/27's is not necessarily the best, we just need it to resolve and hopefully be somewhat pleasant
+- https://f-puzzles.com/?id=y3a7ph42 the symmetry might be extremely boring https://f-puzzles.com/?id=y549tmn8
+- One restriction we could put is the sandwich clues need to read as 727 in that order...
+- https://f-puzzles.com/?id=y2qjj7fc the problem is 6/8's cannot be disambiguated!
+- The bigger problem is it's just super boring as you apply the exact same logic over and over
+
+Quite a Mouthful progress:
+https://f-puzzles.com/?id=y4g88zdy

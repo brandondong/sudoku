@@ -28,6 +28,18 @@ Attempt 3:
 - https://f-puzzles.com/?id=y5vtnnf6 keeping it simple because I give up and linearity or something but 28 is too powerful...
 - https://f-puzzles.com/?id=y5blextk I'm literally going backwards, the 9/1 is too powerful
 - https://f-puzzles.com/?id=y59gbrez please tell me this works!
+- Ideas: 3 quadruple so not both 1 and 9.
+- https://f-puzzles.com/?id=y43porzv you could probably keep going by using a non-zero sandwich on column 8...
+- Probably should move it to the top so the middle rows are required to derive first.
+- https://f-puzzles.com/?id=y5k8dkbn it doesn't feel linear due to the weak association with the previous step.
+- However, switcing the order breaks it.
+- https://f-puzzles.com/?id=y28axjr2 to force low digits, seems unactionable in the columns unless there is some magic in column 3.
+- https://f-puzzles.com/?id=y6r236l3 unfortunately, this doesn't need the previous column 3 deduction but maybe that's ok since you need box 6.
+- https://f-puzzles.com/?id=y43456c2 just more piles and piles of idk, strangely enough we don't even need the 59 https://f-puzzles.com/?id=y654wxg5
+- If we eliminate 35, we get the direction of sandwich 8 in column 2 and it's not too too bad but for all that effort, we only eliminate one cell...
+- There is an alternative trick using a 6 quadruple in the bottom right of box 6 but it's too late now unless I restart...
+- The pros is it fits the theme but there is no way to communicate that the step is needed so you can have frustration until you think to use the clue.
+- https://f-puzzles.com/?id=y59mdyyh so much info from the 0
 
 727 tribute puzzle:
 Ideas:

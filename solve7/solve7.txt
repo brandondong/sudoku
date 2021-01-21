@@ -40,6 +40,11 @@ Attempt 3:
 - There is an alternative trick using a 6 quadruple in the bottom right of box 6 but it's too late now unless I restart...
 - The pros is it fits the theme but there is no way to communicate that the step is needed so you can have frustration until you think to use the clue.
 - https://f-puzzles.com/?id=y59mdyyh so much info from the 0
+- We still have the potential to eliminate the top 6 and force a bottom 6.
+- https://f-puzzles.com/?id=yxj7khjz 10 -> 11 needed to fix sudoku.
+- https://f-puzzles.com/?id=yy6whqyh please work please work...
+- https://f-puzzles.com/?id=y49acs4y got it!
+- https://f-puzzles.com/?id=yyjhav7f derive so far
 
 727 tribute puzzle:
 Ideas:

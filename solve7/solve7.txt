@@ -45,6 +45,11 @@ Attempt 3:
 - https://f-puzzles.com/?id=yy6whqyh please work please work...
 - https://f-puzzles.com/?id=y49acs4y got it!
 - https://f-puzzles.com/?id=yyjhav7f derive so far
+- It doesn't seem like there is any interesting quadruple behavior as we would need to combo it with a sandwich sum and the only ambiguous one is the 5.
+- https://f-puzzles.com/?id=y5on4cma accomplishes so little...
+- https://f-puzzles.com/?id=y3tz3p6g no amount of clues seems to resolve this and the 1-3-8 makes it feel like the 6 derivation is not needed.
+- https://f-puzzles.com/?id=y2e62kdb ho boy please be logically correct...
+- https://f-puzzles.com/?id=y4hoao9c probably gives away the least info
 
 727 tribute puzzle:
 Ideas:

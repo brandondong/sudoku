@@ -64,3 +64,29 @@ Ideas:
 
 Quite a Mouthful progress:
 https://f-puzzles.com/?id=y4g88zdy
+
+Classic Sandwich + Quadruples Sudoku
+
+Puzzle:
+https://f-puzzles.com/?id=y65824qh
+
+Rules:
+- Normal sudoku rules apply.
+- Normal sandwich sum rules apply (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value).
+- Normal quadruple rules apply (each of the numbers in a quadruple constraint must appear in its four surrounding cells).
+
+Solution:
+https://f-puzzles.com/?id=y4hoao9c
+
+<p><b>Rules:</b></p>
+<ol>
+<li>Normal sudoku rules apply.</li>
+<li>Normal sandwich sum rules apply (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value).</li>
+<li>Normal quadruple rules apply (each of the numbers in a quadruple constraint must appear in its four surrounding cells).</li>
+</ol>
+<p><b>Puzzle:</b></p>
+<p><a href="https://f-puzzles.com/?id=y65824qh">f-puzzles</a></p>
+<div style="width: 60%;">
+<img:0007GP>
+</div>
+<p>Happy solving!</p>

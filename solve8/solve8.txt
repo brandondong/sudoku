@@ -72,3 +72,10 @@ Ideas:
 - More sudoku https://f-puzzles.com/?id=yyzez9tb ...
 - Sandwich sums look good https://f-puzzles.com/?id=y3g9mhje ...
 - OMG everything works: https://f-puzzles.com/?id=y5ld8j4u
+- https://f-puzzles.com/?id=y33bt26e is quite efficient but sort of ugly
+- https://f-puzzles.com/?id=y3x8vc77 ugly
+- https://f-puzzles.com/?id=yxg37fut way better, I like the horizontal 7-8. The best thing is it signifies to the solver early that these are for disambiguation only.
+- Unfortunately, it breaks row 9's ambiguity ahhhhhhhhh
+- https://f-puzzles.com/?id=yy8ve97u this "works"
+- https://f-puzzles.com/?id=y6thqnn8 no box escape, still bad
+- https://f-puzzles.com/?id=y5o8azle dark magic!!!!!

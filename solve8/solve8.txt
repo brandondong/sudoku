@@ -49,7 +49,22 @@ Ideas:
 - https://f-puzzles.com/?id=yxw3ssgp slightly better, more number crunchy...
 - I think to avoid the number crunchiness, just leave the 25.
 
-Inner Sandwich
+Inner Sandwich Sudoku
+
+Puzzle:
+https://f-puzzles.com/?id=y6reqc4b
+
+Rules:
+- Normal sudoku rules apply.
+- Normal thermometer rules apply (numbers on a thermometer must strictly increase as they move away from the bulb).
+- Digits at the start of a row/column with a dash behave like sandwich clues (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value). Two-digit sandwich clues are read left to right or top to bottom. Example: https://f-puzzles.com/?id=yxlvgq42
+
+Hint: Can any sandwich be fully contained in one box? How many sandwiches can span three boxes?
+
+Example:
+https://f-puzzles.com/?id=yxlvgq42
+
+I believe the second deduction in the solve path is a bit tricky relative to the difficulty of the rest of the puzzle. As such, I have provided a hint below. Hopefully it won't be needed in your solve :)
 
 Ideas:
 - Use every possibility leaving 3 and 4.
@@ -79,3 +94,21 @@ Ideas:
 - https://f-puzzles.com/?id=yy8ve97u this "works"
 - https://f-puzzles.com/?id=y6thqnn8 no box escape, still bad
 - https://f-puzzles.com/?id=y5o8azle dark magic!!!!!
+
+Solve path:
+- 3 and 4 cannot be used in a sandwich.
+- None of the sandwiches can be contained in one box. Only 2 can span three boxes. Therefore, 2-3-4 must be 3 box sandwiches in 3 different boxes.
+- Column 3 box 1 needs a 1 or a 9 but the thermo eliminates 9 and forces 1 in one position.
+- r1c1 has 5 and 6 eliminated because they must use 2-3 or 2-4. 8 is invalid as it forces a 9 immediately. 7 sandwich means the next digit is 8.
+- r1c4 cannot be 1-9 because we must use 2-5. This places the sandwich.
+- r2c1 cannot be 9 so every other digit besides 2 would take two spaces in the sandwich which is impossible.
+- Any sum >= 23 takes up more than three spaces. The 9 in box 3 sorts out the 2-5 pair.
+- 29 has an outer of 6 which forces a 1-4.
+- 2 is placed in box 2 because of the virtual 2-4 pair in the column.
+- Row 2 can only be 2-3-7 or 2-5-3. 6 is placed in box 3. 4 is in row 2 or box 2 resolving the 3-4 pair.
+- Column 2 has a virtual 2-6 pair leaving only 5-9 in the thermo. 5 would force a 3 which would break.
+- 4 is locked into column 1 of box 4 meaning 1 in r9c1 is eliminated. Column 4 sandwich is done.
+- 3 is locked into column 6 of box 8 so the sandwich sum cannot be three spaces long. Column 7's sandwich is done.
+- 3 is locked into row 7 in box 9 by sudoku. The thermo now forces the 3.
+- The second thermo forces 6 off and 5 in.
+- Puzzle done!

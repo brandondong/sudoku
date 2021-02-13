@@ -61,6 +61,23 @@ Rules:
 
 Hint: Can any sandwich be fully contained in one box? How many sandwiches can span three boxes?
 
+Solution:
+https://f-puzzles.com/?id=y5o8azle
+368724159134698572
+
+<p><b>Rules:</b></p>
+<ol>
+<li>Normal sudoku rules apply.</li>
+<li>Normal thermometer rules apply (numbers on a thermometer must strictly increase as they move away from the bulb).</li>
+<li>Digits at the start of a row/column with a dash behave like sandwich clues (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value). Two-digit sandwich clues are read left to right or top to bottom. <a href="https://f-puzzles.com/?id=yxlvgq42">Example</a></li>
+</ol>
+<p><b>Puzzle:</b></p>
+<p><a href="https://f-puzzles.com/?id=y6reqc4b">f-puzzles</a></p>
+<div>
+<img:0007OX>
+</div>
+<p>Happy solving!</p>
+
 Example:
 https://f-puzzles.com/?id=yxlvgq42
 

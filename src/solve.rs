@@ -1,6 +1,7 @@
 use crate::rules::PuzzleRules;
 use crate::Board;
 use crate::Cell;
+use crate::LENGTH;
 use std::convert::TryInto;
 
 #[derive(Debug, PartialEq)]
@@ -26,7 +27,8 @@ pub fn solve(board: &mut Board, rules: &impl PuzzleRules) -> SolveResult {
         Some(v) => v,
     };
     let mut current_result = SolveResult::NoSolution;
-    for guess in 1..=9 {
+    for guess in 1..=LENGTH {
+        let guess: u8 = guess.try_into().unwrap();
         board.cells[index] = Cell::Filled(guess.try_into().unwrap());
         let sub_result = solve(board, rules);
         match (sub_result, &current_result) {
@@ -84,7 +86,8 @@ fn derive_recursive(board: &mut Board, rules: &impl PuzzleRules, acc: &mut Optio
         }
         Some(v) => v,
     };
-    for guess in 1..=9 {
+    for guess in 1..=LENGTH {
+        let guess: u8 = guess.try_into().unwrap();
         board.cells[index] = Cell::Filled(guess.try_into().unwrap());
         derive_recursive(board, rules, acc);
     }
@@ -97,6 +100,7 @@ mod tests {
     use super::*;
     use crate::rules::ClassicSudoku;
     use crate::rules::KnightsRestrictionSudoku;
+    use crate::NUM_CELLS;
 
     #[test]
     fn test_unique_solution() {
@@ -117,9 +121,7 @@ mod tests {
 
     #[test]
     fn test_multiple_solutions() {
-        let mut puzzle = Board {
-            cells: [Cell::Unfilled; 81],
-        };
+        let mut puzzle = Board::unfilled();
         assert!(matches!(
             solve(&mut puzzle, &ClassicSudoku {}),
             SolveResult::MultipleSolutions(_)
@@ -129,7 +131,7 @@ mod tests {
     #[test]
     fn test_no_solutions() {
         let mut puzzle = Board {
-            cells: [Cell::Filled((1).try_into().unwrap()); 81],
+            cells: [Cell::Filled((1).try_into().unwrap()); NUM_CELLS],
         };
         assert!(matches!(
             solve(&mut puzzle, &ClassicSudoku {}),
@@ -179,6 +181,23 @@ mod tests {
         assert_eq!(
             derive(&mut missing, &KnightsRestrictionSudoku {}),
             Some(finished)
+        );
+    }
+
+    #[test]
+    fn test_knights_move() {
+        // https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=0005HX with some digits filled in for speed.
+        let mut puzzle: Board =
+            "894562371000403000006000500010000020008000700020000030009000200000206000452789613"
+                .parse()
+                .unwrap();
+        let solution: Board =
+            "894562371275413896136978542513697428948321765627845139369154287781236954452789613"
+                .parse()
+                .unwrap();
+        assert_eq!(
+            solve(&mut puzzle, &KnightsRestrictionSudoku {}),
+            SolveResult::UniqueSolution(solution)
         );
     }
 }

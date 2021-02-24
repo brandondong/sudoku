@@ -1,19 +1,22 @@
 use crate::Board;
 use crate::Cell;
+use crate::BOX_HEIGHT;
+use crate::BOX_WIDTH;
+use crate::LENGTH;
 
 pub fn is_valid_classic(board: &Board) -> bool {
     // Each row, column, and block must not contain duplicate digits.
-    let mut row_values = [[false; 9]; 9];
-    let mut column_values = [[false; 9]; 9];
-    let mut block_values = [[false; 9]; 9];
+    let mut row_values = [[false; LENGTH]; LENGTH];
+    let mut column_values = [[false; LENGTH]; LENGTH];
+    let mut block_values = [[false; LENGTH]; LENGTH];
     for (i, v) in board.cells.iter().enumerate().filter_map(|(i, c)| match c {
         Cell::Unfilled => None,
         Cell::Filled(v) => Some((i, v)),
     }) {
         let value_index: usize = (v.get() - 1).into();
-        let row = i / 9;
-        let column = i % 9;
-        let block = (row / 3) * 3 + column / 3;
+        let row = i / LENGTH;
+        let column = i % LENGTH;
+        let block = (row / BOX_HEIGHT) * BOX_WIDTH + column / BOX_WIDTH;
 
         if row_values[row][value_index] {
             return false;
@@ -38,15 +41,19 @@ pub fn passes_knights_move_constraint(board: &Board) -> bool {
         .enumerate()
         .filter(|(_i, &c)| matches!(c, Cell::Filled(_)))
         .any(|(i, &v)| {
-            let row = i / 9;
-            let column = i % 9;
-            row >= 1 && column >= 2 && board.cells[i - 11] == v
-                || row >= 1 && column <= 6 && board.cells[i - 7] == v
-                || row <= 7 && column >= 2 && board.cells[i + 7] == v
-                || row <= 7 && column <= 6 && board.cells[i + 11] == v
-                || column >= 1 && row >= 2 && board.cells[i - 19] == v
-                || column <= 7 && row >= 2 && board.cells[i - 17] == v
-                || column >= 1 && row <= 6 && board.cells[i + 17] == v
-                || column <= 7 && row <= 6 && board.cells[i + 19] == v
+            let row = i / LENGTH;
+            let column = i % LENGTH;
+            row >= 1 && column >= 2 && board.cells[i - (LENGTH + 2)] == v // Left up.
+                || row >= 1 && column <= (LENGTH - 3) && board.cells[i - (LENGTH - 2)] == v // Right up.
+                || row <= (LENGTH - 2) && column >= 2 && board.cells[i + (LENGTH - 2)] == v // Left down.
+                || row <= (LENGTH - 2)
+                    && column <= (LENGTH - 3)
+                    && board.cells[i + (LENGTH + 2)] == v // Right down.
+                || column >= 1 && row >= 2 && board.cells[i - (2 * LENGTH + 1)] == v // Up left.
+                || column <= (LENGTH - 2) && row >= 2 && board.cells[i - (2 * LENGTH - 1)] == v // Up right.
+                || column >= 1 && row <= (LENGTH - 3) && board.cells[i + (2 * LENGTH - 1)] == v // Down left.
+                || column <= (LENGTH - 2)
+                    && row <= (LENGTH - 3)
+                    && board.cells[i + (2 * LENGTH + 1)] == v // Down right.
         })
 }

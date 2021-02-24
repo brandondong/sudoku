@@ -3,6 +3,7 @@ pub mod util;
 use crate::Board;
 use crate::Cell;
 use crate::ParseError;
+use crate::LENGTH;
 use std::str::FromStr;
 use util::is_valid_classic;
 use util::passes_knights_move_constraint;
@@ -77,12 +78,12 @@ impl PuzzleRules for EvenOddNeighbors {
             .enumerate()
             .filter(|(_i, &c)| is_even_cell(c))
             .any(|(i, _v)| {
-                let row = i / 9;
-                let column = i % 9;
-                row > 0 && is_even_cell(board.cells[i - 9])
-                    || row < 8 && is_even_cell(board.cells[i + 9])
+                let row = i / LENGTH;
+                let column = i % LENGTH;
+                row > 0 && is_even_cell(board.cells[i - LENGTH])
+                    || row < LENGTH - 1 && is_even_cell(board.cells[i + LENGTH])
                     || column > 0 && is_even_cell(board.cells[i - 1])
-                    || column < 8 && is_even_cell(board.cells[i + 1])
+                    || column < LENGTH - 1 && is_even_cell(board.cells[i + 1])
             });
         if has_even_neighbor {
             return false;
@@ -96,6 +97,7 @@ mod tests {
     use super::*;
     use crate::solve::solve;
     use crate::solve::SolveResult;
+    use crate::NUM_CELLS;
     use std::convert::TryInto;
 
     #[test]
@@ -105,7 +107,7 @@ mod tests {
                 .parse()
                 .unwrap();
         let invalid = Board {
-            cells: [Cell::Filled(1.try_into().unwrap()); 81],
+            cells: [Cell::Filled(1.try_into().unwrap()); NUM_CELLS],
         };
         let rule = EvenOddNeighbors {};
         assert!(rule.is_valid(&board));
@@ -138,11 +140,9 @@ mod tests {
             "132547698547698123698123574321456789874931256965872341419765832783214965256389417"
                 .parse()
                 .unwrap();
-        let empty = Board {
-            cells: [Cell::Unfilled; 81],
-        };
+        let empty = Board::unfilled();
         let invalid = Board {
-            cells: [Cell::Filled(1.try_into().unwrap()); 81],
+            cells: [Cell::Filled(1.try_into().unwrap()); NUM_CELLS],
         };
         let mask: ParityMask =
             "112121212121212121212121112121212121212111212121212121211121212121212121212121211"

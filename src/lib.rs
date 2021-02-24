@@ -8,20 +8,33 @@ use std::fmt;
 use std::num::NonZeroU8;
 use std::str::FromStr;
 
+pub const LENGTH: usize = 9;
+pub const NUM_CELLS: usize = LENGTH * LENGTH;
+pub const BOX_WIDTH: usize = 3;
+pub const BOX_HEIGHT: usize = 3;
+
 #[derive(Clone, PartialEq)]
 pub struct Board {
     // Rows are read from left to right and then top to bottom.
-    pub(crate) cells: [Cell; 81],
+    pub(crate) cells: [Cell; NUM_CELLS],
+}
+
+impl Board {
+    pub fn unfilled() -> Board {
+        Board {
+            cells: [Cell::Unfilled; NUM_CELLS],
+        }
+    }
 }
 
 impl FromStr for Board {
     type Err = ParseError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
-        if s.len() != 81 {
+        if s.len() != NUM_CELLS {
             return Err(ParseError {});
         }
-        let mut cells = [Cell::Unfilled; 81];
+        let mut cells = [Cell::Unfilled; NUM_CELLS];
         for (dst, src) in cells.iter_mut().zip(s.chars().map(|c| {
             let digit = match c.to_digit(10) {
                 None => return Err(ParseError {}),

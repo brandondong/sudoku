@@ -3,6 +3,7 @@ use crate::solve::solve;
 use crate::solve::SolveResult;
 use crate::Board;
 use crate::Cell;
+use crate::LENGTH;
 use rand::seq::SliceRandom;
 use rand::{thread_rng, Rng};
 use std::convert::TryInto;
@@ -29,13 +30,7 @@ impl Error for PuzzleCreateError {}
 
 pub fn create_puzzle_solution(rules: &impl PuzzleRules) -> Option<Board> {
     let mut rng = thread_rng();
-    create_puzzle_solution_recursive(
-        &mut Board {
-            cells: [Cell::Unfilled; 81],
-        },
-        rules,
-        &mut rng,
-    )
+    create_puzzle_solution_recursive(&mut Board::unfilled(), rules, &mut rng)
 }
 
 fn create_puzzle_solution_recursive(
@@ -57,9 +52,10 @@ fn create_puzzle_solution_recursive(
         None => return Some(board.clone()),
         Some(v) => v,
     };
-    let mut options = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+    let mut options: Vec<_> = (1..=LENGTH).collect();
     options.shuffle(rng);
     for &guess in options.iter() {
+        let guess: u8 = guess.try_into().unwrap();
         board.cells[index] = Cell::Filled(guess.try_into().unwrap());
         match create_puzzle_solution_recursive(board, rules, rng) {
             None => (),

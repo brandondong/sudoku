@@ -64,6 +64,44 @@ pub fn solve<
     current_result
 }
 
+pub fn solve_one<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &mut Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    rules: &impl PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+) -> Option<Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>> {
+    if !rules.is_valid(board) {
+        return None;
+    }
+    // Find an empty cell.
+    let index = board
+        .cells
+        .iter()
+        .enumerate()
+        .find(|(_i, &cell)| matches!(cell, Cell::Unfilled))
+        .map(|e| e.0);
+    let index = match index {
+        None => return Some(board.clone()),
+        Some(v) => v,
+    };
+    for guess in 1..=LENGTH {
+        let guess: u8 = guess.try_into().unwrap();
+        board.cells[index] = Cell::Filled(guess.try_into().unwrap());
+        match solve_one(board, rules) {
+            None => (),
+            Some(b) => {
+                return Some(b);
+            }
+        }
+    }
+    // Make sure we exit this function with the board unchanged if we did not find a solution.
+    board.cells[index] = Cell::Unfilled;
+    None
+}
+
 pub fn derive<
     const NUM_CELLS: usize,
     const LENGTH: usize,
@@ -165,6 +203,20 @@ mod tests {
             solve(&mut puzzle, &ClassicSudoku {}),
             SolveResult::NoSolution
         ));
+    }
+
+    #[test]
+    fn test_unique_solution_solve_one() {
+        // From https://raw.githubusercontent.com/maxbergmark/sudoku-solver/master/data-sets/hard_sudokus_solved.txt.
+        let mut puzzle: Board<81, 9, 3, 3> =
+            "693875412000000008080190000300001060000000034000068170204000603900000020530200000"
+                .parse()
+                .unwrap();
+        let solved: Board<81, 9, 3, 3> =
+            "693875412145632798782194356357421869816957234429368175274519683968743521531286947"
+                .parse()
+                .unwrap();
+        assert_eq!(solve_one(&mut puzzle, &ClassicSudoku {}), Some(solved));
     }
 
     #[test]

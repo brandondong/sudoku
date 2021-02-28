@@ -4,8 +4,28 @@ use crate::Board;
 use crate::Cell;
 use crate::ParseError;
 use std::str::FromStr;
-use util::is_valid_classic;
-use util::passes_knights_move_constraint;
+
+use self::util::{
+    is_valid_classic, passes_kings_move_constraint, passes_knights_move_constraint,
+    passes_nonconsecutive_constraint,
+};
+
+pub struct Miracle {}
+
+impl<
+        const NUM_CELLS: usize,
+        const LENGTH: usize,
+        const BOX_WIDTH: usize,
+        const BOX_HEIGHT: usize,
+    > PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT> for Miracle
+{
+    fn is_valid(&self, board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>) -> bool {
+        is_valid_classic(board)
+            && passes_knights_move_constraint(board)
+            && passes_kings_move_constraint(board)
+            && passes_nonconsecutive_constraint(board)
+    }
+}
 
 pub trait PuzzleRules<
     const NUM_CELLS: usize,

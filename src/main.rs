@@ -1,11 +1,17 @@
-use sudoku::create::create_puzzle_from;
-use sudoku::rules::EvenOddNeighbors;
-use sudoku::Board;
+use sudoku::rules::ClassicSudoku;
+use sudoku::rules::Miracle;
+use sudoku::{create::create_puzzle_solution, rules::PuzzleRules};
 
 fn main() {
-    let mut board: Board =
-        "132547698547698123698123574321456789874931256965872341419765832783214965256389417"
-            .parse()
-            .unwrap();
-    dbg!(create_puzzle_from(&mut board, &EvenOddNeighbors {}).unwrap());
+    for _i in 0..100 {
+        match create_puzzle_solution(&Miracle {}) {
+            None => println!("No solution"),
+            Some(board) => {
+                if !(ClassicSudoku {}).is_valid(&board) {
+                    dbg!(board);
+                    return;
+                }
+            }
+        }
+    }
 }

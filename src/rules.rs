@@ -6,7 +6,21 @@ use crate::ParseError;
 use crate::LENGTH;
 use std::str::FromStr;
 use util::is_valid_classic;
+use util::is_valid_irregular;
+use util::passes_kings_move_constraint;
 use util::passes_knights_move_constraint;
+use util::passes_nonconsecutive_constraint;
+
+pub struct Miracle {}
+
+impl PuzzleRules for Miracle {
+    fn is_valid(&self, board: &Board) -> bool {
+        is_valid_irregular(board)
+            && passes_knights_move_constraint(board)
+            && passes_kings_move_constraint(board)
+            && passes_nonconsecutive_constraint(board)
+    }
+}
 
 pub trait PuzzleRules {
     fn is_valid(&self, board: &Board) -> bool;

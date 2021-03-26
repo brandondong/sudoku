@@ -1,17 +1,29 @@
 use crate::rules::PuzzleRules;
 use crate::Board;
 use crate::Cell;
-use crate::LENGTH;
 use std::convert::TryInto;
 
 #[derive(Debug, PartialEq)]
-pub enum SolveResult {
+pub enum SolveResult<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+> {
     NoSolution,
-    UniqueSolution(Board),
-    MultipleSolutions(Board),
+    UniqueSolution(Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>),
+    MultipleSolutions(Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>),
 }
 
-pub fn solve(board: &mut Board, rules: &impl PuzzleRules) -> SolveResult {
+pub fn solve<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &mut Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    rules: &impl PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+) -> SolveResult<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT> {
     if !rules.is_valid(board) {
         return SolveResult::NoSolution;
     }
@@ -52,13 +64,30 @@ pub fn solve(board: &mut Board, rules: &impl PuzzleRules) -> SolveResult {
     current_result
 }
 
-pub fn derive(board: &mut Board, rules: &impl PuzzleRules) -> Option<Board> {
+pub fn derive<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &mut Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    rules: &impl PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+) -> Option<Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>> {
     let mut acc = None;
     derive_recursive(board, rules, &mut acc);
     acc
 }
 
-fn derive_recursive(board: &mut Board, rules: &impl PuzzleRules, acc: &mut Option<Board>) {
+fn derive_recursive<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &mut Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    rules: &impl PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    acc: &mut Option<Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>>,
+) {
     if !rules.is_valid(board) {
         return;
     }
@@ -100,16 +129,15 @@ mod tests {
     use super::*;
     use crate::rules::ClassicSudoku;
     use crate::rules::KnightsRestrictionSudoku;
-    use crate::NUM_CELLS;
 
     #[test]
     fn test_unique_solution() {
         // From https://raw.githubusercontent.com/maxbergmark/sudoku-solver/master/data-sets/hard_sudokus_solved.txt.
-        let mut puzzle: Board =
+        let mut puzzle: Board<81, 9, 3, 3> =
             "000075400000000008080190000300001060000000034000068170204000603900000020530200000"
                 .parse()
                 .unwrap();
-        let solved: Board =
+        let solved: Board<81, 9, 3, 3> =
             "693875412145632798782194356357421869816957234429368175274519683968743521531286947"
                 .parse()
                 .unwrap();
@@ -121,7 +149,7 @@ mod tests {
 
     #[test]
     fn test_multiple_solutions() {
-        let mut puzzle = Board::unfilled();
+        let mut puzzle: Board<81, 9, 3, 3> = Board::unfilled();
         assert!(matches!(
             solve(&mut puzzle, &ClassicSudoku {}),
             SolveResult::MultipleSolutions(_)
@@ -130,8 +158,8 @@ mod tests {
 
     #[test]
     fn test_no_solutions() {
-        let mut puzzle = Board {
-            cells: [Cell::Filled((1).try_into().unwrap()); NUM_CELLS],
+        let mut puzzle: Board<81, 9, 3, 3> = Board {
+            cells: [Cell::Filled((1).try_into().unwrap()); 81],
         };
         assert!(matches!(
             solve(&mut puzzle, &ClassicSudoku {}),
@@ -141,11 +169,11 @@ mod tests {
 
     #[test]
     fn test_derive_solution() {
-        let solved: Board =
+        let solved: Board<81, 9, 3, 3> =
             "693875412145632798782194356357421869816957234429368175274519683968743521531286947"
                 .parse()
                 .unwrap();
-        let mut missing: Board =
+        let mut missing: Board<81, 9, 3, 3> =
             "093875412145632798782194356357421869816957234429368175274519683968743521531286947"
                 .parse()
                 .unwrap();
@@ -154,7 +182,7 @@ mod tests {
 
     #[test]
     fn test_derive_no_unique_solution() {
-        let mut missing: Board =
+        let mut missing: Board<81, 9, 3, 3> =
             "050971624946823157007654983000549768465387219789162005090715006634298571571436892"
                 .parse()
                 .unwrap();
@@ -165,7 +193,7 @@ mod tests {
         );
         // Disambiguate the left side.
         missing.cells[56] = Cell::Filled(8.try_into().unwrap());
-        let still_missing: Board =
+        let still_missing: Board<81, 9, 3, 3> =
             "853971624946823157127654983312549768465387219789162005298715006634298571571436892"
                 .parse()
                 .unwrap();
@@ -174,7 +202,7 @@ mod tests {
             Some(still_missing)
         );
         missing.cells[51] = Cell::Filled(4.try_into().unwrap());
-        let finished: Board =
+        let finished: Board<81, 9, 3, 3> =
             "853971624946823157127654983312549768465387219789162435298715346634298571571436892"
                 .parse()
                 .unwrap();
@@ -187,11 +215,11 @@ mod tests {
     #[test]
     fn test_knights_move() {
         // https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=0005HX with some digits filled in for speed.
-        let mut puzzle: Board =
+        let mut puzzle: Board<81, 9, 3, 3> =
             "894562371000403000006000500010000020008000700020000030009000200000206000452789613"
                 .parse()
                 .unwrap();
-        let solution: Board =
+        let solution: Board<81, 9, 3, 3> =
             "894562371275413896136978542513697428948321765627845139369154287781236954452789613"
                 .parse()
                 .unwrap();

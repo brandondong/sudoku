@@ -3,7 +3,6 @@ use crate::solve::solve;
 use crate::solve::SolveResult;
 use crate::Board;
 use crate::Cell;
-use crate::LENGTH;
 use rand::seq::SliceRandom;
 use rand::{thread_rng, Rng};
 use std::convert::TryInto;
@@ -28,16 +27,28 @@ impl fmt::Display for PuzzleCreateError {
 
 impl Error for PuzzleCreateError {}
 
-pub fn create_puzzle_solution(rules: &impl PuzzleRules) -> Option<Board> {
+pub fn create_puzzle_solution<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    rules: &impl PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+) -> Option<Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>> {
     let mut rng = thread_rng();
     create_puzzle_solution_recursive(&mut Board::unfilled(), rules, &mut rng)
 }
 
-fn create_puzzle_solution_recursive(
-    board: &mut Board,
-    rules: &impl PuzzleRules,
+fn create_puzzle_solution_recursive<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &mut Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    rules: &impl PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
     rng: &mut impl Rng,
-) -> Option<Board> {
+) -> Option<Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>> {
     if !rules.is_valid(board) {
         return None;
     }
@@ -67,9 +78,14 @@ fn create_puzzle_solution_recursive(
     None
 }
 
-pub fn create_puzzle_from(
-    board: &mut Board,
-    rules: &impl PuzzleRules,
+pub fn create_puzzle_from<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &mut Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    rules: &impl PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
 ) -> Result<(), PuzzleCreateError> {
     match solve(board, rules) {
         SolveResult::NoSolution => return Err(PuzzleCreateError::NoSolution),
@@ -82,7 +98,16 @@ pub fn create_puzzle_from(
     Ok(())
 }
 
-fn remove_digit(board: &mut Board, rules: &impl PuzzleRules, rng: &mut impl Rng) -> bool {
+fn remove_digit<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &mut Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    rules: &impl PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    rng: &mut impl Rng,
+) -> bool {
     let mut filled_indexes: Vec<usize> = board
         .cells
         .iter()
@@ -122,7 +147,7 @@ mod tests {
     #[test]
     fn test_create_solution() {
         let rules = ClassicSudoku {};
-        let board = create_puzzle_solution(&rules).unwrap();
+        let board: Board<81, 9, 3, 3> = create_puzzle_solution(&rules).unwrap();
         assert!(rules.is_valid(&board));
     }
 }

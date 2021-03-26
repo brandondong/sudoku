@@ -1,10 +1,14 @@
 use crate::Board;
 use crate::Cell;
-use crate::BOX_HEIGHT;
-use crate::BOX_WIDTH;
-use crate::LENGTH;
 
-pub fn is_valid_classic(board: &Board) -> bool {
+pub fn is_valid_classic<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+) -> bool {
     // Each row, column, and block must not contain duplicate digits.
     let mut row_values = [[false; LENGTH]; LENGTH];
     let mut column_values = [[false; LENGTH]; LENGTH];
@@ -34,7 +38,14 @@ pub fn is_valid_classic(board: &Board) -> bool {
     true
 }
 
-pub fn passes_knights_move_constraint(board: &Board) -> bool {
+pub fn passes_knights_move_constraint<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+) -> bool {
     !board
         .cells
         .iter()

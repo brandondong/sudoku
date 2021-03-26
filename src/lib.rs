@@ -8,26 +8,38 @@ use std::fmt;
 use std::num::NonZeroU8;
 use std::str::FromStr;
 
-pub const LENGTH: usize = 9;
-pub const NUM_CELLS: usize = LENGTH * LENGTH;
-pub const BOX_WIDTH: usize = 3;
-pub const BOX_HEIGHT: usize = 3;
-
 #[derive(Clone, PartialEq)]
-pub struct Board {
+pub struct Board<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+> {
     // Rows are read from left to right and then top to bottom.
     pub(crate) cells: [Cell; NUM_CELLS],
 }
 
-impl Board {
-    pub fn unfilled() -> Board {
+impl<
+        const NUM_CELLS: usize,
+        const LENGTH: usize,
+        const BOX_WIDTH: usize,
+        const BOX_HEIGHT: usize,
+    > Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>
+{
+    pub fn unfilled() -> Self {
         Board {
             cells: [Cell::Unfilled; NUM_CELLS],
         }
     }
 }
 
-impl FromStr for Board {
+impl<
+        const NUM_CELLS: usize,
+        const LENGTH: usize,
+        const BOX_WIDTH: usize,
+        const BOX_HEIGHT: usize,
+    > FromStr for Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>
+{
     type Err = ParseError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
@@ -53,7 +65,13 @@ impl FromStr for Board {
     }
 }
 
-impl fmt::Debug for Board {
+impl<
+        const NUM_CELLS: usize,
+        const LENGTH: usize,
+        const BOX_WIDTH: usize,
+        const BOX_HEIGHT: usize,
+    > fmt::Debug for Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>
+{
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         for cell in self.cells.iter() {
             match cell {

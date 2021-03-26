@@ -3,26 +3,43 @@ pub mod util;
 use crate::Board;
 use crate::Cell;
 use crate::ParseError;
-use crate::LENGTH;
 use std::str::FromStr;
 use util::is_valid_classic;
 use util::passes_knights_move_constraint;
 
-pub trait PuzzleRules {
-    fn is_valid(&self, board: &Board) -> bool;
+pub trait PuzzleRules<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>
+{
+    fn is_valid(&self, board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>) -> bool;
 }
 pub struct ClassicSudoku {}
 
-impl PuzzleRules for ClassicSudoku {
-    fn is_valid(&self, board: &Board) -> bool {
+impl<
+        const NUM_CELLS: usize,
+        const LENGTH: usize,
+        const BOX_WIDTH: usize,
+        const BOX_HEIGHT: usize,
+    > PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT> for ClassicSudoku
+{
+    fn is_valid(&self, board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>) -> bool {
         is_valid_classic(board)
     }
 }
 
 pub struct KnightsRestrictionSudoku {}
 
-impl PuzzleRules for KnightsRestrictionSudoku {
-    fn is_valid(&self, board: &Board) -> bool {
+impl<
+        const NUM_CELLS: usize,
+        const LENGTH: usize,
+        const BOX_WIDTH: usize,
+        const BOX_HEIGHT: usize,
+    > PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT> for KnightsRestrictionSudoku
+{
+    fn is_valid(&self, board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>) -> bool {
         passes_knights_move_constraint(board) && is_valid_classic(board)
     }
 }
@@ -31,11 +48,22 @@ impl PuzzleRules for KnightsRestrictionSudoku {
 // However, it can be used with the solver to quickly find interesting solutions.
 // For example, meeting the 112121212121212121212121112121212121212111212121212121211121212121212121212121211 restriction
 // guarantees all even digits only have odd neighbors.
-pub struct ParityMask {
-    mask: Board,
+pub struct ParityMask<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+> {
+    mask: Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
 }
 
-impl FromStr for ParityMask {
+impl<
+        const NUM_CELLS: usize,
+        const LENGTH: usize,
+        const BOX_WIDTH: usize,
+        const BOX_HEIGHT: usize,
+    > FromStr for ParityMask<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>
+{
     type Err = ParseError;
 
     fn from_str(s: &str) -> Result<Self, Self::Err> {
@@ -43,8 +71,15 @@ impl FromStr for ParityMask {
     }
 }
 
-impl PuzzleRules for ParityMask {
-    fn is_valid(&self, board: &Board) -> bool {
+impl<
+        const NUM_CELLS: usize,
+        const LENGTH: usize,
+        const BOX_WIDTH: usize,
+        const BOX_HEIGHT: usize,
+    > PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>
+    for ParityMask<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>
+{
+    fn is_valid(&self, board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>) -> bool {
         let parity_mismatch =
             board
                 .cells
@@ -64,8 +99,14 @@ impl PuzzleRules for ParityMask {
 // Even digits must have odd orthogonally adjacent cells.
 pub struct EvenOddNeighbors {}
 
-impl PuzzleRules for EvenOddNeighbors {
-    fn is_valid(&self, board: &Board) -> bool {
+impl<
+        const NUM_CELLS: usize,
+        const LENGTH: usize,
+        const BOX_WIDTH: usize,
+        const BOX_HEIGHT: usize,
+    > PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT> for EvenOddNeighbors
+{
+    fn is_valid(&self, board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>) -> bool {
         fn is_even_cell(c: Cell) -> bool {
             match c {
                 Cell::Unfilled => false,
@@ -97,17 +138,16 @@ mod tests {
     use super::*;
     use crate::solve::solve;
     use crate::solve::SolveResult;
-    use crate::NUM_CELLS;
     use std::convert::TryInto;
 
     #[test]
     fn test_even_odd_valid() {
-        let board: Board =
+        let board: Board<81, 9, 3, 3> =
             "132547698547698123698123574321456789874931256965872341419765832783214965256389417"
                 .parse()
                 .unwrap();
-        let invalid = Board {
-            cells: [Cell::Filled(1.try_into().unwrap()); NUM_CELLS],
+        let invalid: Board<81, 9, 3, 3> = Board {
+            cells: [Cell::Filled(1.try_into().unwrap()); 81],
         };
         let rule = EvenOddNeighbors {};
         assert!(rule.is_valid(&board));
@@ -116,11 +156,11 @@ mod tests {
 
     #[test]
     fn test_even_odd_solve() {
-        let mut puzzle: Board =
+        let mut puzzle: Board<81, 9, 3, 3> =
             "000000698000090100000000000000006089004000050000070000000700000700000900000300000"
                 .parse()
                 .unwrap();
-        let solution: Board =
+        let solution: Board<81, 9, 3, 3> =
             "132547698547698123698123574321456789874931256965872341419765832783214965256389417"
                 .parse()
                 .unwrap();
@@ -132,19 +172,19 @@ mod tests {
 
     #[test]
     fn test_parity_mask_valid() {
-        let puzzle: Board =
+        let puzzle: Board<81, 9, 3, 3> =
             "000000698000090100000000000000006089004000050000070000000700000700000900000300000"
                 .parse()
                 .unwrap();
-        let solution: Board =
+        let solution: Board<81, 9, 3, 3> =
             "132547698547698123698123574321456789874931256965872341419765832783214965256389417"
                 .parse()
                 .unwrap();
         let empty = Board::unfilled();
         let invalid = Board {
-            cells: [Cell::Filled(1.try_into().unwrap()); NUM_CELLS],
+            cells: [Cell::Filled(1.try_into().unwrap()); 81],
         };
-        let mask: ParityMask =
+        let mask: ParityMask<81, 9, 3, 3> =
             "112121212121212121212121112121212121212111212121212121211121212121212121212121211"
                 .parse()
                 .unwrap();

@@ -129,3 +129,13 @@ Solve path:
 - 3 is locked into row 7 in box 9 by sudoku. The thermo now forces the 3.
 - The second thermo forces 6 off and 5 in.
 - Puzzle done!
+
+Irregular Magic:
+https://f-puzzles.com/?id=y9tcehnc
+https://f-puzzles.com/?id=y7tcksqq not possible although parts of it was cool
+template: https://f-puzzles.com/?id=yaxunx2j
+- Given the difficulty with 1's, 2's just seem impossible
+- The dream is dead imo but there is still some opportunity for some real nice logic if you can find something that doesn't satisfy 3x3 boxes and put the 1/2 far apart.
+
+6x6 Irregular 1 digit?
+- Actually seems way too restricted... consider increasing dimensions until possible...

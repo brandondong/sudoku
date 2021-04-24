@@ -1,0 +1,7 @@
+Quite a Mouthful
+https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=00052M
+
+Ideas:
+- Choose an orientation and hope those are just thermo disambiguations
+- https://f-puzzles.com/?id=y2sm6umm
+- Bifurcate until an error is reached to see what is actually constrained

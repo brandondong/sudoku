@@ -50,3 +50,27 @@ pub fn passes_knights_move_constraint(board: &Board) -> bool {
                 || column <= 7 && row <= 6 && board.cells[i + 19] == v
         })
 }
+
+pub fn is_valid_irregular(board: &Board) -> bool {
+    // Each row, column, and block must not contain duplicate digits.
+    let mut row_values = [[false; 9]; 9];
+    let mut column_values = [[false; 9]; 9];
+    for (i, v) in board.cells.iter().enumerate().filter_map(|(i, c)| match c {
+        Cell::Unfilled => None,
+        Cell::Filled(v) => Some((i, v)),
+    }) {
+        let value_index: usize = (v.get() - 1).into();
+        let row = i / 9;
+        let column = i % 9;
+
+        if row_values[row][value_index] {
+            return false;
+        }
+        if column_values[column][value_index] {
+            return false;
+        }
+        row_values[row][value_index] = true;
+        column_values[column][value_index] = true;
+    }
+    true
+}

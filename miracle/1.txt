@@ -1,0 +1,48 @@
+- Irregular miracle with 6x6, 7, 8 are impossible it seems
+- Irregular with 9 is possible?
+817963524463528179928174635574639281139285746685741392241396857796852413352417968
+- https://f-puzzles.com/?id=yd75ovt7
+
+https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=0005MP
+Mirror flip:
+- Seems like there are actually none...
+- With the limited flip, we can get pretty far https://f-puzzles.com/?id=ybxzdbuy
+- https://f-puzzles.com/?id=y9hngl3r seems to just keep going...
+- https://f-puzzles.com/?id=ydht8ct8 screws up in multiple ways :(
+- https://f-puzzles.com/?id=ycp43kf5 minimal resolve
+- https://f-puzzles.com/?id=yccemvoy I think this is as far as it goes without the white dot...
+- https://f-puzzles.com/?id=y878pbwp death at the white dot
+- https://f-puzzles.com/?id=y8runofl death at white dot down
+- Actually 1-2 is impossible https://f-puzzles.com/?id=ybzrpzsl
+- Using bifurcation, https://f-puzzles.com/?id=ycsc3ajw needs to not be a 1.
+- Nevermind, it's broken https://f-puzzles.com/?id=y7whzyer from the very start
+- In conclusion, f this puzzle, it wasn't going to be good anyways
+
+XV Miracle Sudoku
+- https://f-puzzles.com/?id=yjfcc3gv Not a bad opening if we can combo it but hilariously, shifted left has literally 0 solutions!!!!
+- https://f-puzzles.com/?id=yg8huwy4 we have consistent L's
+- What about just X, no V, all givens, non-consecutive for the magical unique solution?
+- In order to color the X's at all, you need to rely on knight's move unfortunately
+- Also, consider using diagonals, both form an X anyways
+- Also, you lose the slick opening... actually https://f-puzzles.com/?id=yfvq2y2v is pretty good..
+- One way to at least get an idea of viability would be to compute a board with no V's, non-consecutive, and knight's move
+- Then, manually check if the colored version could be disambiguated
+
+Approach 1: Brute Force
+- 
+
+Approach 2: Human Touch
+- https://f-puzzles.com/?id=yfvq2y2v slick opening tbh
+- https://f-puzzles.com/?id=yz3wqxtw actually ridiculously powerful...
+- https://f-puzzles.com/?id=yhlq7ndy so much for disambiguation problems, good luck being a coloring puzzle, knight's move at this point would be tragic
+- We would love to color based on 1/9 2/8
+- Rest in pieces coloring https://f-puzzles.com/?id=ygd7qhq3
+- Really want https://f-puzzles.com/?id=yepu5aqu to be 3/7 so we can color more
+- https://f-puzzles.com/?id=ye34cjbd dead dead and dead
+- https://f-puzzles.com/?id=yg6yjxdl logic is quite nice but wrong coloring... to be honest though I'm in love with the opening
+- https://f-puzzles.com/?id=yfaj46nv wow we actually get coloring now
+- https://f-puzzles.com/?id=yh9eh8pz broken, we have to link something...
+- https://f-puzzles.com/?id=yerxfqbf nope broken
+- https://f-puzzles.com/?id=yjbl7a26 Don't know what I was smoking but once again it unambiguously disambiguates...
+- One possibility is to do all V's given in box x as a final disambiguation step!
+- https://f-puzzles.com/?id=yggnfxeo not too bad with the logic in box 2 but again the coloring...

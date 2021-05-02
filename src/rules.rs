@@ -20,10 +20,29 @@ impl<
     > PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT> for Miracle
 {
     fn is_valid(&self, board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>) -> bool {
-        is_valid_classic(board)
+        is_add_10(board, 0, 1)
+            && is_add_10(board, 9, 18)
+            && is_add_10(board, 19, 20)
+            && is_valid_classic(board)
             && passes_knights_move_constraint(board)
-            && passes_kings_move_constraint(board)
             && passes_nonconsecutive_constraint(board)
+    }
+}
+
+fn is_add_10<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+    i1: usize,
+    i2: usize,
+) -> bool {
+    let c = board.cells;
+    match (c[i1], c[i2]) {
+        (Cell::Filled(a), Cell::Filled(b)) => a.get() + b.get() == 10,
+        _ => true,
     }
 }
 

@@ -20,12 +20,7 @@ impl<
     > PuzzleRules<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT> for Miracle
 {
     fn is_valid(&self, board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>) -> bool {
-        is_add_10(board, 0, 1)
-            && is_add_10(board, 9, 18)
-            && is_add_10(board, 19, 20)
-            && is_valid_classic(board)
-            && passes_knights_move_constraint(board)
-            && passes_nonconsecutive_constraint(board)
+        is_valid_classic(board) && passes_nonconsecutive_constraint(board)
     }
 }
 

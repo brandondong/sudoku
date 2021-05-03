@@ -139,6 +139,7 @@ pub fn passes_nonconsecutive_constraint<
         .cells
         .iter()
         .enumerate()
+        .filter(|(i, _)| i % 9 <= 5)
         .filter_map(|(i, &c)| match c {
             Cell::Unfilled => None,
             Cell::Filled(v) => Some((i, v.get())),
@@ -147,7 +148,7 @@ pub fn passes_nonconsecutive_constraint<
             let row = i / LENGTH;
             let column = i % LENGTH;
             column >= 1 && consecutive_val(board.cells[i - 1], v) // Left.
-                || column <= (LENGTH - 2) && consecutive_val(board.cells[i + 1], v) // Right.
+                || column < 5 && consecutive_val(board.cells[i + 1], v) // Right.
                 || row >= 1 && consecutive_val(board.cells[i - LENGTH], v) // Up.
                 || row <= (LENGTH - 2)
                     && consecutive_val(board.cells[i + LENGTH], v) // Down.

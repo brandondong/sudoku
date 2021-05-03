@@ -24,6 +24,42 @@ impl<
     }
 }
 
+pub fn count_10s<
+    const NUM_CELLS: usize,
+    const LENGTH: usize,
+    const BOX_WIDTH: usize,
+    const BOX_HEIGHT: usize,
+>(
+    board: &Board<NUM_CELLS, LENGTH, BOX_WIDTH, BOX_HEIGHT>,
+) -> usize {
+    board
+        .cells
+        .iter()
+        .enumerate()
+        .filter(|(i, _)| i % 9 <= 5)
+        .filter_map(|(i, &c)| match c {
+            Cell::Unfilled => None,
+            Cell::Filled(v) => Some((i, v.get())),
+        })
+        .map(|(i, _v)| {
+            let row = i / LENGTH;
+            let column = i % LENGTH;
+            let mut sum = 0;
+            if column < 5 {
+                if is_add_10(board, i + 1, i) {
+                    sum += 1;
+                } // Right.
+            }
+            if row <= (LENGTH - 2) {
+                if is_add_10(board, i + LENGTH, i) {
+                    sum += 1;
+                } // Down.
+            }
+            sum
+        })
+        .sum()
+}
+
 fn is_add_10<
     const NUM_CELLS: usize,
     const LENGTH: usize,

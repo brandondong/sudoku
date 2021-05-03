@@ -59,6 +59,56 @@ Approach 2: Human Touch
 - https://f-puzzles.com/?id=yh7gobyx I think we should let brute force take it at this point... leave the two x's if possible and roll
 - Actually no valid nonconsecutive WTF!
 
+- Evaluating, box 1 break in is beautiful, column 3 x is a bit too powerful but only if you use coloring
+- https://f-puzzles.com/?id=yz85orwq is fine, forces the green blue coloring
+- Anything with 3 in r4c1 immediately breaks non-consecutive, the alternative breaks as well LUL
+- Therefore we go back to beautiful checkpoint and not have global non-consecutive
+- https://f-puzzles.com/?id=yffudcbc matrix logic is nice but sort of convoluted
+- 173524689495861732628397145364719258817253964259486371931648527586172493742935816 seems quite easy to do first 6 columns
+- https://f-puzzles.com/?id=yzmc9hvv sort of ridiculous the number of X's... can even get a 5 yuck
+- Slices through like code butter but on the other hand, it shouldn't ruin the starting logic at all
+- I'm honestly not a fan and it dilutes the opening because a user might try anyways
+- What if we use a different ruleset, all X's given, no non-consecutive but use knight's move strictly within those 3 columns which wouldn't be actionable at the start
+- I remain unconvinced of the 6 column non-consecutive unless there are very very few X's in the middle columns.
+
+- https://f-puzzles.com/?id=yz3kcr2q lol wtf, there's no way this is human solvable...
+- https://f-puzzles.com/?id=yg7pttek 9 X's pain beyond belief...
+- https://f-puzzles.com/?id=ydlu66q6 11 X's not bad good luck getting this with coloring LUL
+- https://f-puzzles.com/?id=yjoeqvo2 at this point, we should just minimize X's and think about 1/4 6/9 placements.
+
+[src\main.rs:12] &solution = 173649852495182376628537194364715928817293465259468731931826547586374219742951683
+[src\main.rs:13] count_10s(&solution) = 14
+[src\main.rs:12] &solution = 173649582495182763628537914364715298817293645259468371931826457586374129742951836
+[src\main.rs:13] count_10s(&solution) = 14
+[src\main.rs:12] &solution = 173649528495382716628157349364925187817463295259718634931574862586291473742836951
+[src\main.rs:13] count_10s(&solution) = 13
+[src\main.rs:12] &solution = 173649528495382176628157394364925781817463259259718643931574862586291437742836915
+[src\main.rs:13] count_10s(&solution) = 13
+[src\main.rs:12] &solution = 173948652495162783628537941364719825817253469259486317931824576586371294742695138
+[src\main.rs:13] count_10s(&solution) = 15
+[src\main.rs:12] &solution = 173964852495728316628351794364815279817293645259647183931472568586139427742586931
+[src\main.rs:13] count_10s(&solution) = 15
+[src\main.rs:12] &solution = 173524986495861327628397541364719852817253694259486713931648275586172439742935168
+[src\main.rs:13] count_10s(&solution) = 14
+[src\main.rs:12] &solution = 173824965495361278628597431364719852817253694259486713931648527586172349742935186
+[src\main.rs:13] count_10s(&solution) = 14
+[src\main.rs:12] &solution = 173962845495738621628415739364179258817526394259384167931647582586291473742853916
+[src\main.rs:13] count_10s(&solution) = 14
+[src\main.rs:12] &solution = 173824956495361827628597431364719582817253649259486713931648275586172394742935168
+[src\main.rs:13] count_10s(&solution) = 14
+[src\main.rs:12] &solution = 173682549495317268628594173364258791817936452259471836931725684586149327742863915
+[src\main.rs:13] count_10s(&solution) = 11
+[src\main.rs:12] &solution = 173852946495136782628479513364791258817524639259368174931685427586247391742913865
+[src\main.rs:13] count_10s(&solution) = 11
+[src\main.rs:12] &solution = 173694258495827361628351749364915872817263594259748136931472685586139427742586913
+[src\main.rs:13] count_10s(&solution) = 11
+[src\main.rs:12] &solution = 173594826495862713628317954364759281817426395259183647931648572586271439742935168
+[src\main.rs:13] count_10s(&solution) = 11
+[src\main.rs:12] &solution = 173594286495862317628317495364759821817426539259183674931648752586271943742935168
+[src\main.rs:13] count_10s(&solution) = 11
+[src\main.rs:12] &solution = 173862495495137682628495173364751829817924536259386714931648257586273941742519368
+[src\main.rs:13] count_10s(&solution) = 12
+
 Name:
 X Gon Give It To Ya
 - Alternatively, a common, unique line in the song

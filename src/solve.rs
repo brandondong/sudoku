@@ -1,3 +1,5 @@
+use rand::{prelude::SliceRandom, thread_rng};
+
 use crate::rules::PuzzleRules;
 use crate::Board;
 use crate::Cell;
@@ -87,7 +89,10 @@ pub fn solve_one<
         None => return Some(board.clone()),
         Some(v) => v,
     };
-    for guess in 1..=LENGTH {
+    let mut rng = thread_rng();
+    let mut options: Vec<_> = (1..=LENGTH).collect();
+    options.shuffle(&mut rng);
+    for &guess in options.iter() {
         let guess: u8 = guess.try_into().unwrap();
         board.cells[index] = Cell::Filled(guess.try_into().unwrap());
         match solve_one(board, rules) {

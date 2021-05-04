@@ -103,11 +103,37 @@ Other possibilities:
 - You can also get more clones but it doesn't seem too helpful, still beautiful though
 - Actually that translates into 4/6 in box 5 oh wow
 - You can disambiguate at column 6 but it's more fun to decolor at the end I think
-- https://f-puzzles.com/?id=yhpzevbo time to end this
+- https://f-puzzles.com/?id=yh32q4db time to end this
 - https://f-puzzles.com/?id=yhwyjhpt pretty efficient
 - https://f-puzzles.com/?id=yhp87jyv too greedy? or maybe the best deadly pattern reveal in history?
 - https://f-puzzles.com/?id=yzxf7mmo column 7 OMG greatest in history LUL!
 - https://f-puzzles.com/?id=yz7a7m84
+- We can sort of bypass the middle logic because of just so many f'ing X's... https://f-puzzles.com/?id=ygkgseb3
+- Maybe start with greedy and try to not have so many vertical in one line
+- https://f-puzzles.com/?id=yeoyyj7a omg ten times better and it's row 9 which is what we dreamed of!
+- The worry is the 5 in row 7 messing up middle columns...
+- Actually, if you could eliminate the 5 in box 8 before, you would get a useless 5 in 3, now it's still useless!
+- Nope, you get a triple, even worse f!!!!!
+- https://f-puzzles.com/?id=yjrem52j if we want 2/8 like this, we must not have another X in the same orientation
+- https://f-puzzles.com/?id=ye5dr7xa potential? nope dead
+- https://f-puzzles.com/?id=yhnj8njv row 9 is dead unfortunately
+- https://f-puzzles.com/?id=ydumdc4e box 3 works, f the rows...
+- This works so f'ing well even the last 3 column disambiguation is good, just describe it as bottom left box!
+- Nevermind, the vertical is too powerful
+- 2/8 might be perma f'd... alternatively, allow connecting from column 6
+- All I know is 1/9 bottom row must be separated!
+- https://f-puzzles.com/?id=yfmdqss8 this is required
+- Seems dead to me... might not actually be able to do better....
+- If we were to instead not use hard constraint in three columns...
+- Okay maybe I overreated, it doesn't seem like you can do too much with row 8 except that one very specific bypass
+- But the bypass is too powerful because the 7 immediately locks
+- Only 2/8 can be done in this deadly pattern sort of way
+- The facts are:
+1. We want to use an all V's are provided ruleset
+2. The deadly pattern disambiguation is just too classy and leaves too good of an impression
+3. The clone logic is very nice albeit short in the optimal case
+4. We've brute forced every other possible 2/8 deadly pattern case and this is the absolute best we can do and all other working ones reveal more information
+- To justify it, there's a chance they don't spot the bypass or they perform the logic and the clone anyways
 
 [src\main.rs:12] &solution = 173649852495182376628537194364715928817293465259468731931826547586374219742951683
 [src\main.rs:13] count_10s(&solution) = 14

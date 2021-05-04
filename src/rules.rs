@@ -36,7 +36,6 @@ pub fn count_10s<
         .cells
         .iter()
         .enumerate()
-        .filter(|(i, _)| i % 9 <= 5)
         .filter_map(|(i, &c)| match c {
             Cell::Unfilled => None,
             Cell::Filled(v) => Some((i, v.get())),
@@ -45,7 +44,7 @@ pub fn count_10s<
             let row = i / LENGTH;
             let column = i % LENGTH;
             let mut sum = 0;
-            if column < 5 {
+            if column <= (LENGTH - 2) {
                 if is_add_10(board, i + 1, i) {
                     sum += 1;
                 } // Right.

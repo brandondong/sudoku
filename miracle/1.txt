@@ -94,9 +94,14 @@ Other possibilities:
 - https://f-puzzles.com/?id=yh8mwcwh solvable via box 8 but extremely tricky and non-obvious
 - https://f-puzzles.com/?id=yj4bnlux wait, that was actually great to use the clone...
 - The clone is known from puzzle start but is not actionable until it hard eliminates the cells above it!
-- You can get 5 to two positions in box 5 from start but it doesn't help
 - You can also get more clones but it doesn't seem too helpful, still beautiful though
 - Actually that translates into 4/6 in box 5 oh wow
+- You can disambiguate at column 6 but it's more fun to decolor at the end I think
+- https://f-puzzles.com/?id=yhpzevbo time to end this
+- https://f-puzzles.com/?id=yhwyjhpt pretty efficient
+- https://f-puzzles.com/?id=yhp87jyv too greedy? or maybe the best deadly pattern reveal in history?
+- https://f-puzzles.com/?id=yzxf7mmo column 7 OMG greatest in history LUL!
+- https://f-puzzles.com/?id=yz7a7m84
 
 [src\main.rs:12] &solution = 173649852495182376628537194364715928817293465259468731931826547586374219742951683
 [src\main.rs:13] count_10s(&solution) = 14

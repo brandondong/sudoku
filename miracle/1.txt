@@ -86,6 +86,17 @@ Testing:
 1. Input into X count checker
 2. Try solving with opposite parity
 3. Try solving without coloring
+4. Sanity check all logic
+
+Other possibilities:
+- Start with https://f-puzzles.com/?id=yzspct4o
+- https://f-puzzles.com/?id=yesk4hwp maybe some genius way to solve but beyond me
+- https://f-puzzles.com/?id=yh8mwcwh solvable via box 8 but extremely tricky and non-obvious
+- https://f-puzzles.com/?id=yj4bnlux wait, that was actually great to use the clone...
+- The clone is known from puzzle start but is not actionable until it hard eliminates the cells above it!
+- You can get 5 to two positions in box 5 from start but it doesn't help
+- You can also get more clones but it doesn't seem too helpful, still beautiful though
+- Actually that translates into 4/6 in box 5 oh wow
 
 [src\main.rs:12] &solution = 173649852495182376628537194364715928817293465259468731931826547586374219742951683
 [src\main.rs:13] count_10s(&solution) = 14
@@ -107,10 +118,6 @@ Testing:
 [src\main.rs:13] count_10s(&solution) = 14
 [src\main.rs:12] &solution = 173824956495361827628597431364719582817253649259486713931648275586172394742935168
 [src\main.rs:13] count_10s(&solution) = 14
-[src\main.rs:12] &solution = 173682549495317268628594173364258791817936452259471836931725684586149327742863915
-[src\main.rs:13] count_10s(&solution) = 11
-[src\main.rs:12] &solution = 173852946495136782628479513364791258817524639259368174931685427586247391742913865
-[src\main.rs:13] count_10s(&solution) = 11
 [src\main.rs:12] &solution = 173694258495827361628351749364915872817263594259748136931472685586139427742586913
 [src\main.rs:13] count_10s(&solution) = 11
 [src\main.rs:12] &solution = 173594826495862713628317954364759281817426395259183647931648572586271439742935168
@@ -124,3 +131,4 @@ Name:
 X Gon Give It To Ya
 - Alternatively, a common, unique line in the song
 First we gonna rock...
+- Neither have any matches on Logic Masters Germany

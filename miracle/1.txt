@@ -188,17 +188,18 @@ Rules:
 
 Solution:
 https://f-puzzles.com/?id=yz7a7m84
-368724159134698572
+185946372368524971
 
 <p><b>Rules:</b></p>
 <ol>
 <li>Normal sudoku rules apply.</li>
-<li>Normal thermometer rules apply (numbers on a thermometer must strictly increase as they move away from the bulb).</li>
-<li>Digits at the start of a row/column with a dash behave like sandwich clues (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value). Two-digit sandwich clues are read left to right or top to bottom. <a href="https://f-puzzles.com/?id=yxlvgq42">Example</a></li>
+<li>Cells separated by an X must sum to 10. All X's are given.</li>
+<li>Cells separated by a V must sum to 5. All V's in row 7 are given.</li>
+<li>Any two cells in the first 6 rows that are orthogonally adjacent must not contain consecutive numbers.</li>
 </ol>
 <p><b>Puzzle:</b></p>
-<p><a href="https://f-puzzles.com/?id=y6reqc4b">f-puzzles</a></p>
+<p><a href="https://f-puzzles.com/?id=ydo8x2m7">f-puzzles</a></p>
 <div>
-<img:0007OX>
+<img:0008OO>
 </div>
 <p>Happy solving!</p>

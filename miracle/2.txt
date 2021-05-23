@@ -7,3 +7,26 @@ Then we gonna roll...
 Inner Sandwich Sudoku, take two
 
 - https://f-puzzles.com/?id=yfep9can beautiful break-in, would be a shame if this did not get permanently released as a puzzle
+- https://f-puzzles.com/?id=yfkr7qa3 pretty cool, difficult to see maybe a bit tedious
+- Unfortunately, https://f-puzzles.com/?id=yjdxqfu5 is great but breaks in a multitude of ways
+
+- https://f-puzzles.com/?id=ye3ty9z2 seems very unactionable
+- https://f-puzzles.com/?id=yjh8yflr very nice derivation of the 1 position in row 8 only using a 2-cell thermo!
+- Death but maybe on the right track https://f-puzzles.com/?id=yenb6cwa
+- We have essentially proven that with a single dash, 1 is forced into r8c8 but it's impossible to see without bifurcation
+- https://f-puzzles.com/?id=yhh59n5w absolutely bonkers in difficulty
+
+- https://f-puzzles.com/?id=ygg3we5m seems to be quite rewarding going down this path
+- https://f-puzzles.com/?id=yfz56da9 it turns out 1/9 pair in box 1 will eventually break
+- https://f-puzzles.com/?id=yzhaqdcc more derivations following this path, just trying to see if there even is a solution
+- https://f-puzzles.com/?id=yghsn75c more bifurcation
+- https://f-puzzles.com/?id=ye7l84j3 okay I think we actually died for real rest in peace....
+
+- https://f-puzzles.com/?id=yfo49oxw path down 29
+- https://f-puzzles.com/?id=yzd77eju 5 + 6 = death, therefore 5 is just death https://f-puzzles.com/?id=yebxpttx
+
+
+783649521169352847425817693372961485918435762654278139536194278297586314841723956
+783649521169352847425817693372981465916435782854276139538194276297568314641723958
+- Two solutions found oh boy
+- No extra inner sandwiches which I guess is not too surprising...

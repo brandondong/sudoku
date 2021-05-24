@@ -18,6 +18,48 @@ Possible X clues:
 - Fun fact, they are also aligned... https://f-puzzles.com/?id=yhadmjha
 - https://f-puzzles.com/?id=yz8gzzn7 wow broken via the 4/6!
 - https://f-puzzles.com/?id=yfo7c846 good to know that the entire premise is broken LUL
+- 11 is probably fine with 2-4-5 or 2-3-6.
+
+- 9 question mark?
+- Same core logic applies, r5c1/r5c2 cannot have 0 1/9's nor 2 1/9's.
+- Actually it's a lot simpler with 9's because of row 3.
+- Nope, broken just like the 10's we have a bad quadruple https://f-puzzles.com/?id=yefjphsm
+
+- 11/12/13
+- All three numbers have the property that they are either one in the middle, one outside or both outside with minimum span
+- Therefore you need two of the first and one of the second
+- https://f-puzzles.com/?id=yf2u7qgc seems quite unrestricted unlike 9/10
+- X-sum is only 2-9 or 3 1/7 2/6
+- https://f-puzzles.com/?id=yzhgj6fh opposite X-sum gets this pattern (https://f-puzzles.com/?id=yhwnzd32)
+- https://f-puzzles.com/?id=yggfny32 seems like it's holding up so far
+- Could also do horizontal but that just gets you to 2/3 pair
+- Hella promising https://f-puzzles.com/?id=ygumrqyz please don't break!
+- The 2/3 pair interaction into rhs 3 back into lhs is super nice
+- https://f-puzzles.com/?id=yhxoxja6 horrible disaster
+- https://f-puzzles.com/?id=yze452yw hello darkness my old friend
+- https://f-puzzles.com/?id=ye5vrfsk o my bejesus this is so dumb
+- We could try various shifts
+- https://f-puzzles.com/?id=ygcg9ysq death again, the outer cannot be the 2 but that's impossible to see without bifurcation
+- https://f-puzzles.com/?id=yjuwr3l8 death again
+- https://f-puzzles.com/?id=yelpc48o okay so we can actually prove that there must be something in the middle because 35 is not divisible by 3 wow LUL
+- Actually not necessarily in the middle
+- If you can provide some smart way of disambiguating the outer pattern, we could work from there...
+- https://f-puzzles.com/?id=yz3fe5ba not terrible
+- https://f-puzzles.com/?id=ye283gfz probably better
+- https://f-puzzles.com/?id=yj8cblw5 Nope broken actually ludicrous
+- https://f-puzzles.com/?id=yfw7dna8 Technically possible to derive this far but impossible in practice https://f-puzzles.com/?id=yznrllvv is reasonable
+- https://f-puzzles.com/?id=ygf6ygg6 seems like it is still alive but uggggg...
+- To be fair, restricting to only outside clues is probably outright impossible
+- At this point, we should just solution search and work backwards because anything and everything can cause breakage
+- https://f-puzzles.com/?id=yer8mr28 holy this is hella fine!
+- https://f-puzzles.com/?id=yhnannyb hello derivation...
+- https://f-puzzles.com/?id=ye63tady through crazy bifurcation we get this...
+
+- https://f-puzzles.com/?id=yeylbcgy not a bad alternative plus you cannot sidestep the rhs addition logic
+
+12:
+- https://f-puzzles.com/?id=yz22p53l not bad, 5/7 on leftmost
+- https://f-puzzles.com/?id=yzdk3arh 1 on outside breaks btw
 
 Inner Sandwich Sudoku, take two
 

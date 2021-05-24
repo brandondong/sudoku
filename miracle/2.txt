@@ -4,6 +4,21 @@ Then we gonna roll...
 - https://f-puzzles.com/?id=ye4tr92n very bifurcatee and you even require forcing this to happen in column 1
 - https://f-puzzles.com/?id=yjn7hhbe so unrestricted it feels like
 
+Possible X clues:
+- X-sum with 10:
+- 2-8, 3 1/6 2/5, 4 1/2/3
+
+- https://f-puzzles.com/?id=yznalabf wow really not bad, columns 7-9 is really surprising and we need to work off of that!
+- https://f-puzzles.com/?id=yfrm8dpu wow it really keeps going please don't break...
+- https://f-puzzles.com/?id=yj3m92e7 omg please please please so nice that we need the rhs before proceeding to the lhs
+- https://f-puzzles.com/?id=ygomsxyh lol nope insta death
+- https://f-puzzles.com/?id=ydlx4rcv even more insta death
+- https://f-puzzles.com/?id=yhfohd7f seems like this is actually quite restricted, both outer is death and bother inner leads to both outer
+- Not obvious at all, you could make a 5* puzzle this way lul
+- Fun fact, they are also aligned... https://f-puzzles.com/?id=yhadmjha
+- https://f-puzzles.com/?id=yz8gzzn7 wow broken via the 4/6!
+- https://f-puzzles.com/?id=yfo7c846 good to know that the entire premise is broken LUL
+
 Inner Sandwich Sudoku, take two
 
 - https://f-puzzles.com/?id=yfep9can beautiful break-in, would be a shame if this did not get permanently released as a puzzle
@@ -14,7 +29,7 @@ Inner Sandwich Sudoku, take two
 - https://f-puzzles.com/?id=yjh8yflr very nice derivation of the 1 position in row 8 only using a 2-cell thermo!
 - Death but maybe on the right track https://f-puzzles.com/?id=yenb6cwa
 - We have essentially proven that with a single dash, 1 is forced into r8c8 but it's impossible to see without bifurcation
-- https://f-puzzles.com/?id=yhh59n5w absolutely bonkers in difficulty
+- https://f-puzzles.com/?id=yfxzyu57 absolutely bonkers in difficulty
 
 - https://f-puzzles.com/?id=ygg3we5m seems to be quite rewarding going down this path
 - https://f-puzzles.com/?id=yfz56da9 it turns out 1/9 pair in box 1 will eventually break
@@ -26,7 +41,11 @@ Inner Sandwich Sudoku, take two
 - https://f-puzzles.com/?id=yzd77eju 5 + 6 = death, therefore 5 is just death https://f-puzzles.com/?id=yebxpttx
 
 
-783649521169352847425817693372961485918435762654278139536194278297586314841723956
+783649521169352847425817693372961485918435762654278139536194278297586314841723956 https://f-puzzles.com/?id=yj6a3nmp
 783649521169352847425817693372981465916435782854276139538194276297568314641723958
 - Two solutions found oh boy
 - No extra inner sandwiches which I guess is not too surprising...
+
+- https://f-puzzles.com/?id=yj4fzxe6 clever thermo but doesn't buy us much
+- https://f-puzzles.com/?id=ydk9mgdf add stuff with impunity while giving us nothing, although linear
+- https://f-puzzles.com/?id=ygxrhf8p I'm getting absolutely zero give

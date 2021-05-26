@@ -63,12 +63,41 @@ Possible X clues:
 - https://f-puzzles.com/?id=yfovomjl breaks again...
 - https://f-puzzles.com/?id=yjmqere2 omg so close...
 - https://f-puzzles.com/?id=yhjkotuh ????? solvable for sure...
+- Many possible easy routes after the break-in and x-sum's
+- X-sum's are actually quite nice paired with the break-in, I'm fine with everything after being easy
+8080f0 .85
+
+Congratulations, you're a dead man
+
+Puzzle:
+https://f-puzzles.com/?id=yeyx4zup
+
+Rules:
+- Normal sudoku rules apply.
+- The black numbers outside the grid are sandwich clues (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value).
+- The blue numbers outside the grid are X-sum clues (the first X digits from the direction of the clue must sum to the indicated value where X is the first digit).
+- The numbers in the cage must sum to the given total in the top left. Numbers must not repeat in a cage.
+
+Solution:
+https://f-puzzles.com/?id=yhjkotuh
+
+
+Best of luck with the <i>break-in</i> :D
 
 Title:
 Ocean's 11 quote:
 All right, we'll get one more
-We're just supposed to walk out of there...?
-Who do ya got in mind?
+The Bellagio, the Mirage, and the MGM Grand (not a good quote or googleable)
+We're just supposed to walk out of there...? (not googleable)
+Who do ya got in mind? (weird question...)
+And you're gonna need a crew as nuts as you are!
+make way for some gaudy monstrosity (probably mistakenly thought to refer to this puzzle)
+As you say, ma'am, I was never charged. (weird first person)
+Congratulations, you're a dead man (poppy)
+
+
+
+Just remember ... at the end of this, he'd *better* not know you're involved, not know your names or think you're dead, because he'll kill ya, and *then* he'll go to work on ya. (too cringe)
 
 12:
 - https://f-puzzles.com/?id=yz22p53l not bad, 5/7 on leftmost

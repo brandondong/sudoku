@@ -70,19 +70,53 @@ Possible X clues:
 Congratulations, you're a dead man
 
 Puzzle:
-https://f-puzzles.com/?id=yhqztc7f
+https://f-puzzles.com/?id=yeqbjh9s
 
 Rules:
 - Normal sudoku rules apply.
 - The black numbers outside the grid are sandwich clues (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value).
 - The blue numbers outside the grid are X-sum clues (the first X digits from the direction of the clue must sum to the indicated value where X is the first digit).
-- The numbers in the cage must sum to the given total in the top left. Numbers must not repeat in a cage.
+- Normal killer cage rules apply (the numbers in the cage must sum to the given total in the top left and numbers must not repeat in a cage).
 
 Solution:
 https://f-puzzles.com/?id=yhjkotuh
+972856314138947625
+Row 5 from left to right followed by column 9 from top to bottom.
 
 
-Best of luck with the <i>break-in</i> :D
+<p><b>Rules:</b></p>
+<ol>
+<li>Normal sudoku rules apply.</li>
+<li>The black numbers outside the grid are sandwich clues (the numbers located between the 1 and 9 in the row or column relevant to the clue must sum to the indicated value).</li>
+<li>The blue numbers outside the grid are X-sum clues (the first X digits from the direction of the clue must sum to the indicated value where X is the first digit).</li>
+<li>Normal killer cage rules apply (the numbers in the cage must sum to the given total in the top left and numbers must not repeat in a cage).</li>
+</ol>
+<p><b>Puzzle:</b></p>
+<p><a href="https://f-puzzles.com/?id=yeqbjh9s">f-puzzles</a></p>
+<div>
+<img:000910>
+</div>
+<p>Best of luck with the <b><i>break-in</i></b> :D</p>
+
+000910
+
+Check list:
+Title
+- DONE
+Puzzle link
+- DONE
+Image
+- DONE
+Solution code description
+- DONE
+Solution code
+- DONE
+Tags
+- DONE
+Image tags
+- DONE
+Difficulty
+- DONE
 
 Title:
 Ocean's 11 quote:

@@ -1,0 +1,36 @@
+WYSI
+
+Puzzle revoles around 7/27 clues
+
+Ideas:
+- X-sum:
+- 7 only has 2/5 which is a dud
+- 27 is from 4-6, 18 in 3-5
+
+- Sandwich:
+- 7 can be 1/2 wide
+- 27 can have 1/2 outie
+
+Aha. The laser fields. Well...
+
+Puzzle revolves around 12 clues
+
+Ideas:
+- 
+
+Thermo/Renban/Odd Mix-up
+
+Ideas:
+- Both have set properties (https://www.youtube.com/watch?v=KokZykCkgUw length 6 thermo's where >= 3 are in one line are key)
+- Renban with length >= 5 must contain a 5, length >= 6 must contain a 4/5/6 and so on
+- Would be nice to use a 4/5/6 to fully eliminate a possibility in a thermo to force one or the either
+- Once you've established a length 6 renban or a length 7 thermo, this should be possible...
+- We probably want the break-in to use something with set theory somehow but I don't think it's enough by itself...
+- Would be classic to have an odd cell full elimination again
+
+- https://f-puzzles.com/?id=y5s8ufy5 interesting pattern, you could put a 5 to instant disambiguate right now...
+- https://f-puzzles.com/?id=y57ve9ag using a 4 leads to nice logic on the red
+- https://f-puzzles.com/?id=y44lj5y6 seems like we can't get shit...
+- https://f-puzzles.com/?id=y6f4g856 if 5, you force this
+- It means we can force 1/2 https://f-puzzles.com/?id=y3emnqpb
+- https://f-puzzles.com/?id=y3kpt663 much more graceful!

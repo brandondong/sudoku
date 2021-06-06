@@ -20,6 +20,8 @@ Ideas:
 
 Thermo/Renban/Odd Mix-up
 
+0xd0
+
 Ideas:
 - Both have set properties (https://www.youtube.com/watch?v=KokZykCkgUw length 6 thermo's where >= 3 are in one line are key)
 - Renban with length >= 5 must contain a 5, length >= 6 must contain a 4/5/6 and so on
@@ -33,4 +35,7 @@ Ideas:
 - https://f-puzzles.com/?id=y44lj5y6 seems like we can't get shit...
 - https://f-puzzles.com/?id=y6f4g856 if 5, you force this
 - It means we can force 1/2 https://f-puzzles.com/?id=y3emnqpb
-- https://f-puzzles.com/?id=y3kpt663 much more graceful!
+- https://f-puzzles.com/?id=y6hfaeka much more graceful!
+
+- https://f-puzzles.com/?id=y2eqhykc gets me so little but what other choice do I have...
+- https://f-puzzles.com/?id=yyses9zq pretty nice combo, 6/7 prevents the renban

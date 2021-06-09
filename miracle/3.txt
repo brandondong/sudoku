@@ -70,13 +70,15 @@ Ideas:
 
 - Can you disambiguate the 6/7 much earlier?
 - No! https://f-puzzles.com/?id=y53hbx2m doesn't break until you get to that logic!
+- Can you bypass logic with the false box 5 box 2 assumption?
+- https://f-puzzles.com/?id=yzqdzlm6 I don't see how to use it...
 
 Unfortunately, it turns out I was holding my pencil upside down and writing with the eraser end the entire time!
 
 Thermo/Renban/Odd Mix-up
 
 Puzzle:
-https://f-puzzles.com/?id=y3khb9ck
+https://f-puzzles.com/?id=yjwqlguc
 
 Solution:
 https://f-puzzles.com/?id=y43bqjch

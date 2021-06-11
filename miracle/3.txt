@@ -89,3 +89,29 @@ Rules:
 - For each connected line and circle, either:
 1) They represent a thermometer (numbers on a thermometer must strictly increase as they move away from the bulb).
 2) The circle must contain an odd digit and the line (which extends into the circle) is a Renban line (lines must contain a set of consecutive, non-repeating digits in any order).
+
+<p>This puzzle is a sequel to <a href="https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=000546">Thermo/Palindrome/Odd Mix-up</a>.</p>
+<p><b>Preamble:</b></p>
+<p>The problem with creating a puzzle using thermometer, Renban, and odd cell constraints is that a Renban line with a single odd cell constraint looks very similar to a thermometer. Fortunately, I remembered to write down which was which while creating the puzzle. Unfortunately, it turns out I was holding my pencil upside down and writing with the eraser end the entire time! What a disaster!</p>
+<p><b>Rules:</b></p>
+<ul>
+<li>Normal sudoku rules apply.</li>
+<li>Normal little killer rules apply (the numbers along the indicated diagonal must sum to the given total). Digits may repeat along the diagonal.</li>
+<li>For each connected line and circle, either:
+<ol>
+<li>They represent a thermometer (numbers on a thermometer must strictly increase as they move away from the bulb).</li>
+<li>The circle must contain an odd digit and the line (which extends into the circle) is a Renban line (lines must contain a set of consecutive, non-repeating digits in any order).</li>
+</ol>
+</li>
+</ul>
+<p><b>Puzzle:</b></p>
+<p><a href="https://f-puzzles.com/?id=yjwqlguc">f-puzzles</a></p>
+<div>
+<img:00098J>
+</div>
+<p>Happy solving!</p>
+<p>Hint 1: <span style="color:white">Focus on the leftmost three columns to start the puzzle.</span></p>
+<p>Hint 2: <span style="color:white">If you get stuck either somewhere in the middle of the puzzle or towards the end, try coloring a certain pair of digits.</span></p>
+
+Row 5 from left to right followed by column 9 from top to bottom.
+629584731347216958

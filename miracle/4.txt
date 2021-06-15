@@ -1,0 +1,31 @@
+WYSI
+
+Puzzle revoles around 7/27 clues
+
+Ideas:
+- X-sum:
+- 7 only has 2/5 which is a dud
+- 27 is from 4-6, 18 in 3-5
+
+- Sandwich:
+- 7 can be 1/2 wide
+- 27 can have 1/2 outie
+
+- Killer:
+- 7 in 2 has 3 possibilities
+- 3/4 has 2 lower digits, otherwise 1 lower and 1 higher
+- 27 in 4 requires a 9
+- The other digits may contain 1 lower digit
+- Coloring would be nice with the 7's but it's pretty difficult without negative constraint
+- 7/7/27 is impossible funnily enough
+- High low coloring would be nice
+
+- https://f-puzzles.com/?id=yeu63y5y Basic coloring
+- https://f-puzzles.com/?id=yzgpnbla Not very interesting...
+- https://f-puzzles.com/?id=yjyqn6wh good luck with this so much for an easy puzzle
+- https://f-puzzles.com/?id=yhmq57no rip what are you doing...
+- https://f-puzzles.com/?id=yeljbmqb wow wow wow
+- https://f-puzzles.com/?id=yfjlu5v3 there is the diff 27 logic....
+
+- https://f-puzzles.com/?id=yexd8yg8 there is an argument for just letting it gracefully solve to respect the amazing break in and acknowledge it
+- https://f-puzzles.com/?id=ykxfyeuc this is a very hand holdy way to explore the same concept, fine with it if it immediately leads to something

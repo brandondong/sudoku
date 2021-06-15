@@ -29,3 +29,24 @@ Ideas:
 
 - https://f-puzzles.com/?id=yexd8yg8 there is an argument for just letting it gracefully solve to respect the amazing break in and acknowledge it
 - https://f-puzzles.com/?id=ykxfyeuc this is a very hand holdy way to explore the same concept, fine with it if it immediately leads to something
+- https://f-puzzles.com/?id=ygxl7cgk combo combo combo...
+- https://f-puzzles.com/?id=yffz4bef not bad
+- https://f-puzzles.com/?id=yzwd8f6w freebies?
+= https://f-puzzles.com/?id=yg3czqju pretty efficient
+- https://f-puzzles.com/?id=yg6wlofa seems to magically work...
+- https://f-puzzles.com/?id=ygrw6hwq first draft
+
+
+Review:
+- https://f-puzzles.com/?id=yfutjs6t nevermind, break in is actually trivial
+- There's only a couple of phases:
+1. Easy break in (3/4, duplicate logic, full disambiguation)
+2. Quintuple not bad comboing into 6 in box 5
+3. Box 5 look ahead, nastiest part
+4. 4 force into box 6
+5. Extreme amounts of sudoku to finish off, pretty mechanical and brainless
+
+Pink coloring would be very nice!
+
+Puzzle:
+https://f-puzzles.com/?id=yjs9sbgd

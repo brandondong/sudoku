@@ -45,8 +45,30 @@ Review:
 3. Box 5 look ahead, nastiest part
 4. 4 force into box 6
 5. Extreme amounts of sudoku to finish off, pretty mechanical and brainless
+- In conclusion, hot garbo of a puzzle and although it might get a decent amount of solves, there's no good idea in there
+- I don't want to waste the break in idea on such a garbo puzzle
 
 Pink coloring would be very nice!
 
+WYSI
+
 Puzzle:
 https://f-puzzles.com/?id=yjs9sbgd
+
+Rules:
+- Normal sudoku rules apply.
+- Normal killer cage rules apply (the numbers in the cage must sum to the given total in the top left and numbers must not repeat in a cage).
+- On the marked diagonals, digits cannot repeat.
+
+Attempt 2:
+- https://f-puzzles.com/?id=yhq42s78 here is the true break in 
+- https://f-puzzles.com/?id=yflsc3xd wow!
+- https://f-puzzles.com/?id=yj6by8fx ok I think we definitely have something special on our hands...
+- Not opposed to reusing the quintuple logic but it's quite random at this point, really should use the 1/6 2/5 disambiguation or coloring
+- In terms of shifts, we only have 1 horizontal or 1 veritcal possibility, 4 possibilities in total
+- 100% we are using an X so this puzzle can end soon and won't mess up the break-in
+
+- https://f-puzzles.com/?id=yf2fdfo8 pretty inefficient...
+- https://f-puzzles.com/?id=yfbganxh great stuff working in the quintuple naturally
+- Diagonal sounds great right about now, 2 still work, not much to gain
+- https://f-puzzles.com/?id=ygw29r42 both flip diagonal is really powerful...

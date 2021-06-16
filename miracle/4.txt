@@ -86,3 +86,9 @@ Attempt 2:
 - https://f-puzzles.com/?id=yeubcafx seems like there is something here but I don't know what
 - You can go very far with just coloring which is fine as long as we don't continue it and they eventually get surprised at everything disambiguating
 - Certainly with this approach, the column 3 thing is not so arbitrary and the underlying idea is quite boring after all
+ - The coloring is much more interesting and the disambiguation of digits is the magic bonus
+ - https://f-puzzles.com/?id=yzgxscku obvious next step
+ - https://f-puzzles.com/?id=yzxcbpec right idea but dead
+ - https://f-puzzles.com/?id=yjdmb9uk excellent!
+ - Disambiguation of 1/6 2/5 is actually not required but it's very pretty if you decide to go that route
+ - https://f-puzzles.com/?id=yhogcfsc omg what???

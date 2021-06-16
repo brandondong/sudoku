@@ -72,3 +72,17 @@ Attempt 2:
 - https://f-puzzles.com/?id=yfbganxh great stuff working in the quintuple naturally
 - Diagonal sounds great right about now, 2 still work, not much to gain
 - https://f-puzzles.com/?id=ygw29r42 both flip diagonal is really powerful...
+
+- https://f-puzzles.com/?id=yg8pnfdo not terrible, unfortunately kills the earlier 2 deduction, breaks with X
+- https://f-puzzles.com/?id=yz5nlt2q lo and behold, this is death for X
+- Maybe it would be sensible at this point to compute X's that work because there might not be many...
+- I think up to the quintuple step is pretty great...
+
+- https://f-puzzles.com/?id=yedgepbv rip break in bypassed again LUL
+- Back to the drawing board https://f-puzzles.com/?id=yfxyztfe
+- Actually, this fails like the previous 1/2 breakage just more convoluted
+- True, but it still captures the spirit of the break in which is the green in column 3 must be each in a 27 cage
+- In fact, we don't need the column 2 setup at all although it is a good pointer
+- https://f-puzzles.com/?id=yeubcafx seems like there is something here but I don't know what
+- You can go very far with just coloring which is fine as long as we don't continue it and they eventually get surprised at everything disambiguating
+- Certainly with this approach, the column 3 thing is not so arbitrary and the underlying idea is quite boring after all

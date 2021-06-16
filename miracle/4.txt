@@ -91,4 +91,23 @@ Attempt 2:
  - https://f-puzzles.com/?id=yzxcbpec right idea but dead
  - https://f-puzzles.com/?id=yjdmb9uk excellent!
  - Disambiguation of 1/6 2/5 is actually not required but it's very pretty if you decide to go that route
- - https://f-puzzles.com/?id=yhogcfsc omg what???
+ - https://f-puzzles.com/?id=ydmdxnun omg what???
+ - In review, the box 9 quintuple is actually very well communicated
+ - For the diagonals, we can only shift and then flip that shifted 3 columns leading to 4 possibilities, one of which is already dead
+ - Right now, there's simply no way we can disambiguate the 8/9's, some 27 cage will be needed!
+
+ - https://f-puzzles.com/?id=yhngzmws honest effort dead
+ - https://f-puzzles.com/?id=yfb2pfqu again lol
+ - I think single diagonal is sort of f'd tbh
+ - https://f-puzzles.com/?id=yh7srkaf...?
+- 6 solutions:
+51........6..1..5..427.51..325476918471598632698123547139247865284651379756389421
+513862794867914253942735186325476918471598632698123547139247865284651379756389421
+513962784967814253842735196325476918471598632698123547139247865284651379756389421
+517834296863912754942765183325476918471598632698123547139247865284651379756389421
+517864293863912754942735186325476918471598632698123547139247865284651379756389421
+517934286963812754842765193325476918471598632698123547139247865284651379756389421
+517964283963812754842735196325476918471598632698123547139247865284651379756389421
+- https://f-puzzles.com/?id=yhp84nxf boom!
+- https://f-puzzles.com/?id=yz9xot2a better no 6 cell!
+- https://f-puzzles.com/?id=yfl6mzrf best!

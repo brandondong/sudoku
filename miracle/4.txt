@@ -55,10 +55,7 @@ WYSI
 Puzzle:
 https://f-puzzles.com/?id=yjs9sbgd
 
-Rules:
-- Normal sudoku rules apply.
-- Normal killer cage rules apply (the numbers in the cage must sum to the given total in the top left and numbers must not repeat in a cage).
-- On the marked diagonals, digits cannot repeat.
+
 
 Attempt 2:
 - https://f-puzzles.com/?id=yhq42s78 here is the true break in 
@@ -111,3 +108,15 @@ Attempt 2:
 - https://f-puzzles.com/?id=yhp84nxf boom!
 - https://f-puzzles.com/?id=yz9xot2a better no 6 cell!
 - https://f-puzzles.com/?id=yfl6mzrf best!
+
+WYSI
+
+Puzzle:
+https://f-puzzles.com/?id=ykxowben
+
+Rules:
+- Normal sudoku rules apply.
+- Normal killer cage rules apply (the numbers in the cage must sum to the given total in the top left and numbers must not repeat in a cage).
+- On the marked diagonal, digits cannot repeat.
+
+This puzzle is dedicated to the most frustrating video game I know of. The title, numerical clues, and color are all thematic. Hopefully, the puzzle itself contains none of this frustration!

@@ -119,4 +119,30 @@ Rules:
 - Normal killer cage rules apply (the numbers in the cage must sum to the given total in the top left and numbers must not repeat in a cage).
 - On the marked diagonal, digits cannot repeat.
 
-This puzzle is dedicated to the most frustrating video game I know of. The title, numerical clues, and color are all thematic. Hopefully, the puzzle itself contains none of this frustration!
+This puzzle is dedicated to the most frustrating video game I know of. The title, numerical clues, and color are all thematic. Hopefully, the puzzle itself contains no such frustration!
+
+Solution:
+https://f-puzzles.com/?id=yzgagtel
+
+Bypass using 9?
+- Not really anything you can do about it because it's crucial to our finisher which is just easy sudoku to end on a good note
+- It's not clear that it's really that actionable https://f-puzzles.com/?id=yffqn8ar
+- It really isn't https://f-puzzles.com/?id=yzkoqaqx and it's arguable that this is more beautiful than the other order
+
+
+<p>This puzzle is dedicated to the most frustrating video game I know of. The title, numerical clues, and color are all thematic. Hopefully, the puzzle itself contains no such frustration!</p>
+<p><b>Rules:</b></p>
+<ul>
+<li>Normal sudoku rules apply.</li>
+<li>Normal killer cage rules apply (the numbers in the cage must sum to the given total in the top left and numbers must not repeat in a cage).</li>
+<li>On the marked diagonal, digits cannot repeat.</li>
+</ul>
+<p><b>Puzzle:</b></p>
+<p><a href="https://f-puzzles.com/?id=ykxowben">f-puzzles</a></p>
+<div>
+<img:0009CI>
+</div>
+<p>Happy solving!</p>
+
+Row 5 from left to right followed by column 9 from top to bottom.
+471598632436827591

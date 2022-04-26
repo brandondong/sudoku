@@ -1,0 +1,19 @@
+Max Disjoint Sandwich
+
+- https://f-puzzles.com/?id=yhqzo4hz 1/2 outie followed by 2/3 outie, have to immediately disambiguate
+- https://f-puzzles.com/?id=yhdcuped very quick disambiguation it seems, 3 sandwich clues only at this point
+- https://f-puzzles.com/?id=yj88flyk 9 possibilities
+- https://f-puzzles.com/?id=ye77pzg5 weird 5/9 as part of the triple
+- The best we can hope for after such a break in is 2 more sandwich clues and one short thermo
+- Doesn't beat the baseline of the thermo portals -> dead in the water
+
+6x6 arrow/sandwich
+- Horizontal 3 into same box means >= 6 -> sandwich spread on two rows
+- Horizontal 2 into the same box means there must be at least one of 1/6 in the far box
+
+Misc:
+- https://f-puzzles.com/?id=yjrn994n Matching cage totals wouldn't work
+
+Clones:
+- https://logic-masters.de/Raetselportal/Raetsel/zeigen.php?id=0006F2
+- Not sharing diagonal logic max/min

@@ -1,3 +1,22 @@
 Imaginary Cages:
 https://f-puzzles.com/?id=yyr55a86 Quite stupendous...
 - 6/7 should form an pairwise interchangeable XV assignment
+- https://f-puzzles.com/?id=y4s64ft8 simplified
+- Not sure what the goals are at this point, it should be really easy to resolve to a unique solution via typical XV knight sudoku
+- Hold off any weird cages that depend on 6/7 until the very end
+- This means you're safe to do 5/10/15 in 2 (but be careful), 15 in 3 with a guaranteed 5
+- https://f-puzzles.com/?id=y6gctong probably would be so painful with coloring...?
+- https://f-puzzles.com/?id=y3ywkoxe better to make it easier, we want the rest of the puzzle to be "smooth" while minimizing cages
+- Especially with 15 in 3, people will be wary and think you need to brute force...
+
+Solver:
+- https://f-puzzles.com/?id=yy7dlebr base
+- https://f-puzzles.com/?id=yxuwwl29 Technically possible with 2 more cages
+- https://f-puzzles.com/?id=y6ec866a up to here is pretty humanly possible vs the computer https://f-puzzles.com/?id=y35csgka
+
+- https://f-puzzles.com/?id=y6z8rqx9 this is nice but sorta misleads the beginning
+- https://f-puzzles.com/?id=y2a8asfl human solvable not terrible...
+
+- https://f-puzzles.com/?id=yyyb62nz Profit???? Human solvable (without coloring!) https://f-puzzles.com/?id=y5vxqp9u (7 variant)
+- Seems to always be the case that the 15's are very different
+- https://f-puzzles.com/?id=y5c3dyl7 final first draft no wasted clues!

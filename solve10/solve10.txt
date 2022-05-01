@@ -28,12 +28,34 @@ https://sudokulab.net/?pzl=_3vjmEJC
 Rules:
 - Normal sudoku rules apply.
 - Normal killer cage rules apply (the digits in a cage must sum to the number printed in its corner and digits may not repeat within a cage).
-- Normal antiknight rules apply (digits must not repeat in cells that are a chess knight's move apart).
+- Normal anti-knight rules apply (digits must not repeat in cells that are a chess knight's move apart).
 
 CTC:
 https://app.crackingthecryptic.com/sudoku/?puzzleid=fpuzzlesN4IgzglgXgpiBcBOANCALhNAbO8QEkBbAQwHMIA7YgJwE8ACAYTJjBFWIFc0ALAe2oIQAIWrEKAEz4V2IapxxgYaIQDkBJLPQDKnKQGtO9eYvrEADuay0AdPQAKWYgGMY9Xm4kRyaMPQCM7jzUfJykPPSI9JT0MC4RMITmaAyuWFh2ACLemH6EnGBo9BR8RdQw5nFFAO6YPDEe9GDEhG4h1cj0znxYnIQUnQL0AEZ8AB42ADoU09k%2BeQVFJWUVVdEUXTDpfrzERTRuxF08rH76FN48aADkeXwAbofmNGhTMxQAKif0XvPrZl0WPR8oUmn13Hwgm4KH1hjBqPRzNRKGgYBJ%2FrkugIKPCsjlfMDiAxlsZVnt6LVeDEjs4WG9pgBRMbmASo9EAMxChDBBgUxGGNhxKlQpGREgQAG0JcAAL7IWXyuUK5VK1WKgC6yGlapVir1utlmu1%2Bp1ppNRoNZstGq11rtpotVqd5ttzvtNuN7vtjpNvu9mpA4gw50uKngaHkMFQ%2Bgg6XhtNIuGlIHuxF6uBAACYAKyyNJYNjwCUgABKmcY%2FlkZcYmarAGYK%2FWayB1UqU2nOBm6wAGPNbAuS0v%2BRh1qvl0eoasAFibE9LDZnrfl7fTQn8udQ%2BcLxerG9L5YAbE29yWG0el6BU6u8Dm%2B9tByXhwB2KvDgAcr8YiDHjBfF5XnZrnuW4Pg2L6Tg2H4QV%2BVZTr%2BLZtlegF4Oud4DkWpZwTOk7Zowi6IR2Gb%2BL2m79tupa4SeuHngR14gMRaHkSWT6MCeLE0cuSFESRIAgRhJaICOVaCfhnGEUBjEPoJ4GloJUGyTBratkAA%3D%3D
+https://tinyurl.com/ye225u8x
 
 f-puzzles:
 https://f-puzzles.com/?load=N4IgzglgXgpiBcBOANCALhNAbO8QEkBbAQwHMIA7YgJwE8ACAYTJjBFWIFc0ALAe2oIQAIWrEKAEz4V2IapxxgYaIQDkBJLPQDKnKQGtO9eYvrEADuay0AdPQAKWYgGMY9Xm4kRyaMPQCM7jzUfJykPPSI9JT0MC4RMITmaAyuWFh2ACLemH6EnGBo9BR8RdQw5nFFAO6YPDEe9GDEhG4h1cj0znxYnIQUnQL0AEZ8AB42ADoU09k+eQVFJWUVVdEUXTDpfrzERTRuxF08rH76FN48aADkeXwAbofmNGhTMxQAKif0XvPrZl0WPR8oUmn13Hwgm4KH1hjBqPRzNRKGgYBJ/rkugIKPCsjlfMDiAxlsZVnt6LVeDEjs4WG9pgBRMbmASo9EAMxChDBBgUxGGNhxKlQpGREgQAG0JcAAL7IWXyuUK5VK1WKgC6yGlapVir1utlmu1+p1ppNRoNZstGq11rtpotVqd5ttzvtNuN7vtjpNvu9mpA4gw50uKngaHkMFQ+gg6XhtNIuGlIHuxF6uBAACYAKyyNJYNjwCUgABKmcY/lkZcYmarAGYK/WayB1UqU2nOBm6wAGPNbAuS0v+Rh1qvl0eoasAFibE9LDZnrfl7fTQn8udQ+cLxerG9L5YAbE29yWG0el6BU6u8Dm+9tByXhwB2KvDgAcr8YiDHjBfF5XnZrnuW4Pg2L6Tg2H4QV+VZTr+LZtlegF4Oud4DkWpZwTOk7Zowi6IR2Gb+L2m79tupa4SeuHngR14gMRaHkSWT6MCeLE0cuSFESRIAgRhJaICOVaCfhnGEUBjEPoJ4GloJUGyTBratkAA==
+https://f-puzzles.com/?id=y37whq54
 
 I don't personally think this is an easy puzzle. Please don't hesitate to ping me for hints if needed!
+
+<p><b>Rules:</b></p>
+<ol>
+<li>Normal sudoku rules apply.</li>
+<li>Normal killer cage rules apply (the digits in a cage must sum to the number printed in its corner and digits may not repeat within a cage).</li>
+<li>Normal anti-knight rules apply (digits must not repeat in cells that are a chess knight's move apart).</li>
+</ol>
+<p><b>Puzzle:</b></p>
+<p><a href="https://f-puzzles.com/?id=y37whq54">f-puzzles</a></p>
+<p><a href="https://app.crackingthecryptic.com/sudoku/?puzzleid=fpuzzlesN4IgzglgXgpiBcBOANCALhNAbO8QEkBbAQwHMIA7YgJwE8ACAYTJjBFWIFc0ALAe2oIQAIWrEKAEz4V2IapxxgYaIQDkBJLPQDKnKQGtO9eYvrEADuay0AdPQAKWYgGMY9Xm4kRyaMPQCM7jzUfJykPPSI9JT0MC4RMITmaAyuWFh2ACLemH6EnGBo9BR8RdQw5nFFAO6YPDEe9GDEhG4h1cj0znxYnIQUnQL0AEZ8AB42ADoU09k%2BeQVFJWUVVdEUXTDpfrzERTRuxF08rH76FN48aADkeXwAbofmNGhTMxQAKif0XvPrZl0WPR8oUmn13Hwgm4KH1hjBqPRzNRKGgYBJ%2FrkugIKPCsjlfMDiAxlsZVnt6LVeDEjs4WG9pgBRMbmASo9EAMxChDBBgUxGGNhxKlQpGREgQAG0JcAAL7IWXyuUK5VK1WKgC6yGlapVir1utlmu1%2Bp1ppNRoNZstGq11rtpotVqd5ttzvtNuN7vtjpNvu9mpA4gw50uKngaHkMFQ%2Bgg6XhtNIuGlIHuxF6uBAACYAKyyNJYNjwCUgABKmcY%2FlkZcYmarAGYK%2FWayB1UqU2nOBm6wAGPNbAuS0v%2BRh1qvl0eoasAFibE9LDZnrfl7fTQn8udQ%2BcLxerG9L5YAbE29yWG0el6BU6u8Dm%2B9tByXhwB2KvDgAcr8YiDHjBfF5XnZrnuW4Pg2L6Tg2H4QV%2BVZTr%2BLZtlegF4Oud4DkWpZwTOk7Zowi6IR2Gb%2BL2m79tupa4SeuHngR14gMRaHkSWT6MCeLE0cuSFESRIAgRhJaICOVaCfhnGEUBjEPoJ4GloJUGyTBratkAA%3D%3D">CTC</a></p>
+<div>
+<img:000D9Y>
+</div>
+<p>Happy solving!</p>
+
+Solution:
+https://f-puzzles.com/?id=y5c3dyl7
+
+Row 5 from left to right.
+563791482
